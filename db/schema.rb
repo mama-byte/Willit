@@ -10,10 +10,44 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_23_194346) do
+ActiveRecord::Schema.define(version: 2020_01_25_123247) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "contact_memories", force: :cascade do |t|
+    t.bigint "contact_id"
+    t.bigint "memory_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["contact_id"], name: "index_contact_memories_on_contact_id"
+    t.index ["memory_id"], name: "index_contact_memories_on_memory_id"
+  end
+
+  create_table "contacts", force: :cascade do |t|
+    t.boolean "is_executor"
+    t.string "first_name"
+    t.string "last_name"
+    t.string "relationship"
+    t.string "email"
+    t.string "release_code"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_contacts_on_user_id"
+  end
+
+  create_table "memories", force: :cascade do |t|
+    t.string "image_url"
+    t.string "audio_url"
+    t.string "title"
+    t.string "video_url"
+    t.string "description"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_memories_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -27,4 +61,8 @@ ActiveRecord::Schema.define(version: 2020_01_23_194346) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "contact_memories", "contacts"
+  add_foreign_key "contact_memories", "memories"
+  add_foreign_key "contacts", "users"
+  add_foreign_key "memories", "users"
 end
