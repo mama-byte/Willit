@@ -4,12 +4,9 @@
 @import url('https://fonts.googleapis.com/css?family=Comfortaa:400,500,700|Karla:400,700|Merriweather+Sans:300,400,700&display=swap');
 
 // Define fonts for body and headers
-$body-font: "Merriweather Sans", "sans-serif";
-$headers-font: "Comfortaa", "Karla";
-
-// font-family: 'Comfortaa', cursive;
-// font-family: 'Merriweather Sans', sans-serif;
-// font-family: 'Karla', sans-serif;
+$body-font: 'Merriweather Sans', 'sans-serif';
+$logo-font: 'Comfortaa', cursive;
+$headers-font:'Karla', sans-serif;
 
 // To use a font file (.woff) uncomment following lines
 // @font-face {
