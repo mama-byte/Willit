@@ -1,0 +1,17 @@
+<div class = "container">
+  <div class = "row">
+    <div class = "col-sm">
+      <div class = "text_box">
+        <h4>Personal Information</h4>
+          <%= simple_form_for @user, url: user_path(@user), method: :patch do |f| %>
+           <%= f.input :legal_name, :label => "What is your Legal Name?" %>
+            <%= f.input :pronouns, :label => "What are your Pronouns?" %>
+            <%= f.input :birthdate, :label => "What is your Birthdate?" %>
+            <%= f.input :nationality, :label => "What is your Nationality?" %>
+            <%= f.input :nickname, :label => "Do you have a Nickname?" %>
+            <%= f.button :submit, 'Save Changes', class: "btn-ghost" %>
+          <% end %>
+      </div>
+    </div>
+  </div>
+</div>
