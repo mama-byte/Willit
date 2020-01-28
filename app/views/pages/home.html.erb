@@ -5,16 +5,49 @@
         <% else %>
           <h2>Welcome! We suggest starting with adding some personal information</h2>
         <% end %>
-<div class=container>
-<div class=cards>
-<%= link_to 'Personal Information', edit_user_path(current_user) %>
+<div class="container">
+  <div class="row justify-content-center">
+      <div class="col-12 col-lg-6">
+<div class="card-columns">
+  <div class="card bg-dark ">
+    <img src="..." class="card-img-top" alt="...">
+    <div class="card-body">
+    <%= link_to 'Yourself', edit_user_path(current_user) %>
+  <label><input type="checkbox" value=""></label>
+    </div>
+  </div>
+  <div class="card bg-dark">
+    <img src="..." class="card-img-top" alt="...">
+    <div class="card-body">
 <%= link_to 'Memories', edit_user_path(current_user) %>
+  <label><input type="checkbox" value=""></label>
+    </div>
+  </div>
+  <div class="card bg-dark">
+    <img src="..." class="card-img-top" alt="...">
+    <div class="card-body">
 <%= link_to 'Relations', edit_user_path(current_user) %>
+  <label><input type="checkbox" value=""></label>
+       </div>
+    </div>
+      <div class="card bg-dark">
+        <img src="..." class="card-img-top" alt="...">
+        <div class="card-body">
 <%= link_to 'Ceremony', edit_user_path(current_user) %>
+  <label><input type="checkbox" value=""></label>
+        </div>
+      </div>
+        <div class="card bg-dark">
+          <img src="..." class="card-img-top" alt="...">
+          <div class="card-body">
 <%= link_to 'Valuables', edit_user_path(current_user) %>
+  <label><input type="checkbox" value=""></label>
+          </div>
+        </div>
+          <div class="card bg-dark">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
 <%= link_to 'Job Benefits', edit_user_path(current_user) %>
+  <label><input type="checkbox" value=""></label>
 </div>
 </div>
-
-
-
