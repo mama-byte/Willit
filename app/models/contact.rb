@@ -1,6 +1,6 @@
 class Contact < ApplicationRecord
   belongs_to :user
 
-  has_many :contact_memories
-  has_many :memories, through: :contact_memories
+  has_many :contact_valuables
+  has_many :valuables, through: :contact_valuables
 end
