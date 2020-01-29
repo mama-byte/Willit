@@ -7,9 +7,9 @@
   </div>
 </div>
     <% if current_user.nickname.present? %>
-          <h2> <%= current_user.nickname %> Select a category</h2>
+          <h2 class="header2"> Hi, <%= current_user.nickname %> </h2>
         <% else %>
-          <h2>Welcome! We suggest starting with adding some personal information</h2>
+          <h2 class="header2">Select a Category</h2>
         <% end %>
   <div class="row no-margin">
     <div class="card">
