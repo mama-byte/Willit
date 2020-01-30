@@ -10,10 +10,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_25_150735) do
+ActiveRecord::Schema.define(version: 2020_01_29_150856) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "ceremonies", force: :cascade do |t|
+    t.string "ceremony_type"
+    t.string "venue"
+    t.string "burial_type"
+    t.string "details"
+    t.string "speaker"
+    t.string "epitaph"
+    t.string "music_selector"
+    t.string "funeral_home"
+    t.string "press_release"
+    t.bigint "user_id"
+    t.bigint "contact_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["contact_id"], name: "index_ceremonies_on_contact_id"
+    t.index ["user_id"], name: "index_ceremonies_on_user_id"
+  end
 
   create_table "contact_memories", force: :cascade do |t|
     t.bigint "contact_id"
@@ -67,8 +85,22 @@ ActiveRecord::Schema.define(version: 2020_01_25_150735) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  create_table "valuables", force: :cascade do |t|
+    t.string "title"
+    t.string "image_url"
+    t.integer "value"
+    t.string "description"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_valuables_on_user_id"
+  end
+
+  add_foreign_key "ceremonies", "contacts"
+  add_foreign_key "ceremonies", "users"
   add_foreign_key "contact_memories", "contacts"
   add_foreign_key "contact_memories", "memories"
   add_foreign_key "contacts", "users"
   add_foreign_key "memories", "users"
+  add_foreign_key "valuables", "users"
 end
