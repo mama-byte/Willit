@@ -7,9 +7,7 @@
 }
 
 .card {
-  // width: calc(50% - 20px);
   width:100%;
-  // margin: 0 10px 0 10px;
   border-radius: 20px;
   border-color: black;
   background-color: black;
@@ -20,23 +18,9 @@
   display:flex;
   flex-wrap: wrap;
   justify-content: space-around;
+  padding-top: 40px;
 }
-// .green {
 
-// }
-
-// .card-padding {
-//   padding: 5px;
-// }
-
-// .no-margin {
-//   margin-left: 0;
-//   margin-right: 0;
-// }
-
-// .max-card-width {
-//   max-width: 550px;
-// }
 
 .card-body{
   padding: 0px;
@@ -52,7 +36,7 @@
 
 .header2 {
   text-align: center;
-  margin: 5px 0px 0px 0px
+  margin: 15px 0px 0px 0px
 
 }
 
