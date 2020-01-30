@@ -1,9 +1,3 @@
 <h1>Pages#home</h1>
 
-    <% if current_user.nickname.present? %>
-          <h2>Welcome <%= current_user.nickname %> </h2>
-        <% else %>
-          <h2>Welcome! We suggest starting with adding some personal information</h2>
-        <% end %>
-
 <%= link_to 'Personal Information', edit_user_path(current_user) %>
