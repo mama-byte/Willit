@@ -1,0 +1,22 @@
+body{
+  color:white;
+}
+
+select{
+  padding:10px;
+}
+
+.btn-ghost {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 20px;
+  background:#F29406;
+  transition: background 0.3s ease;
+  margin-top:20px;
+  margin-bottom:20px;
+}
+
+.btn-ghost:hover {
+  opacity: 1;
+}
+
