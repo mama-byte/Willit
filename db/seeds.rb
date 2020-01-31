@@ -5,4 +5,6 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-User.create!(legal_name:'wally', email: 'wally@notwally.com', password:'wally123', birthdate: Date.new(2007,5,12))
+
+wolly = User.create!(legal_name:'wally', email: 'wally12@notwally.com', password:'wally123', birthdate: Date.new(2007,5,12))
+watches = Valuable.create!(title:'watch', image_url: 'wallynotwally.com', value:'12', description:"Rolex")
