@@ -10,16 +10,17 @@
       <h4>Personal Information</h4>
           <%= f.input :legal_name , :label => "What is your Legal Name?"%>
           <%= f.input :pronouns, :label => "What are your Pronouns?" %>
-          <!-- Custom Field For Form With Flex-column -->
            <%= f.input :birthdate, :label => "What is your birthdate?" %>
           <%= f.input :nationality, :label => "What is your Nationality?" %>
           <%= f.input :nickname, :label => "Do you have a Nickname?"%>
       </div>
-          <%= f.button :button do %>
+           <%= f.button :button do %>
             <%= image_tag('lock.png', width:30)%>
           <% end %>
     <% end %>
   </div>
+  <div class="button-align">
+   <%= link_to 'Review your info', profile_path(current_user), class: 'btn btn-ghost' %>
   </div>
-  <%#= link_to 'Review your info', user_path(current_user) %>
+  </div>
 </div>
