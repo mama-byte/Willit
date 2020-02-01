@@ -7,6 +7,10 @@ class CeremoniesController < ApplicationController
   def show
   end
 
+  def index
+    @ceremony = policy_scope(Ceremony)
+  end
+
   def create
     @ceremony = Ceremony.new(ceremony_params)
     @ceremony.user = current_user
