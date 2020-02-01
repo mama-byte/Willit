@@ -5,4 +5,6 @@ Rails.application.routes.draw do
   get '/profile', to: "profiles#show", as: :profile
   get '/profile/edit', to: "profiles#edit", as: :profile_edit
   patch '/profile/update', to: "profiles#update", as: :profile_update
+
+
 end

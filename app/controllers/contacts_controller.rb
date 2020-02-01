@@ -23,6 +23,8 @@ class ContactsController < ApplicationController
   end
 
   def update
+    @contact = Contact.find(params[:id])
+    authorize @contact
     if @contact.update(contact_params)
       redirect_to @contact, notice: 'Your Relation was updated'
     else
