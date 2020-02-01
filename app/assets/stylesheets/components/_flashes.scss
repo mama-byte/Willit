@@ -1,0 +1,23 @@
+.alert-success{
+  padding: 10px;
+  position: relative;
+}
+
+.alert-danger{
+  padding: 10px;
+  position: relative;
+}
+
+.btn-ghost {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  background:#7b8e85;
+  transition: background 0.3s ease;
+  margin-top:20px;
+  margin-bottom:20px;
+}
+
+.btn-ghost:hover {
+  opacity: 1;
+}
