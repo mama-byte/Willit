@@ -5,5 +5,6 @@ class Ceremony < ApplicationRecord
   enum ceremony_type: { funeral: 0, memorial: 1 }
 
   belongs_to :user
-  has_many :contacts, through: :ceremony
+  belongs_to :speaker, class_name: 'Contact', foreign_key: 'speaker_id'
+  belongs_to :music_selector, class_name: 'Contact', foreign_key: 'music_selector_id'
 end

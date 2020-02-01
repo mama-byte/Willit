@@ -5,4 +5,12 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+Ceremony.delete_all
+Contact.delete_all
+User.delete_all
+
 User.create!(legal_name:'wally', email: 'wally@notwally.com', password:'wally123', birthdate: Date.new(2007,5,12))
+user = User.create!(legal_name:'ruthie', email: 'ruthie@notwally.com', password:'wally123', birthdate: Date.new(1983,5,12))
+andrew = Contact.create!(first_name:'andrew', last_name: 'erlanger', user_id: user.id )
+les = Contact.create!(first_name:'les', last_name: 'erlanger', user_id: user.id )
+ceremony = Ceremony.create!(ceremony_type: 'memorial', user_id: user.id, speaker_id: andrew.id, music_selector_id: les.id)

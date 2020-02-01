@@ -9,8 +9,8 @@ class CreateCeremonies < ActiveRecord::Migration[5.2]
       t.string :funeral_home
       t.string :press_release
       t.references :user, foreign_key: true
-      t.references :speaker, references: :contacts, foreign_key: true
-      t.references :music_selector, references: :contacts, foreign_key: true
+      t.references :speaker, foreign_key: {to_table: :contacts}
+      t.references :music_selector, foreign_key: {to_table: :contacts}
 
       t.timestamps
     end
