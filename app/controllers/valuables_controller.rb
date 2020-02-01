@@ -10,6 +10,7 @@ class ValuablesController < ApplicationController
 
   def new
     @valuable = Valuable.new
+    @category = params[:category]
   end
 
   def create

@@ -1,0 +1,48 @@
+<h1> hello </h1>
+
+<p> <%= @valuable.item%> </p>
+
+
+<div class="container card-padding max-card-width pt-3" >
+  <% if user_signed_in? %>
+    <h2 class="header2"> Hi, <%= current_user.nickname %> </h2>
+  <% else %>
+    <h2 class="header2">Valuables type</h2>
+  <% end %>
+  <div class="card-wrapper">
+    <div class=" no-margin">
+      <div class="card">
+        <%= image_tag "personal.png", class: "home-img" %>
+        <div class="card-body">
+          <%= link_to 'Yourself', valuables_path %>
+        </div>
+      </div>
+    </div>
+    <div class=" no-margin" >
+      <div class="card green">
+        <%= image_tag "relations.png", class: "home-img" %>
+         <div class="card-body">
+          <%= link_to 'Relations',  valuables_path %>
+         </div>
+      </div>
+    </div>
+    <div class=" no-margin" >
+      <div class="card">
+        <%= image_tag "dog.png", class: "home-img" %>
+        <div class="card-body">
+          <%= link_to 'Valuables', valuables_path %>
+        </div>
+      </div>
+    </div>
+    <div class=" no-margin" >
+        <div class="card green">
+          <%= image_tag "ceremony.png", class: "home-img" %>
+          <div class="card-body">
+            <%= link_to 'Ceremony', valuables_path %>
+          </div>
+        </div>
+    </div>
+  </div>
+</div>
+
+

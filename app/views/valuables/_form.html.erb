@@ -7,6 +7,7 @@
             <%= f.input :description, :label => "Item Description" %>
             <%= f.input :value, :label => "How much is it worth?" %>
             <%= f.input :image_url, :label => "add a photo" %>
+            <%= f.hidden_field :category, value: @category %>
             <%= f.button :submit, class: "btn btn-ghost" %>
         <%end%>
         </div>

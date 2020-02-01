@@ -4,4 +4,9 @@ class PagesController < ApplicationController
   def home
     @user = current_user
   end
+
+  def item
+    @valuable = Valuable.find(params[:id])
+  end
+
 end

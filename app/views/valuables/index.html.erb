@@ -1,19 +1,20 @@
-<div class="container">
-  <div class="row">
-    <div class="col-sm m-5">
-     <div class="text_box">
-        <%= simple_form_for @valuable  do |f| %>
-            <%= f.input :title, :label => "Item Brand/Name"%>
-            <%= f.input :description, :label => "Item Description" %>
-            <%= f.input :value, :label => "How much is it worth?" %>
-            <%= f.input :image_url, :label => "add a photo" %>
-            <%= f.button :submit, class: "btn btn-ghost" %>
-        <%end%>
-        </div>
-      </div>
-  </div>
-</div>
 
-<div class="popup" onclick="myFunction()">Click me!
-  <span class="popuptext" id="myPopup">Popup text...</span>
-</div>
+
+<%= link_to "Have you any collections?", new_valuable_path("collections") %> <br>
+
+<%= link_to "Have you any electronics?", new_valuable_path("electronics") %> <br>
+
+<%= link_to "Have you any housewares?", new_valuable_path("housewares") %> <br>
+
+<%= link_to "Have you any jewelry?", new_valuable_path("jewelry") %> <br>
+
+<%= link_to "Have you any cars?", new_valuable_path("cars") %> <br>
+
+
+
+
+<% @valuables.each do |valuable| %>
+<%= link_to "#{valuable.title}", valuable_path(valuable) %> <br>
+
+
+<% end %>
