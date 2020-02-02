@@ -1,48 +1,63 @@
-<h1> hello </h1>
 
-<p> <%= @valuable.item%> </p>
+<div class="container" >
 
-
-<div class="container card-padding max-card-width pt-3" >
-  <% if user_signed_in? %>
-    <h2 class="header2"> Hi, <%= current_user.nickname %> </h2>
-  <% else %>
-    <h2 class="header2">Valuables type</h2>
-  <% end %>
   <div class="card-wrapper">
     <div class=" no-margin">
+     <h2> Choose your Collection </h2>
       <div class="card">
-        <%= image_tag "personal.png", class: "home-img" %>
+        <%= image_tag "collection.jpg", class: "home-imgs" %>
         <div class="card-body">
-          <%= link_to 'Yourself', valuables_path %>
+          <%= link_to "Stamps", new_valuable_path("collections") %> <br>
+          <%= link_to "Books", new_valuable_path("collections") %> <br>
+          <%= link_to "Coins", new_valuable_path("collections") %> <br>
         </div>
       </div>
     </div>
     <div class=" no-margin" >
+      <h2> Choose your Electronics </h2>
       <div class="card green">
-        <%= image_tag "relations.png", class: "home-img" %>
+        <%= image_tag "electronics.jpeg", class: "home-imgs" %>
          <div class="card-body">
-          <%= link_to 'Relations',  valuables_path %>
+      <%= link_to "Tv", new_valuable_path("electronics") %> <br>
+      <%= link_to "Laptop", new_valuable_path("electronics") %> <br>
+      <%= link_to "Headset", new_valuable_path("electronics") %> <br>
          </div>
       </div>
     </div>
     <div class=" no-margin" >
+      <h2> Choose your Housewares </h2>
       <div class="card">
-        <%= image_tag "dog.png", class: "home-img" %>
+        <%= image_tag "houseware.png", class: "home-imgs" %>
         <div class="card-body">
-          <%= link_to 'Valuables', valuables_path %>
+      <%= link_to "Vase", new_valuable_path("housewares") %> <br>
+      <%= link_to "Lamps", new_valuable_path("housewares") %> <br>
+      <%= link_to "Knifes", new_valuable_path("housewares") %> <br>
         </div>
       </div>
     </div>
     <div class=" no-margin" >
+        <h2> Choose your Jewelry </h2>
         <div class="card green">
-          <%= image_tag "ceremony.png", class: "home-img" %>
+          <%= image_tag "jewelry.jpeg", class: "home-imgs" %>
           <div class="card-body">
-            <%= link_to 'Ceremony', valuables_path %>
+      <%= link_to "Rings", new_valuable_path("jewelry") %> <br>
+      <%= link_to "Braclets", new_valuable_path("jewelry") %> <br>
+      <%= link_to "Earings", new_valuable_path("jewelry") %> <br>
           </div>
         </div>
     </div>
+    <div class=" no-margin" >
+        <h2> Choose your Vehicles </h2>
+      <div class="card">
+        <%= image_tag "vehicles.jpeg", class: "home-imgs" %>
+        <div class="card-body">
+      <%= link_to "Cars", new_valuable_path("vehicles") %> <br>
+      <%= link_to "Bikes", new_valuable_path("jewelry") %> <br>
+      <%= link_to "Boats", new_valuable_path("jewelry") %> <br>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
-
+</div>
 

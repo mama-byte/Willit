@@ -6,7 +6,6 @@ class PagesController < ApplicationController
   end
 
   def item
-    @valuable = Valuable.find(params[:id])
+    @valuable = Valuable.all
   end
-
 end

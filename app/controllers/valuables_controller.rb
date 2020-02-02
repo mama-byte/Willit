@@ -6,6 +6,7 @@ class ValuablesController < ApplicationController
   end
 
   def show
+    @valuables = Valuable.all
   end
 
   def new
@@ -17,7 +18,7 @@ class ValuablesController < ApplicationController
     @valuable = Valuable.new(valuable_params)
     @valuable.user = current_user
     if @valuable.save
-      redirect_to valuable_path(@valuable), notice: 'Valuable was saved'
+      redirect_to valuable_show_path(@valuable), notice: 'Valuable was saved'
     else
       render :new
     end
@@ -36,8 +37,9 @@ class ValuablesController < ApplicationController
   end
 
   def destroy
+    @valuable = Valuable.find(params[:id])
     @valuable.destroy
-    redirect_to valuable_url, notice: 'Valuable was removed'
+    redirect_to valuable_show_path(@valuable), notice: 'Valuable was removed'
   end
 
   private

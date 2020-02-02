@@ -1,20 +1,48 @@
 
+    <h2 class="header2">Start a log of You Valuables</h2>
+  <div class="card-wrapper">
+    <div class=" no-margin">
+      <div class="card">
+        <%= image_tag "collection.jpg", class: "home-imgs" %>
+        <div class="card-body">
+        <%= link_to "Have you any collections?", pages_path %> <br>
+        </div>
+      </div>
+    </div>
+    <div class=" no-margin" >
+      <div class="card green">
+        <%= image_tag "electronics.jpeg", class: "home-imgs" %>
+         <div class="card-body">
+        <%= link_to "Have you any electronics?", pages_path %> <br>
+         </div>
+      </div>
+    </div>
+    <div class=" no-margin" >
+      <div class="card">
+        <%= image_tag "houseware.png", class: "home-imgs" %>
+        <div class="card-body">
+        <%= link_to "Have you any housewares?", pages_path %> <br>
+        </div>
+      </div>
+    </div>
+    <div class=" no-margin" >
+        <div class="card green">
+          <%= image_tag "jewelry.jpeg", class: "home-imgs" %>
+          <div class="card-body">
+          <%= link_to "Have you any jewelry?", pages_path %> <br>
+          </div>
+        </div>
+    </div>
+    <div class=" no-margin" >
+      <div class="card">
+        <%= image_tag "vehicles.jpeg", class: "home-imgs" %>
+        <div class="card-body">
+        <%= link_to "Have you any vehicles?", pages_path %> <br>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-<%= link_to "Have you any collections?", new_valuable_path("collections") %> <br>
-
-<%= link_to "Have you any electronics?", new_valuable_path("electronics") %> <br>
-
-<%= link_to "Have you any housewares?", new_valuable_path("housewares") %> <br>
-
-<%= link_to "Have you any jewelry?", new_valuable_path("jewelry") %> <br>
-
-<%= link_to "Have you any cars?", new_valuable_path("cars") %> <br>
 
 
-
-
-<% @valuables.each do |valuable| %>
-<%= link_to "#{valuable.title}", valuable_path(valuable) %> <br>
-
-
-<% end %>
