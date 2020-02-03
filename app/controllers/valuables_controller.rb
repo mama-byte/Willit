@@ -37,9 +37,8 @@ class ValuablesController < ApplicationController
   end
 
   def destroy
-    @valuable = Valuable.find(params[:id])
     @valuable.destroy
-    redirect_to valuable_show_path(@valuable), notice: 'Valuable was removed'
+    redirect_to valuables_path, notice: 'Valuable was removed'
   end
 
   private
