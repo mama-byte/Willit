@@ -3,6 +3,7 @@
     <%= image_tag('top_banner.png',class:'top_image')%>
   </div>
 
+ <div class ="purple_box">
   <div class='container2'>
       <h4>Review Your Personal Information</h4>
         <div class='review'>
@@ -12,5 +13,5 @@
           <p>Nationality: <%= current_user.nationality ? current_user.nationality: nil %> </p>
           <p>Legal Name: <%= current_user.legal_name ? current_user.legal_name: nil  %> </p>
         </div>
-    </div>
+   </div>
 </div>

@@ -1,18 +1,20 @@
 .top_image{
-  height: 400px;
+  height: 500px;
   width:100%;
   object-fit:cover;
 }
 
-h4{
+.container2 h4{
+  grid-row: 1 / span 1;
+  grid-column: 2/ span 1;
   padding-top: 20px;
   padding-bottom: 20px;
-  color:#8F99B7;
+  color: #8F99B7;
 }
 
 .container1{
   display:grid;
-  grid-template-rows: 40% 1fr;
+  grid-template-rows: 400px 1fr;
   grid-template-columns: 1fr;
   grid-auto-flow: row;
 }
@@ -20,8 +22,6 @@ h4{
 .container2{
   display:grid;
   grid-template-columns: 20% 1fr 20%;
-  background-color: $dark-purple;
-  border-radius: 20px 20px 0px 0px;
 }
 
 form {
@@ -32,5 +32,16 @@ form {
 .review {
   grid-row: 2 / span 1;
   grid-column: 2/ span 1;
+  padding: 20px;
+  background-color: #2E394E;
 }
 
+.review li{
+  list-style-type: none;
+}
+
+.purple_box{
+background: linear-gradient(45deg, rgba(1,14,34,1) 0%, rgba(1,14,34,1) 44%, rgba(24,36,55,1) 74%);
+  border-radius: 40px 40px 0px 0px;
+  padding-top: 30px;
+}
