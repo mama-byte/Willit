@@ -5,6 +5,10 @@ class ContactPolicy < ApplicationPolicy
     end
   end
 
+  def index?
+    true
+  end
+
   def new?
     create?
   end
