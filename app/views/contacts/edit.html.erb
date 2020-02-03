@@ -1,0 +1,26 @@
+<div class = "container1">
+  <div>
+    <%= image_tag('relations.png',class:'top_image')%>
+  </div>
+
+  <div class ="purple_box">
+    <div class = "container2">
+    <%= simple_form_for @contact do |f| %>
+      <div class = 'inner_container'>
+      <h4>Add a Relative</h4>
+          <%= f.input :first_name, :label => "What is the First Name of the Person?"%>
+          <%= f.input :last_name, :label => "What is the Last Name of the Person?" %>
+          <!-- Custom Field For Form With Flex-column -->
+           <%= f.input :relationship, :label => "What is their Relationship to you?" %>
+          <%= f.input :email, :label => "Do they have an email address?" %>
+          <%= f.input :phone_number, :label => "Do they have a Phone Number?"%>
+          <%= f.input :is_executor, :label => "Appoint this person as an Executor"%>
+      </div>
+          <%= f.button :button do %>
+            <%= image_tag('lock.png', width:30)%>
+          <% end %>
+    <% end %>
+  </div>
+  </div>
+  <%#= link_to 'Review your info', user_path(current_user) %>
+</div>
