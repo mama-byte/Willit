@@ -48,6 +48,6 @@ class ValuablesController < ApplicationController
   end
 
   def valuable_params
-    params.require(:valuable).permit(:title, :image_url, :value, :description)
+    params.require(:valuable).permit(:title, :image_url, :value, :description, :photo)
   end
 end

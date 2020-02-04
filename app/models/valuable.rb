@@ -1,4 +1,4 @@
-class Valuable < ApplicationRecord
+  class Valuable < ApplicationRecord
   enum category: { electronics: 0, housewares: 1, jewelry: 2}
 
   enum item: { cans: 0, stamps: 1, phones: 2}
@@ -7,4 +7,5 @@ class Valuable < ApplicationRecord
 
   has_many :contact_valuables
   has_many :contacts, through: :contact_valuables
+  mount_uploader :photo, PhotoUploader
 end

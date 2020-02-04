@@ -1,6 +1,7 @@
 <h1> Your new valuable, <%=@valuable.title%> </h1>
 <p> <%= @valuable.description%> </p>
 <p>Value is, <%= @valuable.value%> euro </p>
+<%= cl_image_tag @valuable.photo, height: 300, width: 400, crop: :fill %>
  <%= link_to "Edit", edit_valuable_path %> <br>
   <%= link_to "Delete", valuable_path(@valuable), method: :delete %> <br>
 
