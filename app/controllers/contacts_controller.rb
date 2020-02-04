@@ -2,7 +2,7 @@ class ContactsController < ApplicationController
   def index
     # need to add the sql query to make sure that only the contacts related to the user are returned.
     @contacts = Contact.where(["user_id = ?", current_user.id])
-    @contact = policy_scope(Contact)
+    @contacts = policy_scope(Contact)
   end
 
   def new
