@@ -1,0 +1,29 @@
+<h1>ceremony edit</h1>
+<div class = "container1">
+  <div>
+    <%= image_tag('ceremony.png',class:'top_image')%>
+  </div>
+
+  <div class ="purple_box">
+    <div class = "container2">
+    <%= simple_form_for @ceremony do |f| %>
+      <div class = 'inner_container'>
+      <h4>Add Ceremony Details</h4>
+          <%= f.input :ceremony_type, :label => "Select the type of ceremony you desire."%>
+          <%= f.input :venue, :label => "Do you have an ideal venue in mind?" %>
+          <!-- Custom Field For Form With Flex-column -->
+          <%= f.input :burial_type, :label => "Select the type of burial you desire." %>
+          <%= f.input :details, :label => "Any specific requests?" %>
+          <%= f.input :epitaph, :label => "Any last words for your epitaph?"%>
+          <%= f.input :funeral_home, :label => "Add the funeral_home you want to work with."%>
+          <%= f.input :press_release, :label => "How would you like the news of your passing published or released?"%>
+          <%= f.input :speaker_id, :label => "Choose a speaker from your list of your Relations."%>
+          <%= f.input :music_selector_id, :label => "Choose who is in charge of music from your list of Relations."%>
+      </div>
+          <%= f.button :button do %>
+            <%= image_tag('lock.png', width:60)%>
+          <% end %>
+    <% end %>
+  </div>
+  </div>
+</div>
