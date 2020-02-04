@@ -5,6 +5,11 @@ class ValuablesController < ApplicationController
     @valuables = Valuable.all
   end
 
+  def items
+    @category = params[:category]
+    @valuables = Valuable.all
+  end
+
   def show
     @valuables = Valuable.all
   end
@@ -12,13 +17,14 @@ class ValuablesController < ApplicationController
   def new
     @valuable = Valuable.new
     @category = params[:category]
+    @item = params[:item]
   end
 
   def create
     @valuable = Valuable.new(valuable_params)
     @valuable.user = current_user
     if @valuable.save
-      redirect_to valuable_show_path(@valuable), notice: 'Valuable was saved'
+      redirect_to valuable_path(@valuable), notice: 'Valuable was saved'
     else
       render :new
     end
@@ -48,6 +54,6 @@ class ValuablesController < ApplicationController
   end
 
   def valuable_params
-    params.require(:valuable).permit(:title, :image_url, :value, :description, :photo)
+    params.require(:valuable).permit(:title, :image_url, :value, :description, :photo, :category, :item)
   end
 end

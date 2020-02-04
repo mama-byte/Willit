@@ -1,7 +1,7 @@
   class Valuable < ApplicationRecord
-  enum category: { electronics: 0, housewares: 1, jewelry: 2}
+  enum category: { electronics: 0, household: 1, jewelry: 2, vehicles: 3}
 
-  enum item: { cans: 0, stamps: 1, phones: 2}
+  enum item: { computer: 0, tv: 1, bikes: 2}
 
   belongs_to :user
 

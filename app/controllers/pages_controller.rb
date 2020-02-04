@@ -4,8 +4,4 @@ class PagesController < ApplicationController
   def home
     @user = current_user
   end
-
-  def item
-    @valuable = Valuable.all
-  end
 end
