@@ -9,16 +9,29 @@
     <%= simple_form_for @ceremony do |f| %>
       <div class = 'inner_container'>
       <h4>Add Ceremony Details</h4>
-          <%= f.input :ceremony_type, collection: Ceremony.ceremony_types.keys, :label => "Select the type of ceremony you desire."%>
+          <%= f.input :ceremony_type, as: :check_box, collection: Ceremony.ceremony_types.keys, :label => "Select the type of ceremony you desire."%>
+          <div class="form-group">
+          <label class="control-label check_boxes optional">Ceremony Type</label>
+          <input type="hidden" name="ceremony[:ceremony_type][]" value="">
+          <div class="ceremony-choices">
+            <% Ceremony.all.each do |ceremony| %>
+            <input type="checkbox" class="hidden" value="<%= :ceremony_type %>" name="ceremony[ceremony_type][]" id="ceremony_category_id_<%= ceremony.id %>">
+            <label for="ceremony_type<%= ceremony.id %>">
+            <%= ceremony.id %>
+        <i class="fa fa-check"></i>
+      </label>
+    <% end %>
+   </div>
+</div>
           <%= f.input :venue, :label => "Do you have an ideal venue in mind?" %>
           <!-- Custom Field For Form With Flex-column -->
-          <%= f.input :burial_type, collection: Ceremony.burial_types.keys, :label => "Select the type of burial you desire." %>
-          <%= f.input :details, :label => "Any specific requests?" %>
+          <%= f.input :burial_type, collection: Ceremony.burial_types.keys, as: :boolean, input_html: {checked: false}, :label => "Select the type of burial you desire." %>
+          <%= f.input :details, :label => "Any specific requests for your ceremony?" %>
           <%= f.input :epitaph, :label => "Any last words for your epitaph?"%>
-          <%= f.input :funeral_home, :label => "Add the funeral_home you want to work with."%>
-          <%= f.input :press_release, :label => "How would you like the news of your passing published or released"%>
+          <%= f.input :funeral_home, :label => "Add the funeral home you want to work with."%>
+          <%= f.input :press_release, :label => "How would you like the news of your passing published or released?"%>
           <%= f.input :speaker_id, collection: current_user.contacts, value_method: :id, label_method: :full_name, :label => "Choose a speaker from your list of your Relations"%>
-          <%= f.input :music_selector_id, collection: current_user.contacts, value_method: :id, label_method: :full_name,:label => "Choose who is in charge of music from your list of Relations."%>
+          <%= f.input :music_selector_id, collection: current_user.contacts, value_method: :id, label_method: :full_name, :label => "Choose who is in charge of music from your list of your Relations."%>
       </div>
           <%= f.button :button do %>
             <%= image_tag('lock.png', width:60)%>

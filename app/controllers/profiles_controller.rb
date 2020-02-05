@@ -11,7 +11,7 @@ class ProfilesController < ApplicationController
 
   def update
     @user = current_user
-    authrorize @user
+    authorize @user
     @user.update(user_params)
     if @user.save
       redirect_to profile_path
