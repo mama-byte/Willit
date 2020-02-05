@@ -6,6 +6,21 @@ select{
   padding:10px;
 }
 
+label{
+  font-weight:lighter;
+}
+
+.form-control {
+  background-color: #2E394E;
+  box-shadow: -5px 3px 18px -6px rgba(0,0,0,0.75);
+  color:white;
+  padding-bottom: 20px;
+}
+
+.form-group{
+  padding-bottom: 20px;
+}
+
 .btn-ghost {
   color: white;
   padding: 8px 24px;
@@ -20,3 +35,24 @@ select{
   opacity: 1;
 }
 
+// .burail-choices {
+//   display:flex;
+//   justify-content: space-between;
+//   flex-wrap: wrap;
+//   margin: 20px 0;
+// }
+
+// .burial-choice {
+//   padding: 20px;
+//   border-radius: 5px;
+//   flex: 0 0 30%;
+//   text-align: center;
+//   &:hover{
+//     opacity: 1;
+//   }
+//   &:active{
+//     background: white;
+//     color: white;
+//     opacity: 1;
+//   }
+// }

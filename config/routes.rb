@@ -10,4 +10,7 @@ Rails.application.routes.draw do
   get '/valuables/category/:category', to: "valuables#items", as: :valuable_items
   get '/valuables/:id', to: "valuables#show", as: :valuable_show
   get '/valuables/:id', to: "valuables#edit", as: :valuable_edit
+  resources :ceremonies
+  resources :contacts
+  get '/relations', to: "pages#intro_relationships", as: :relations
 end

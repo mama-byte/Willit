@@ -16,20 +16,20 @@ ActiveRecord::Schema.define(version: 2020_02_04_184250) do
   enable_extension "plpgsql"
 
   create_table "ceremonies", force: :cascade do |t|
-    t.string "ceremony_type"
+    t.integer "ceremony_type"
     t.string "venue"
-    t.string "burial_type"
+    t.integer "burial_type"
     t.string "details"
-    t.string "speaker"
     t.string "epitaph"
-    t.string "music_selector"
     t.string "funeral_home"
     t.string "press_release"
     t.bigint "user_id"
-    t.bigint "contact_id"
+    t.bigint "speaker_id"
+    t.bigint "music_selector_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["contact_id"], name: "index_ceremonies_on_contact_id"
+    t.index ["music_selector_id"], name: "index_ceremonies_on_music_selector_id"
+    t.index ["speaker_id"], name: "index_ceremonies_on_speaker_id"
     t.index ["user_id"], name: "index_ceremonies_on_user_id"
   end
 
@@ -99,7 +99,8 @@ ActiveRecord::Schema.define(version: 2020_02_04_184250) do
     t.index ["user_id"], name: "index_valuables_on_user_id"
   end
 
-  add_foreign_key "ceremonies", "contacts"
+  add_foreign_key "ceremonies", "contacts", column: "music_selector_id"
+  add_foreign_key "ceremonies", "contacts", column: "speaker_id"
   add_foreign_key "ceremonies", "users"
   add_foreign_key "contact_memories", "contacts"
   add_foreign_key "contact_memories", "memories"

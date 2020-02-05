@@ -1,0 +1,34 @@
+<div class = "container1">
+  <div>
+    <%= image_tag('relations.png',class:'top_image')%>
+  </div>
+
+  <div class ="purple_box">
+    <div class = "container2">
+    <h4>Review Your Important People</h4>
+      <div class = "review">
+      <% if @contacts.empty? %>
+        <h4> You currently have no relations added </h4>
+        <%= link_to 'Add a Relation', new_contact_path, class: 'btn btn-ghost' %>
+        <%else%>
+      <% @contacts.each do |contact| %>
+      <li>
+      <% if contact.is_executor %>
+      <%= image_tag('tick.png', width:40) %>
+      <%end%>
+      <%= contact.first_name + " " + contact.last_name %>
+
+        <% if policy(contact).edit? %>
+        <%= link_to image_tag('edit.png',width:40), edit_contact_path(contact) %>
+        <% end %>
+        <% if policy(contact).destroy? %>
+        <%= link_to image_tag('bin.png',width:40), contact_path(contact),
+                method: :delete, data: {
+                confirm: 'Are you sure?' }%></li>
+        <%end%>
+      <% end %>
+      <% end %>
+    </div>
+    </div>
+  </div>
+</div>
