@@ -1,46 +1,93 @@
 // Specific CSS for your home-page
-.container{
-  // background-color: rgb(1, 14, 34);
-  background: linear-gradient(45deg, rgba(1,14,34,1) 0%, rgba(1,14,34,1) 44%, rgba(24,36,55,1) 74%);
+ .header2 {
+  margin: 15px 0px 12px 0px;
+  padding-top: 15px;
+  font-weight: lighter;
+  font-size: 20px;
   color: white;
-  height: 900px;
-
 }
 
-.card {
-  width:100%;
+.card-trip {
+  overflow: hidden;
+  background: $light-purple;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
   border-radius: 20px;
-  border-color: black;
-  background-color: black;
-  margin-bottom: 10px;
 }
 
-.card-wrapper {
-  display:flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  padding-top: 40px;
+.card-trip > img {
+  height: 150px;
+  width: 100%;
+  object-fit: cover;
 }
 
+.card-trip h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
 
-.card-body{
-  padding: 0px;
-  background-color: rgb(47,52,74);
-  border-radius: 0 0 20px 20px;
-  padding: 10px 25px;
-  a {
-    color: white;
+.card-trip p {
+  font-size: 12px;
+  opacity: .7;
+  margin: 0;
+}
+
+.card-trip a {
+  color:white;
+}
+
+.card-trip .card-trip-infos {
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+}
+
+.card-trip-infos .card-trip-user {
+  position: absolute;
+  right: 16px;
+  top: -20px;
+  width: 40px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 16px;
+}
+
+// Smallest device
+@media (min-width: 100px) and (max-width: 575px) {
+  .cards {
+    grid-template-columns: 1fr 1fr;
   }
 }
 
-.header2 {
-  text-align: center;
-  margin: 15px 0px 0px 0px
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+  .cards {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
-.home-img{
-  height: 150px;
-  width:150px;
-  border-radius:20px 20px 0 0;
-  background-size: cover;
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  .cards {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  .cards {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+  .cards {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
 }

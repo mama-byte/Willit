@@ -41,7 +41,7 @@ form {
 }
 
 .purple_box{
-background: linear-gradient(45deg, rgba(1,14,34,1) 0%, rgba(1,14,34,1) 44%, rgba(24,36,55,1) 74%);
+background: $dark-purple;
   border-radius: 40px 40px 0px 0px;
   padding-top: 30px;
 }
