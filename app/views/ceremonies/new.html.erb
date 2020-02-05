@@ -6,26 +6,33 @@
 
   <div class ="purple_box">
     <div class = "container2">
+      <div class = "row">
+      <div class = " col-xs-12 col-sm-6 col-sm-offset-3">
+
+      </div>
+      </div>
     <%= simple_form_for @ceremony do |f| %>
       <div class = 'inner_container'>
       <h4>Add Ceremony Details</h4>
-          <%= f.input :ceremony_type, as: :check_box, collection: Ceremony.ceremony_types.keys, :label => "Select the type of ceremony you desire."%>
-          <div class="form-group">
-          <label class="control-label check_boxes optional">Ceremony Type</label>
-          <input type="hidden" name="ceremony[:ceremony_type][]" value="">
-          <div class="ceremony-choices">
-            <% Ceremony.all.each do |ceremony| %>
-            <input type="checkbox" class="hidden" value="<%= :ceremony_type %>" name="ceremony[ceremony_type][]" id="ceremony_category_id_<%= ceremony.id %>">
-            <label for="ceremony_type<%= ceremony.id %>">
-            <%= ceremony.id %>
-        <i class="fa fa-check"></i>
-      </label>
-    <% end %>
-   </div>
-</div>
-          <%= f.input :venue, :label => "Do you have an ideal venue in mind?" %>
+          <%#= f.input :ceremony_type, as: :check_box, collection: Ceremony.ceremony_types.keys, :label => "Select the type of ceremony you desire."%>
+          <%#= f.collection_check_boxes :ceremony, [[true, "Yes"], [false, "No"]], :ceremony_type, collection: Ceremony.ceremony_types.keys %>
+          <p>Select the type of ceremony you desire.</p>
+          <% Ceremony.ceremony_types.each do |key, value| %>
+            <%= f.fields_for :ceremonies do |x| %>
+            <%= x.check_box :ceremony_type, {}, value, false %>
+            <%= key %>
+            <% end %>
+            <% end %>
+           <%= f.input :venue, :label => "Do you have an ideal venue in mind?" %>
           <!-- Custom Field For Form With Flex-column -->
-          <%= f.input :burial_type, collection: Ceremony.burial_types.keys, as: :boolean, input_html: {checked: false}, :label => "Select the type of burial you desire." %>
+<!--           <%= f.input :burial_type, collection: Ceremony.burial_types.keys, as: :boolean, input_html: {checked: false}, :label => "Select the type of burial you desire." %> -->
+          <p>Select the type of burial you desire.</p>
+          <% Ceremony.burial_types.each do |key, value| %>
+            <%= f.fields_for :ceremonies do |x| %>
+            <%= x.check_box :burial_type, {}, value, false %>
+            <%= key %>
+            <% end %>
+            <% end %>
           <%= f.input :details, :label => "Any specific requests for your ceremony?" %>
           <%= f.input :epitaph, :label => "Any last words for your epitaph?"%>
           <%= f.input :funeral_home, :label => "Add the funeral home you want to work with."%>
@@ -37,7 +44,7 @@
             <%= image_tag('lock.png', width:60)%>
           <% end %>
     <% end %>
-  </div>
+     </div>
   </div>
 </div>
 
