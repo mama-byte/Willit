@@ -15,7 +15,7 @@ class ProfilesController < ApplicationController
     @user.update(user_params)
     if @user.save
       redirect_to profile_path
-      flash[:notice] = "Your Personal Information has been updated"
+      flash[:success] = 'You have successfully added and saved your Personal Information'
     else
       render 'edit'
     end
