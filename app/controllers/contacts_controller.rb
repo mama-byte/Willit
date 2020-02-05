@@ -15,7 +15,8 @@ class ContactsController < ApplicationController
     @contact.user = current_user
     authorize @contact
     if @contact.save
-      redirect_to contacts_path, notice: 'Contact was saved'
+      redirect_to contacts_path
+      flash[:success] = 'You have successfully Created and Saved your Relation'
     else
       render 'new'
     end
@@ -31,7 +32,8 @@ class ContactsController < ApplicationController
     authorize @contact
     if @contact.update(contact_params)
       @contact.save
-      redirect_to contacts_path, notice: 'Relation was updated'
+      redirect_to contacts_path
+      flash[:success] = 'You have successfully Updated and Saved your Existing Relation'
     else
       render 'edit'
     end
