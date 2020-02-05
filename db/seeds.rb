@@ -5,6 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+Valuable.delete_all
 Ceremony.delete_all
 Contact.delete_all
 User.delete_all
@@ -66,3 +67,13 @@ funeral = Ceremony.create!(
   speaker_id: mike.id,
   music_selector_id: joe.id
   )
+
+watches = Valuable.create!(
+  user_id: wolly.id,
+  title:'watch',
+  image_url: 'wallynotwally.com',
+  value:'12',
+  description:"Rolex",
+  item:'cans')
+
+

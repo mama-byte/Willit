@@ -1,7 +1,5 @@
-// Specific CSS for your home-page
 .container{
-  // background-color: rgb(1, 14, 34);
-  background: linear-gradient(45deg, rgba(1,14,34,1) 0%, rgba(1,14,34,1) 44%, rgba(24,36,55,1) 74%);
+  background-color: rgb(1, 14, 34);
   color: white;
   height: 900px;
 
@@ -30,18 +28,20 @@
   padding: 10px 25px;
   a {
     color: white;
+    font-size: 20px;
+    font-weight: bold;
   }
 }
 
 .header2 {
   text-align: center;
   margin: 15px 0px 0px 0px
+
 }
 
-.home-img{
+.home-imgs{
   height: 150px;
-  width: 150px;
+
   border-radius:20px 20px 0 0;
   background-size: cover;
 }
-
