@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm m-5">
+     <div class="text_box">
+        <%= simple_form_for @valuable  do |f| %>
+            <%= f.input :title, :label => "Item Brand/Name"%>
+            <%= f.input :description, :label => "Item Description" %>
+            <%= f.input :value, :label => "How much is it worth?" %>
+            <%= f.hidden_field :category, value: @category %>
+            <%= f.hidden_field :item, value: @item %>
+            <%= f.input :photo %>
+            <%= f.input :photo_cache, as: :hidden %>
+            <%= f.button :submit, class: "btn btn-ghost" %>
+        <%end%>
+        </div>
+      </div>
+  </div>
+</div>

@@ -20,7 +20,7 @@ class ContactsController < ApplicationController
     progress
     if @contact.save
       redirect_to contacts_path
-      flash[:notice] = "Your Personal Information has been updated. You are #{@progress} % complete"
+      flash[:success] = "Your Personal Information has been updated. You are #{@progress} % complete"
     else
       render 'new'
     end
@@ -36,7 +36,8 @@ class ContactsController < ApplicationController
     authorize @contact
     if @contact.update(contact_params)
       @contact.save
-      redirect_to contacts_path, notice: 'Relation was updated'
+      redirect_to contacts_path
+      flash[:success] = 'You have successfully Updated and Saved your Existing Relation'
     else
       render 'edit'
     end

@@ -18,7 +18,7 @@ class ProfilesController < ApplicationController
     progress
     if @user.save
       redirect_to profile_path
-      flash[:notice] = "Your Personal Information has been updated. You are #{@progress} % complete"
+      flash[:success] = "Your Personal Information has been updated. You are #{@progress} % complete"
     else
       render 'edit'
     end
