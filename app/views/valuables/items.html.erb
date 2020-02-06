@@ -19,7 +19,7 @@
     <div class="<%= 'd-none' unless @category == 'electronics' %> no-margin" >
       <h2> Choose your Electronics </h2>
       <div class="card green">
-        <%= image_tag "electronics.jpeg", class: "home-imgs" %>
+        <%= image_tag "electronics.jpg", class: "home-imgs" %>
          <div class="card-body">
       <%= link_to "Computer", new_valuable_path("electronics", "computer") %> <br>
       <%= link_to "Phone", new_valuable_path("electronics", "phone") %> <br>
@@ -47,7 +47,7 @@
     <div class="<%= 'd-none' unless @category == 'jewelry' %> no-margin" >
         <h2> Choose your Jewelry </h2>
         <div class="card green">
-          <%= image_tag "jewelry.jpeg", class: "home-imgs" %>
+          <%= image_tag "jewelry.jpg", class: "home-imgs" %>
           <div class="card-body">
       <%= link_to "Rings", new_valuable_path("jewelry", "rings") %> <br>
       <%= link_to "Braclets", new_valuable_path("jewelry", "braclets") %> <br>
@@ -61,7 +61,7 @@
     <div class="<%= 'd-none' unless @category == 'vehicles' %> no-margin" >
         <h2> Choose your Equiptment </h2>
       <div class="card">
-        <%= image_tag "vehicles.jpeg", class: "home-imgs" %>
+        <%= image_tag "vehicles.jpg", class: "home-imgs" %>
         <div class="card-body">
       <%= link_to "Cars", new_valuable_path("vehicles", "cars") %> <br>
       <%= link_to "Bikes", new_valuable_path("vehicles", "bikes") %> <br>
