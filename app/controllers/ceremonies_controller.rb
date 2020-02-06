@@ -1,8 +1,9 @@
 class CeremoniesController < ApplicationController
+  before_action :set_ceremonies, only: [:show, :edit, :update, :destroy]
+
   def index
     @ceremonies = Ceremony.where(["user_id = ?", current_user.id])
     @ceremonies = policy_scope(Ceremony)
-    # authorize @ceremony
   end
 
   def new
@@ -49,6 +50,10 @@ class CeremoniesController < ApplicationController
   end
 
   private
+
+  def set_ceremonies
+    @ceremony = Ceremony.find(params[:id])
+  end
 
   def ceremony_params
     params.require(:ceremony).permit(

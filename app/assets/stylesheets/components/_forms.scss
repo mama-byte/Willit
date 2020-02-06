@@ -43,7 +43,7 @@ label{
 .radios .radio {
   position: relative;
   display: block;
-  background-color: #000000;
+  background-color: #2E394E;
   color: #FFFFFF;
   width: 100px;
   height: 100px;
@@ -57,8 +57,8 @@ label{
 }
 
 .radios input[type=radio]:checked + .radio {
-  background-color: #ffffff;
-  color: #000000;
+  background-color: #F4F4F4;
+  color: #FFFFFF;
   line-height: 100px;
   text-align: center;
 }
