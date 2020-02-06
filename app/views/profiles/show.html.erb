@@ -3,9 +3,13 @@
     <%= image_tag('personal.png',class:'top_image')%>
   </div>
 
+
  <div class ="purple_box">
   <div class='container2'>
+       <div class ="progress_notes">
       <h4>Review Your Personal Information</h4>
+         <%= render "profiles/progress" %>
+      </div>
         <div class='review'>
           <p>NickName: <%= current_user.nickname ? current_user.nickname: nil %> </p>
           <p>Pronouns: <%= current_user.pronouns ? current_user.pronouns : nil %> </p>

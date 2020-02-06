@@ -5,7 +5,11 @@
 
   <div class ="purple_box">
     <div class = "container2">
-    <h4>Review Your Important People</h4>
+    <div class ="progress_notes">
+      <h4>Review Your Important People</h4>
+      <%= render "contacts/progress" %>
+      <%= render "contacts/executor_set" %>
+    </div>
       <div class = "review">
       <% if @contacts.empty? %>
         <h4> You currently have no relations added </h4>
@@ -14,15 +18,15 @@
       <% @contacts.each do |contact| %>
       <li>
       <% if contact.is_executor %>
-      <%= image_tag('tick.png', width:40) %>
+      <%= image_tag('tick.png', width:25) %>
       <%end%>
       <%= contact.first_name + " " + contact.last_name %>
 
         <% if policy(contact).edit? %>
-        <%= link_to image_tag('edit.png',width:40), edit_contact_path(contact) %>
+        <%= link_to image_tag('edit.png',width:25), edit_contact_path(contact) %>
         <% end %>
         <% if policy(contact).destroy? %>
-        <%= link_to image_tag('bin.png',width:40), contact_path(contact),
+        <%= link_to image_tag('bin.png',width:25), contact_path(contact),
                 method: :delete, data: {
                 confirm: 'Are you sure?' }%></li>
         <%end%>

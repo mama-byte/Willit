@@ -69,11 +69,12 @@ funeral = Ceremony.create!(
   )
 
 watches = Valuable.create!(
-  user_id: wolly.id,
+  user_id: wally.id,
   title:'watch',
   image_url: 'wallynotwally.com',
   value:'12',
   description:"Rolex",
-  item:'cans')
+  item:"watches"
+  )
 
 
