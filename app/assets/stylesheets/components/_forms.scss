@@ -10,11 +10,14 @@ label{
   font-weight:lighter;
 }
 
+.inner_container{
+  padding:20px;
+}
+
 .form-control {
   background-color: #2E394E;
   box-shadow: -5px 3px 18px -6px rgba(0,0,0,0.75);
   color:white;
-  padding-bottom: 20px;
 }
 
 .form-group{
