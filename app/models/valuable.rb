@@ -1,5 +1,5 @@
   class Valuable < ApplicationRecord
-  enum category: { electronics: 0, housewares: 1, jewelry: 2, vehicles: 3}
+  enum category: { electronics: 0, housewares: 1, jewelry: 2, vehicles: 3, collections: 4}
 
   enum item: { instruments: 0, books: 1, coins: 2, vinyls: 3, games: 4, miles: 5,
     computer: 6, phone: 7, camera: 8, television: 9, game_console: 10,

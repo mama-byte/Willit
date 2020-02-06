@@ -20,7 +20,8 @@ class CeremoniesController < ApplicationController
     @ceremony.user = current_user
     authorize @ceremony
     if @ceremony.save
-      redirect_to ceremonies_path, notice: 'You created a ceremony'
+      redirect_to ceremonies_path
+      flash[:success] = "Your Ceremony has been created"
     else
       render 'new'
     end
@@ -35,7 +36,8 @@ class CeremoniesController < ApplicationController
     @ceremony = Ceremony.find(params[:id])
     if @ceremony.update(ceremony_params)
       authorize @ceremony
-      redirect_to ceremonies_path, notice: 'You updated your ceremony details'
+      redirect_to ceremonies_path
+      flash[:success] = "Your Ceremony has been updated"
     else
       render 'edit'
     end

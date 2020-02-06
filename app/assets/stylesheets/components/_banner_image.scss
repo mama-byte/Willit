@@ -21,7 +21,12 @@
 
 .container2{
   display:grid;
-  grid-template-columns: 20% 1fr 20%;
+  grid-template-columns: 40px 1fr 40px;
+}
+
+.progress_notes{
+  grid-row: 1 / span 1;
+  grid-column: 2/ span 1;
 }
 
 form {
@@ -38,6 +43,7 @@ form {
 
 .review li{
   list-style-type: none;
+  color: $dark-purple;
 }
 
 .purple_box{
