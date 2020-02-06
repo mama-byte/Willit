@@ -1,1 +1,41 @@
-<h1>Ceremony Show page </h1>
+<!-- <h1>Ceremony Show page </h1>
+<div class = "container1">
+  <div>
+    <%= image_tag('ceremony.png',class:'top_image')%>
+  </div>
+
+  <div class ="purple_box">
+    <div class = "container2">
+    <h4>Review Your Ceremony Details</h4>
+      <div class = "review">
+          <p>CeremonyType: <%= current_user.ceremony_types ? current_user.ceremony_types: nil %> </p> --> -->
+          <p>Venue: <%= current_user.venue ? current_user.venue : nil %> </p>
+          <p>BurialType: <%= current_user.burial_type ? current_user.burial_type : nil %> </p>
+          <p>Details: <%= current_user.details ? current_user.details: nil %> </p>
+          <p>Epitaph: <%= current_user.epitaph ? current_user.epitaph: nil  %> </p>
+          <p>FuneralHome: <%= current_funeral_home ? current_user.funeral_home: nil  %> </p>
+          <p>PressRelease: <%= current_user.press_release ? current_user.press_release: nil  %> </p>
+          <p>Speaker: <%= current_user.speaker_id ? current_user.speaker_id: nil  %> </p>
+          <p>MusicSelector: <%= current_user.music_selector_id ? current_user.music_selector_id: nil  %> </p>
+      <% if @ceremonies.empty? %>
+        <h4> You currently have no ceremony details added </h4>
+          <%#if policy(ceremony).new? %>
+          <%= link_to 'Add some details', new_ceremony_path, class: 'btn btn-ghost' %>
+          <%#end  %>
+      <%else%>
+      <% @ceremonies.each do |ceremony| %>
+      <li>
+        <% if policy(ceremony).edit? %>
+        <%= link_to image_tag('edit.png',width:40), edit_ceremony_path(ceremony) %>
+        <% end %>
+        <% if policy(ceremony).destroy? %>
+        <%= link_to image_tag('bin.png',width:40), ceremony_path(ceremony),
+                method: :delete, data: {
+                confirm: 'Are you sure?' }%></li>
+        <%end%>
+      <% end %>
+    <% end %>
+    </div>
+    </div>
+  </div> -->
+</div>

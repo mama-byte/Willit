@@ -1,7 +1,7 @@
 
 <div class = "container1">
   <div>
-    <%= image_tag('ceremony.png',class:'top_image')%>
+    <%= image_tag('ceremony.png',class: 'top_image')%>
   </div>
 
   <div class ="purple_box">
@@ -10,7 +10,9 @@
       <div class = "review">
       <% if @ceremonies.empty? %>
         <h4> You currently have no ceremony details added </h4>
-        <%= link_to 'Add some details', new_ceremony_path, class: 'btn btn-ghost' %>
+          <%#if policy(ceremony).new? %>
+          <%= link_to 'Add some details', new_ceremony_path, class: 'btn btn-ghost' %>
+          <%#end  %>
       <%else%>
       <% @ceremonies.each do |ceremony| %>
       <li>
