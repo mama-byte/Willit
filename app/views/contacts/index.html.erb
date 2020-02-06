@@ -6,6 +6,10 @@
   <div class ="purple_box">
     <div class = "container2">
     <h4>Review Your Important People</h4>
+    <div class ="mt-3 ">
+      <%= render "contacts/progress" %>
+      <%= render "contacts/executor_set" %>
+    </div>
       <div class = "review">
       <% if @contacts.empty? %>
         <h4> You currently have no relations added </h4>
