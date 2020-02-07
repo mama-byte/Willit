@@ -44,8 +44,8 @@
           <%= f.input :epitaph, :label => "Any last words for your epitaph?"%>
           <%= f.input :funeral_home, :label => "Add the funeral home you want to work with."%>
           <%= f.input :press_release, :label => "How would you like the news of your passing published or released?"%>
-          <%= f.input :speaker_id, collection: current_user.contacts, value_method: :id, label_method: :full_name, :label => "Choose a speaker from your list of your Relations"%>
-          <%= f.input :music_selector_id, collection: current_user.contacts, value_method: :id, label_method: :full_name, :label => "Choose who is in charge of music from your list of your Relations."%>
+          <%= f.input :speaker_id, collection: current_user.contacts, required: true, value_method: :id, label_method: :full_name, :label => "Choose a speaker from your list of your Relations"%>
+          <%= f.input :music_selector_id, collection: current_user.contacts, required: true, value_method: :id, label_method: :full_name, :label => "Choose who is in charge of music from your list of your Relations."%>
       </div>
           <%= f.button :button do %>
             <%= image_tag('lock.png', width:60)%>

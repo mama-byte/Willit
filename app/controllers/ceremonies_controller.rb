@@ -20,9 +20,10 @@ class CeremoniesController < ApplicationController
     @ceremony = Ceremony.new(ceremony_params)
     @ceremony.user = current_user
     authorize @ceremony
+    @progress = helpers.ceremony_progress
     if @ceremony.save
       redirect_to ceremonies_path
-      flash[:success] = "Your Ceremony has been created"
+      flash[:success] = "Your Ceremony has been created. You are #{@progress}% complete"
     else
       render 'new'
     end
@@ -35,10 +36,11 @@ class CeremoniesController < ApplicationController
 
   def update
     @ceremony = Ceremony.find(params[:id])
+    @progress = helper.ceremony_progress
     if @ceremony.update(ceremony_params)
       authorize @ceremony
       redirect_to ceremonies_path
-      flash[:success] = "Your Ceremony has been updated"
+      flash[:success] = "Your Ceremony has been updated. You are #{@progress}% complete"
     else
       render 'edit'
     end

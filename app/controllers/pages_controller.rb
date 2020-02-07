@@ -7,4 +7,5 @@ class PagesController < ApplicationController
 
   def intro_relationships
   end
+
 end

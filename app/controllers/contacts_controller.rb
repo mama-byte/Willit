@@ -1,5 +1,5 @@
 class ContactsController < ApplicationController
-  helper_method :progress, :executor_set
+  helper_method :executor_set
 
   def index
     # need to add the sql query to make sure that only the contacts related to the user are returned.
@@ -17,7 +17,7 @@ class ContactsController < ApplicationController
     @contact = Contact.new(contact_params)
     @contact.user = current_user
     authorize @contact
-    progress
+    @progress = helpers.contact_progress
     if @contact.save
       redirect_to contacts_path
       flash[:success] = "Your Personal Information has been updated. You are #{@progress} % complete"
@@ -34,10 +34,11 @@ class ContactsController < ApplicationController
   def update
     @contact = Contact.find(params[:id])
     authorize @contact
+    @progress = helpers.contact_progress
     if @contact.update(contact_params)
       @contact.save
       redirect_to contacts_path
-      flash[:success] = 'You have successfully Updated and Saved your Existing Relation'
+      flash[:success] = "You have successfully Updated and Saved your Existing Relation.You are #{@progress}% complete"
     else
       render 'edit'
     end
@@ -50,19 +51,6 @@ class ContactsController < ApplicationController
     redirect_to contacts_path
   end
 
-  def progress
-    @contacts = Contact.where(["user_id = ?", current_user.id])
-    @progress = 0
-    if @contacts.count >= 5
-      @progress = 100
-    elsif @contacts.count == 4
-      @progress = 75
-    elsif @contacts.count == 3
-      @progress = 50
-    elsif @contacts.count == 2
-      @progress = 25
-    end
-  end
 
   def executor_set?
     @contacts = Contact.where(["user_id = ?", current_user.id])

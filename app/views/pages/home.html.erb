@@ -21,6 +21,7 @@
       <%= image_tag "ceremony.png" %>
         <div class="card-trip-infos">
           <div>
+            <%= ceremony_progress %>
             <h2><%= link_to 'Ceremony', new_ceremony_path %></h2>
           </div>
       </div>
@@ -30,6 +31,7 @@
         <%= image_tag "relations.png" %>
           <div class="card-trip-infos">
             <div>
+              <h2> You are <%= contact_progress %>% done with your contacts</h2>
               <h2><%= link_to 'Relations',relations_path %></h2>
             </div>
         </div>
@@ -39,6 +41,7 @@
         <%= image_tag "personal.png" %>
           <div class="card-trip-infos">
             <div>
+              <h2> You are <%= profile_progress %>% done with your profile</h2>
               <h2><%= link_to 'Yourself', profile_edit_path %></h2>
             </div>
         </div>
@@ -54,40 +57,4 @@
       </div>
 </div>
 
-  <!-- <div class="card-wrapper">
-    <div class=" no-margin">
-      <div class="card">
-        <%= image_tag "personal.png", class: "home-img" %>
-        <div class="card-body">
-          <h4><%= link_to 'Yourself', profile_edit_path %></h4>
-        </div>
-      </div>
-    </div>
-    <div class=" no-margin" >
-      <div class="card green">
-        <%= image_tag "relations.png", class: "home-img" %>
-         <div class="card-body">
-          <h4><%= link_to 'Relations',relations_path %></h4>
-         </div>
-      </div>
-    </div>
-    <div class=" no-margin" >
-      <div class="card">
-        <%= image_tag "dog.png", class: "home-img" %>
-        <div class="card-body">
-          <h4><%= link_to 'Valuables', valuables_path %></h4>
-        </div>
-      </div>
-    </div>
-    <div class=" no-margin" >
-        <div class="card green">
-          <%= image_tag "ceremony.png", class: "home-img" %>
-          <div class="card-body">
-            <h4><%= link_to 'Ceremony', new_ceremony_path %></h4>
-          </div>
-        </div>
-    </div>
-  </div>
-</div>
- -->
 
