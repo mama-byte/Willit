@@ -1,45 +1,49 @@
+<div class = "container1">
+  <div>
+    <%= image_tag('valuables.png',class:'top_image')%>
+  </div>
 
-    <h2 class="header2">Start a log of You Valuables</h2>
-  <div class="card-wrapper">
-    <div class=" no-margin">
-      <div class="card">
-        <%= image_tag "collection.jpg", class: "home-imgs" %>
-        <div class="card-body">
-        <%= link_to "Have you any collections?", valuable_items_path("collections") %> <br>
-        </div>
-      </div>
-    </div>
-    <div class=" no-margin" >
-      <div class="card green">
-        <%= image_tag "electronics.jpeg", class: "home-imgs" %>
-         <div class="card-body">
-        <%= link_to "Have you any electronics?", valuable_items_path("electronics") %> <br>
-         </div>
-      </div>
-    </div>
-    <div class=" no-margin" >
-      <div class="card">
-        <%= image_tag "houseware.png", class: "home-imgs" %>
-        <div class="card-body">
-        <%= link_to "Have you any housewares?", valuable_items_path("housewares") %> <br>
-        </div>
-      </div>
-    </div>
-    <div class=" no-margin" >
-        <div class="card green">
-          <%= image_tag "jewelry.jpeg", class: "home-imgs" %>
-          <div class="card-body">
-          <%= link_to "Have you any jewelry?", valuable_items_path("jewelry") %> <br>
+
+  <div class ="purple_box">
+    <h4>Log Your Valuables</h4>
+    <h4>Do you have any? </h4>
+    <div class='container-val'>
+
+          <div class="card-valuable">
+            <div class = 'back'>
+              <%= link_to image_tag("collection.png", width: 70), valuable_items_path("collections") %>
+            </div>
+               <h2>Collections</h2>
           </div>
-        </div>
-    </div>
-    <div class=" no-margin" >
-      <div class="card">
-        <%= image_tag "vehicles.jpeg", class: "home-imgs" %>
-        <div class="card-body">
-        <%= link_to "Have you any vehicles?", valuable_items_path("vehicles") %> <br>
-        </div>
-      </div>
+
+          <div class="card-valuable1">
+            <div class = 'back'>
+            <%= link_to image_tag("laptop.png", width: 70), valuable_items_path("electronics") %>
+            </div>
+              <h2>Electronics</h2>
+          </div>
+
+          <div class="card-valuable">
+            <div class = 'back'>
+            <%= link_to image_tag("housewares.png", width: 70), valuable_items_path("housewares") %>
+          </div>
+              <h2>Housewares</h2>
+          </div>
+
+          <div class="card-valuable1">
+            <div class = 'back'>
+           <%= link_to image_tag("jewelery.png", width: 70), valuable_items_path("jewelry") %>
+           </div>
+              <h2>Jewelery</h2>
+          </div>
+
+          <div class="card-valuable">
+            <div class = 'back'>
+            <%= link_to image_tag("vehicle.png", width: 70), valuable_items_path("vehicles") %>
+            </div>
+              <h2>Vehicles</h2>
+          </div>
+
     </div>
   </div>
 </div>
