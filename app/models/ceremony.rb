@@ -9,5 +9,4 @@ class Ceremony < ApplicationRecord
   belongs_to :speaker, class_name: 'Contact', foreign_key: 'speaker_id'
   belongs_to :music_selector, class_name: 'Contact', foreign_key: 'music_selector_id'
 
-
 end
