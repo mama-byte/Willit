@@ -7,7 +7,7 @@ class Valuable < ApplicationRecord
     stereo: 11, furniture: 12, appliance: 13, artwork: 14, antiques: 15, clothing: 16,
     kitchenwares: 17, rings: 18, braclets: 19, earings: 20, necklaces: 21,
     watches: 22, cufflinks: 23, cars: 24, bikes: 25, motorbikes: 26, snowboards: 27,
-    scooters: 28, boats: 29}
+    scooters: 28, boats: 29 }
 
   belongs_to :user
 

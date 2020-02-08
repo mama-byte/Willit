@@ -1,9 +1,9 @@
 <div class="container" >
-  <h1>The Category is <%= @category %></h1>
+  <h1><%= @category %></h1>
 
   <div class="card-wrapper">
     <div class="<%= 'd-none' unless @category == 'collections' %> no-margin">
-     <h2> Choose your Collection </h2>
+     <h2> Add a Collection </h2>
       <div class="card">
         <%= image_tag "collection.jpg", class: "home-imgs" %>
         <div class="card-body">
@@ -17,7 +17,7 @@
       </div>
     </div>
     <div class="<%= 'd-none' unless @category == 'electronics' %> no-margin" >
-      <h2> Choose your Electronics </h2>
+      <h2> Add Electronics </h2>
       <div class="card green">
         <%= image_tag "electronics.jpg", class: "home-imgs" %>
          <div class="card-body">
@@ -31,7 +31,7 @@
       </div>
     </div>
     <div class="<%= 'd-none' unless @category == 'housewares' %> no-margin" >
-      <h2> Choose your Houseware </h2>
+      <h2> Add Housewares </h2>
       <div class="card">
         <%= image_tag "houseware.png", class: "home-imgs" %>
         <div class="card-body">
@@ -45,13 +45,13 @@
       </div>
     </div>
     <div class="<%= 'd-none' unless @category == 'jewelry' %> no-margin" >
-        <h2> Choose your Jewelry </h2>
+        <h2> Add Jewelry </h2>
         <div class="card green">
           <%= image_tag "jewelry.jpg", class: "home-imgs" %>
           <div class="card-body">
       <%= link_to "Rings", new_valuable_path("jewelry", "rings") %> <br>
-      <%= link_to "Braclets", new_valuable_path("jewelry", "braclets") %> <br>
-      <%= link_to "Earings", new_valuable_path("jewelry", "earings") %> <br>
+      <%= link_to "Bracelets", new_valuable_path("jewelry", "braclets") %> <br>
+      <%= link_to "Earrings", new_valuable_path("jewelry", "earings") %> <br>
       <%= link_to "Necklaces", new_valuable_path("jewelry","necklaces") %> <br>
       <%= link_to "Watch", new_valuable_path("jewelry", "watches") %> <br>
       <%= link_to "Cufflinks", new_valuable_path("jewelry", "cufflinks") %> <br>
@@ -59,7 +59,7 @@
         </div>
     </div>
     <div class="<%= 'd-none' unless @category == 'vehicles' %> no-margin" >
-        <h2> Choose your Equiptment </h2>
+        <h2> Add Equiptment </h2>
       <div class="card">
         <%= image_tag "vehicles.jpg", class: "home-imgs" %>
         <div class="card-body">
