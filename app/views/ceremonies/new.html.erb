@@ -5,28 +5,10 @@
 
   <div class ="purple_box">
     <div class = "container2">
-      <!-- <div class = "row">
-      <div class = " col-xs-12 col-sm-6 col-sm-offset-3">
-
-      </div>
-    </div> -->
     <%= simple_form_for @ceremony do |f| %>
     <div class = 'inner_container'>
       <h4>Add Ceremony Details</h4>
-      <%#= f.input :ceremony_type, as: :check_box, collection: Ceremony.ceremony_types.keys, :label => "Select the type of ceremony you desire."%>
-      <%#= f.collection_check_boxes :ceremony, [[true, "Yes"], [false, "No"]], :ceremony_type, collection: Ceremony.ceremony_types.keys %>
-
       <p>Select the type of ceremony you desire.</p>
-    <!--       <div class = "ceremony-choices">
-          <%# Ceremony.ceremony_types.each do |key, value| %>
-          <div class = "ceremony-choice" >
-            <%#= f.fields_for :ceremonies do |x| %>
-            <%#= x.check_box :ceremony_type, {}, value, false %>
-            <%#= key %>
-          </div>
-            <%# end %>
-            <%# end %>
-          </div> -->
           <div class = "radio-selector">
             <% id_incrementor = 1 %>
             <% Ceremony.ceremony_types.keys.each do |ceremony_type| %>
