@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  get 'pages/dashboard', to: 'pages#dashboard', as: :dashboard
   get '/profile', to: "profiles#show", as: :profile
   get '/profile/edit', to: "profiles#edit", as: :profile_edit
   patch '/profile/update', to: "profiles#update", as: :profile_update
@@ -15,4 +16,5 @@ Rails.application.routes.draw do
   get '/relations', to: "pages#intro_relationships", as: :relations
   get :send_profile_mail, to: 'profiles#send_order_mail', as: :send_profile_mail
   get :send_valuable_mail, to: 'valuables#send_order_mail', as: :send_valuable_mail
+
 end

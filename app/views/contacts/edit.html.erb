@@ -11,7 +11,7 @@
           <%= f.input :first_name, :label => "What is the First Name of the Person?"%>
           <%= f.input :last_name, :label => "What is the Last Name of the Person?" %>
           <!-- Custom Field For Form With Flex-column -->
-           <%= f.input :relationship, :label => "What is their Relationship to you?" %>
+          <%= f.input :relationship, :label => "What is their Relationship to you?" %>
           <%= f.input :email, :label => "Do they have an email address?" %>
           <%= f.input :phone_number, :label => "Do they have a Phone Number?"%>
           <%= f.input :is_executor, :label => "Appoint this person as an Executor"%>
@@ -22,5 +22,7 @@
     <% end %>
   </div>
   </div>
-  <%#= link_to 'Review your info', user_path(current_user) %>
+<div class="button-align">
+   <%= link_to 'Review your info', ceremonies_path(current_user), class: 'btn btn-ghost' %>
+  </div>
 </div>

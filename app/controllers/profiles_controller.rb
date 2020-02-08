@@ -1,6 +1,4 @@
 class ProfilesController < ApplicationController
-  helper_method :progress
-
   def show
     @user = current_user
     authorize @user
@@ -23,8 +21,8 @@ class ProfilesController < ApplicationController
     @user = current_user
     authorize @user
     @user.update(user_params)
-    progress
-    if @user.save
+    @progress = helpers.profile_progress
+     if @user.save
       redirect_to profile_path
       flash[:success] = "Your Personal Information has been updated. You are #{@progress} % complete"
     else
@@ -32,6 +30,7 @@ class ProfilesController < ApplicationController
     end
   end
 
+<<<<<<< HEAD
   def progress
    @complete = []
    @complete << current_user.legal_name if !current_user.legal_name.empty?

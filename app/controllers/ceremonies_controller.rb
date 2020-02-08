@@ -2,8 +2,8 @@ class CeremoniesController < ApplicationController
   before_action :set_ceremonies, only: [:show, :edit, :update, :destroy]
 
   def index
-    @ceremonies = Ceremony.where(["user_id = ?", current_user.id])
-    @ceremonies = policy_scope(Ceremony)
+    @ceremony = current_user.ceremony
+    @ceremony = policy_scope(Ceremony).first
   end
 
   def new
@@ -20,9 +20,10 @@ class CeremoniesController < ApplicationController
     @ceremony = Ceremony.new(ceremony_params)
     @ceremony.user = current_user
     authorize @ceremony
+    @progress = helpers.ceremony_progress
     if @ceremony.save
       redirect_to ceremonies_path
-      flash[:success] = "Your Ceremony has been created"
+      flash[:success] = "Your Ceremony has been created. You are #{@progress}% complete"
     else
       render 'new'
     end
@@ -35,19 +36,21 @@ class CeremoniesController < ApplicationController
 
   def update
     @ceremony = Ceremony.find(params[:id])
+    @progress = helper.ceremony_progress
     if @ceremony.update(ceremony_params)
       authorize @ceremony
       redirect_to ceremonies_path
-      flash[:success] = "Your Ceremony has been updated"
+      flash[:success] = "Your Ceremony has been updated. You are #{@progress}% complete"
     else
       render 'edit'
     end
   end
 
   def destroy
+    # raise
     @ceremony = Ceremony.find(params[:id])
-    @ceremony.destroy
     authorize @ceremony
+    @ceremony.destroy
     redirect_to ceremonies_path, notice: 'You removed your ceremony'
   end
 
