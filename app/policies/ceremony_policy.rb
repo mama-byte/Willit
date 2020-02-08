@@ -1,7 +1,7 @@
 class CeremonyPolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
-      scope.all
+      scope.where(user: user)
     end
   end
 
@@ -15,6 +15,10 @@ class CeremonyPolicy < ApplicationPolicy
 
   def create?
     true
+  end
+
+  def edit?
+    update?
   end
 
   def update?
