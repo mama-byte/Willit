@@ -4,6 +4,8 @@
 
 <p> <%= @valuable.description%> </p>
 <p>Value is, <%= @valuable.value%> euro </p>
+
+
 <%= cl_image_tag @valuable.photo, height: 300, width: 400, crop: :fill %>
  <% if policy(@valuable).edit? %>
  <%= link_to "Edit", edit_valuable_path %> <br>
@@ -17,3 +19,10 @@
   <h2><%= link_to valuable.title, valuable_path(valuable) %></h2>
 <% end %>
 
+<p>Assigned user is:
+  <% current_user.contacts.each do |contact| %>
+    <span><%= contact.first_name %>,</span>
+  <% end %>
+euro </p>
+
+<%= link_to "Send details to email", :controller => "valuables", :action => "send_order_mail", :id => @valuable.user.id %>

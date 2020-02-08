@@ -18,4 +18,5 @@
           <p>Legal Name: <%= current_user.legal_name ? current_user.legal_name: nil  %> </p>
         </div>
    </div>
+   <%= link_to "Send details to email", :controller => "profiles", :action => "send_order_mail", :id => @user.id %>
 </div>
