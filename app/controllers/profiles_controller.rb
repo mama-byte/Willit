@@ -30,7 +30,6 @@ class ProfilesController < ApplicationController
     end
   end
 
-<<<<<<< HEAD
   def progress
    @complete = []
    @complete << current_user.legal_name if !current_user.legal_name.empty?
