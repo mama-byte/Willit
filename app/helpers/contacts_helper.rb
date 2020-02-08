@@ -33,26 +33,26 @@ def profile_progress
     return @progress
   end
 
-  def ceremony_progress
-    @ceremony = Ceremony.where(["user_id = ?", current_user.id])
-    @complete = []
-    @ceremony.each do |ceremony|
-      @complete << ceremony.ceremony_type if !ceremony.ceremony_type.nil?
-      @complete << ceremony.burial_type if !ceremony.burial_type.nil?
-      @complete << ceremony.details if !ceremony.details.nil?
-      @complete << ceremony.epitaph if !ceremony.epitaph.nil?
-      @complete << ceremony.press_release if !ceremony.press_release.nil?
-    end
-    if @complete.length == 5
-      @progress = 100
-    elsif @complete.length == 3 || @complete.length == 4
-      @progress = 75
-    elsif @complete.length == 2
-      @progress = 50
-    elsif @complete.length == 1 || @complete.length == 0
-      @progress = 25
-    end
-    return @progress
-  end
+  # def ceremony_progress
+  #   @ceremony = Ceremony.where(["user_id = ?", current_user.id])
+  #   @complete = []
+  #   @ceremony.each do |ceremony|
+  #     @complete << ceremony.ceremony_type if !ceremony.ceremony_type.nil?
+  #     @complete << ceremony.burial_type if !ceremony.burial_type.nil?
+  #     @complete << ceremony.details if !ceremony.details.nil?
+  #     @complete << ceremony.epitaph if !ceremony.epitaph.nil?
+  #     @complete << ceremony.press_release if !ceremony.press_release.nil?
+  #   end
+  #   if @complete.length == 5
+  #     @progress = 100
+  #   elsif @complete.length == 3 || @complete.length == 4
+  #     @progress = 75
+  #   elsif @complete.length == 2
+  #     @progress = 50
+  #   elsif @complete.length == 1 || @complete.length == 0
+  #     @progress = 25
+  #   end
+  #   return @progress
+  # end
 
 end

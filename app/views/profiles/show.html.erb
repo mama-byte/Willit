@@ -15,6 +15,8 @@
           <p>Birthdate: <%= current_user.birthdate ? current_user.birthdate.strftime('%-d %B %Y') : nil %> </p>
           <p>Nationality: <%= current_user.nationality ? current_user.nationality: nil %> </p>
           <p>Legal Name: <%= current_user.legal_name ? current_user.legal_name: nil  %> </p>
+          <%= link_to image_tag("edit.png", size: 30, style:"float:right"), profile_edit_path %>
         </div>
     </div>
+  </div>
 </div>
