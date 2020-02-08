@@ -8,9 +8,9 @@
     <div class = "container2">
       <h4>Review Your Ceremony Details</h4>
       <div class = "review">
-        <p>CeremonyType: <%= current_user.ceremony.ceremony_type ? current_user.ceremony.ceremony_type: nil %> </p>
+        <p>CeremonyType: <%= current_user.ceremony.ceremony_type ? current_user.ceremony.ceremony_type.key : nil %> </p>
         <p>Venue: <%= current_user.ceremony.venue ? current_user.ceremony.venue : nil %> </p>
-        <p>BurialType: <%= current_user.ceremony.burial_type ? current_user.ceremony.burial_type : nil %> </p>
+        <p>BurialType: <%= current_user.ceremony.burial_type ? current_user.ceremony.burial_type.key : nil %> </p>
         <p>Details: <%= current_user.ceremony.details ? current_user.ceremony.details: nil %> </p>
         <p>Epitaph: <%= current_user.ceremony.epitaph ? current_user.ceremony.epitaph: nil  %> </p>
         <p>FuneralHome: <%= current_user.ceremony.funeral_home ? current_user.ceremony.funeral_home: nil  %> </p>
@@ -21,7 +21,6 @@
         <h4> You currently have no ceremony details added </h4>
         <%= link_to 'Add some details', new_ceremony_path, class: 'btn btn-ghost' %>
         <%else%>
-        <%# @ceremonies.each do |ceremony| %>
         <li>
           <% if policy(@ceremony).edit? %>
           <%= link_to image_tag('edit.png',width:40), edit_ceremony_path(@ceremony) %>
@@ -32,7 +31,6 @@
             confirm: 'Are you sure?' }%></li>
             <%end%>
             <% end %>
-            <%# end %>
           </div>
         </div>
       </div>

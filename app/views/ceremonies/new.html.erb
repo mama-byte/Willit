@@ -9,14 +9,14 @@
       <div class = " col-xs-12 col-sm-6 col-sm-offset-3">
 
       </div>
-      </div> -->
+    </div> -->
     <%= simple_form_for @ceremony do |f| %>
-      <div class = 'inner_container'>
+    <div class = 'inner_container'>
       <h4>Add Ceremony Details</h4>
-          <%#= f.input :ceremony_type, as: :check_box, collection: Ceremony.ceremony_types.keys, :label => "Select the type of ceremony you desire."%>
-          <%#= f.collection_check_boxes :ceremony, [[true, "Yes"], [false, "No"]], :ceremony_type, collection: Ceremony.ceremony_types.keys %>
+      <%#= f.input :ceremony_type, as: :check_box, collection: Ceremony.ceremony_types.keys, :label => "Select the type of ceremony you desire."%>
+      <%#= f.collection_check_boxes :ceremony, [[true, "Yes"], [false, "No"]], :ceremony_type, collection: Ceremony.ceremony_types.keys %>
 
-          <p>Select the type of ceremony you desire.</p>
+      <p>Select the type of ceremony you desire.</p>
     <!--       <div class = "ceremony-choices">
           <%# Ceremony.ceremony_types.each do |key, value| %>
           <div class = "ceremony-choice" >
@@ -28,11 +28,13 @@
             <%# end %>
           </div> -->
           <div class = "radio-selector">
-          <% Ceremony.ceremony_types.keys.each do |ceremony_type| %>
+            <% id_incrementor = 1 %>
+            <% Ceremony.ceremony_types.keys.each do |ceremony_type| %>
             <%#= f.fields_for :ceremonies do |x| %>
             <div class = "radios" >
-              <%= f.radio_button :ceremony_type, ceremony_type, class: "radio", id: "test" %>
-              <%= f.label ceremony_type, class: "radio", for: "test" %>
+              <%= f.radio_button :ceremony_type, ceremony_type, class: "radio", id: "test#{id_incrementor}", name:"ceremony[ceremony_type]" %>
+              <%= f.label ceremony_type, class: "radio", for: "test#{id_incrementor}" %>
+              <% id_incrementor += 1 %>
             </div>
             <% end %>
           </div>
@@ -46,11 +48,13 @@
 
           <p>Select the type of burial you desire.</p>
           <div class = "radio-selector">
-          <% Ceremony.burial_types.keys.each do |burial_type| %>
+            <% id_incrementor_two = 10 %>
+            <% Ceremony.burial_types.keys.each do |burial_type| %>
             <%#= f.fields_for :ceremonies do |x| %>
             <div class = "radios" >
-              <%= f.radio_button :burial_type, burial_type, class: "radio", id: "test" %>
-              <%= f.label burial_type, class: "radio", for: "test" %>
+              <%= f.radio_button :burial_type, burial_type, class: "radio", id: "test#{id_incrementor_two}", name:"ceremony[burial_type]" %>
+              <%= f.label burial_type, class: "radio", for: "test#{id_incrementor_two}" %>
+              <% id_incrementor_two += 1 %>
             </div>
             <% end %>
           </div>
@@ -72,12 +76,12 @@
           <div>
             <%= f.input :music_selector_id, collection: current_user.contacts, value_method: :id, label_method: :full_name, :label => "Choose who is in charge of music from your list of your Relations."%>
           </div>
+        </div>
+        <%= f.button :button do %>
+        <%= image_tag('lock.png', width:60)%>
+        <% end %>
+        <% end %>
       </div>
-          <%= f.button :button do %>
-            <%= image_tag('lock.png', width:60)%>
-          <% end %>
-    <% end %>
-     </div>
+    </div>
   </div>
-</div>
 
