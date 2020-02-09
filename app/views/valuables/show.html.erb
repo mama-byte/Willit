@@ -1,4 +1,4 @@
-<h1> Your new valuable, <%=@valuable.title%> </h1>
+<h1> Your new valuable, <%= @valuable.title %> </h1>
 
 <h2>Your item type is <%=@valuable.item%></h2>
 
@@ -25,4 +25,4 @@
   <% end %>
 euro </p>
 
-<%= link_to "Send details to email", :controller => "valuables", :action => "send_order_mail", :id => @valuable.user.id %>
+  <%= link_to "Send details to email", :controller => "valuables", :action => "send_order_mail", :id => @valuable.user.id %>

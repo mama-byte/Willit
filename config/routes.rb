@@ -16,5 +16,6 @@ Rails.application.routes.draw do
   get '/relations', to: "pages#intro_relationships", as: :relations
   get :send_profile_mail, to: 'profiles#send_order_mail', as: :send_profile_mail
   get :send_valuable_mail, to: 'valuables#send_order_mail', as: :send_valuable_mail
+  get :send_ceremony_mail, to: 'ceremonies#send_order_mail', as: :send_ceremony_mail
 
 end

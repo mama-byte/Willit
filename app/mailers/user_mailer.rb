@@ -7,13 +7,20 @@ class UserMailer < ApplicationMailer
   #
   def datasend(user)
     @user = user
-    @greeting = "Hello from Willit"
+    @greeting = "Your information from Willit"
     mail(to: "dozornik88@gmail.com", subject: 'Welcome to Willit')
   end
 
   def valuable_email(user)
     @user = user
-    @greeting = "Hello from Willit"
+    @greeting = "Your Valuables from Willit"
     mail(to: "dozornik88@gmail.com", subject: 'Welcome to Willit')
   end
+
+  def ceremony_email(user)
+    @user = user
+    @greeting = "Your Ceremony from Willit"
+    mail(to: "dozornik88@gmail.com", subject: 'Welcome to Willit')
+  end
+
 end

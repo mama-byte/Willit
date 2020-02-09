@@ -21,6 +21,10 @@ class ValuablePolicy < ApplicationPolicy
     true
   end
 
+  def send_order_mail?
+    true
+  end
+
   def edit?
     user_is_owner
   end

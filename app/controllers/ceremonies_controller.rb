@@ -16,6 +16,14 @@ class CeremoniesController < ApplicationController
     authorize @ceremony
   end
 
+  def send_order_mail
+    @user = current_user
+    authorize @user
+    UserMailer.ceremony_email(@user).deliver
+    flash[:notice] = "Email has been sent."
+    redirect_to ceremonies_path(@user)
+  end
+
   def create
     @ceremony = Ceremony.new(ceremony_params)
     @ceremony.user = current_user

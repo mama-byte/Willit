@@ -17,11 +17,11 @@
           <p>Legal Name: <%= current_user.legal_name ? current_user.legal_name: nil  %> </p>
           <%= link_to image_tag("edit.png", size: 30, style:"float:right"), profile_edit_path %>
         </div>
-<<<<<<< HEAD
+
    </div>
    <%= link_to "Send details to email", :controller => "profiles", :action => "send_order_mail", :id => @user.id %>
-=======
+
     </div>
   </div>
->>>>>>> master
+
 </div>

@@ -17,6 +17,10 @@ class CeremonyPolicy < ApplicationPolicy
     true
   end
 
+  def send_order_mail?
+    true
+  end
+
   def edit?
     update?
   end
