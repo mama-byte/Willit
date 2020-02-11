@@ -1,14 +1,19 @@
 // Import Google fonts
 // @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,300,700|Raleway:400,100,300,700,500");
 
-@import url('https://fonts.googleapis.com/css?family=Jura:300&display=swap');
+// @import url('https://fonts.googleapis.com/css?family=Comfortaa:400,500,600|Karla:400,700|Merriweather+Sans:400,700,800&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Comfortaa:400,500,600|Karla:400,700|Merriweather+Sans:400,700,800|Muli:400,500,700&display=swap');
 
 // Define fonts for body and headers
-$body-font: 'Jura', sans-serif;
-$headers-font: 'Jura', sans-serif;
+$body-font: 'Merriweather Sans', 'sans-serif';
+// $headers-font: 'Merriweather Sans', 'sans-serif';
+$logo-font:'Comfortaa', cursive;
+$headers-font: 'Muli', sans-serif;
 
 // // Define fonts for body and headers
-// $body-font: 'Merriweather Sans', 'sans-serif';
+// font-family: 'Karla', sans-serif;
+// font-family: 'Comfortaa', cursive;
+// font-family: 'Merriweather Sans', sans-serif;
 
 
 // To use a font file (.woff) uncomment following lines

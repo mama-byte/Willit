@@ -1,6 +1,6 @@
-$(document).ready(function (){
-  $(".ceremony-choice").click(
-    function(){
-      $(this).toggleClass('active');
-    });
-});
+// $(document).ready(function (){
+//   $(".ceremony-choice").click(
+//     function(){
+//       $(this).toggleClass('active');
+//     });
+// });

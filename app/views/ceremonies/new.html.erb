@@ -12,7 +12,6 @@
           <div class = "radio-selector">
             <% id_incrementor = 1 %>
             <% Ceremony.ceremony_types.keys.each do |ceremony_type| %>
-            <%#= f.fields_for :ceremonies do |x| %>
             <div class = "radios" >
               <%= f.radio_button :ceremony_type, ceremony_type, class: "radio", id: "test#{id_incrementor}", name:"ceremony[ceremony_type]" %>
               <%= f.label ceremony_type, class: "radio", for: "test#{id_incrementor}" %>
@@ -32,7 +31,6 @@
           <div class = "radio-selector">
             <% id_incrementor_two = 10 %>
             <% Ceremony.burial_types.keys.each do |burial_type| %>
-            <%#= f.fields_for :ceremonies do |x| %>
             <div class = "radios" >
               <%= f.radio_button :burial_type, burial_type, class: "radio", id: "test#{id_incrementor_two}", name:"ceremony[burial_type]" %>
               <%= f.label burial_type, class: "radio", for: "test#{id_incrementor_two}" %>

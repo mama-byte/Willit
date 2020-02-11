@@ -9,19 +9,18 @@
           <%= total_progress %>%
         </div>
       </div>
-    <h4 class="header2">Your proactive Planning Categories</h4>
+    <h4 class="header2">Your Proactive Planning Categories</h4>
   <% else %>
-    <h4 class="header2">Your proactive Planning Categories</h4>
+    <h4 class="header2">Your Proactive Planning Categories</h4>
   <% end %>
 
-
     <div class="card-trip">
-      <%= link_to new_ceremony_path do %>
-        <%= image_tag("ceremony.png") %>
-        <div class="card-trip-infos" style='height: <%= "#{ceremony_progress}%" %>'>
-          <h2>Ceremony</h2>
+      <%= link_to profile_path do %>
+        <%= image_tag("personal.png") %>
+        <div class="card-trip-infos" style='height: <%= "#{profile_progress}%" %>'>
+          <h2>Yourself</h2>
         </div>
-      <%end %>
+       <% end%>
     </div>
 
     <div class="card-trip">
@@ -34,15 +33,6 @@
     </div>
 
     <div class="card-trip">
-      <%= link_to profile_path do %>
-        <%= image_tag("personal.png") %>
-        <div class="card-trip-infos" style='height: <%= "#{profile_progress}%" %>'>
-          <h2>Yourself</h2>
-        </div>
-       <% end%>
-    </div>
-
-    <div class="card-trip">
       <%= link_to valuables_path do %>
         <%= image_tag("valuables.png") %>
         <div class="card-trip-infos" style='height: <%= "#{valuable_progress}%" %>'>
@@ -51,6 +41,14 @@
       <% end%>
     </div>
 
+    <div class="card-trip">
+      <%= link_to ceremonies_path do %>
+        <%= image_tag("ceremony.png") %>
+        <div class="card-trip-infos" style='height: <%= "#{ceremony_progress}%" %>'>
+          <h2>Ceremony</h2>
+        </div>
+      <%end %>
+    </div>
   </div>
 </div>
 

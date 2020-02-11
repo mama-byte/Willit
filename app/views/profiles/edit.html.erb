@@ -8,11 +8,11 @@
       <%= simple_form_for @user, url: profile_update_path, method: :patch do |f| %>
         <div class = 'inner_container'>
           <h4>Personal Information</h4>
-              <%= f.input :legal_name , :label => "What is your Legal Name?"%>
-              <%= f.input :pronouns, :label => "What are your Pronouns?" %>
-               <%= f.input :birthdate, :label => "What is your birthdate?" %>
-              <%= f.input :nationality, :label => "What is your Nationality?" %>
-              <%= f.input :nickname, :label => "Do you have a Nickname?"%>
+              <%= f.input :legal_name , :label => "Legal Name"%>
+              <%= f.input :pronouns, :label => "Pronouns" %>
+               <%= f.input :birthdate, :label => "Birthdate" %>
+              <%= f.input :nationality, :label => "Nationality" %>
+              <%= f.input :nickname, :label => "Nickname"%>
           </div>
             <%= f.button :button do %>
               <%= image_tag('lock.png', width:60, style:"float:right")%>
