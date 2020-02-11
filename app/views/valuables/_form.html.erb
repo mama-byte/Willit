@@ -10,7 +10,7 @@
             <%= f.hidden_field :item, value: @item %>
             <%= f.input :photo %>
             <%= f.input :photo_cache, as: :hidden %>
-            <%= f.input :title, collection: current_user.contacts, value_method: :id, label_method: :full_name, :label => "Choose who?"%>
+            <%= f.input :user_id, collection: current_user.contacts, value_method: :id, label_method: :full_name, :label => "Choose who?"%>
             <%= f.button :submit, class: "btn btn-ghost" %>
         <%end%>
         </div>

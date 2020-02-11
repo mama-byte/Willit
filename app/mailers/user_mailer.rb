@@ -13,6 +13,7 @@ class UserMailer < ApplicationMailer
 
   def valuable_email(user)
     @user = user
+    @valuables = @user.valuables
     @greeting = "Your Valuables from Willit"
     mail(to: "dozornik88@gmail.com", subject: 'Welcome to Willit')
   end

@@ -42,9 +42,20 @@
             </div>
               <h2>Vehicles</h2>
           </div>
+
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-sm">Small modal</button>
+
+          <div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-sm">
+              <div class="modal-content">
+                <% @valuables.each do |valuable| %>
+                  <%= link_to valuable.title, valuable_path(valuable) %>
+                <% end %>
+              </div>
+            </div>
+          </div>
     </div>
   </div>
 </div>
-
 
 

@@ -6,8 +6,9 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  has_many :contacts
   has_one :ceremony
+  has_many :contacts
+  has_many :valuables
 
 
 end
