@@ -66,6 +66,26 @@
   margin-right:60px;
 }
 
+.item_link {
+  text-decoration: none;
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  justify-content: space-between;
+  display: block;
+  // background: rgb(46,57,78);
+  // background: radial-gradient(circle, rgba(46,57,78,1) 0%, rgba(1,14,34,1) 100%);
+  background-color: #8F99B7;
+  color: #FFFFFF;
+  line-height: 100px;
+  text-align: center;
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0,0,0,1);
+  width: 80px;
+  height: 80px;
+  margin: 10px;
+}
+
 // @media (min-width: 100px) and (max-width: 575px) {
 //   .cards-grid-val{
 //     grid-template-columns: 1fr 1fr;

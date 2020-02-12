@@ -8,7 +8,9 @@
     <div class = "container2">
       <h4>Review Your Ceremony Details</h4>
       <% if @ceremony == nil %>
-      <%= link_to 'Add some details', new_ceremony_path, class: 'btn btn-ghost' %>
+      <div class= "plus">
+      <%= link_to image_tag("plus_white.png", size: 40), new_ceremony_path %>
+      </div>
       <%else%>
 
       <div class = "review">
@@ -31,8 +33,8 @@
             confirm: 'Are you sure?' }%>
             <% end %>
           </li>
-        </div>
       </div>
     </div>
   </div>
-  <% end %>
+</div>
+    <% end %>

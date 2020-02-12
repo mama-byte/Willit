@@ -17,10 +17,10 @@ def contact_progress
 
 def profile_progress
   complete = []
-     complete << current_user.legal_name if !current_user.legal_name.nil?
-     complete << current_user.nickname if !current_user.nickname.nil?
-     complete << current_user.nationality if !current_user.nationality.nil?
-     complete << current_user.pronouns if !current_user.pronouns.nil?
+     complete << current_user.legal_name if !current_user.legal_name.empty?
+     complete << current_user.nickname if !current_user.nickname.empty?
+     complete << current_user.nationality if !current_user.nationality.empty?
+     complete << current_user.pronouns if !current_user.pronouns.empty?
      if complete.length == 4
       progress = 100
      elsif complete.length == 3
@@ -41,11 +41,11 @@ def ceremony_progress
     progress = 0
   else
     complete = []
-    complete << ceremony.ceremony_type if !ceremony.ceremony_type.nil?
-    complete << ceremony.burial_type if !ceremony.burial_type.nil?
-    complete << ceremony.details if !ceremony.details.nil?
-    complete << ceremony.epitaph if !ceremony.epitaph.nil?
-    complete << ceremony.press_release if !ceremony.press_release.nil?
+    complete << ceremony.ceremony_type if !ceremony.ceremony_type.empty?
+    complete << ceremony.burial_type if !ceremony.burial_type.empty?
+    complete << ceremony.details if !ceremony.details.empty?
+    complete << ceremony.epitaph if !ceremony.epitaph.empty?
+    complete << ceremony.press_release if !ceremony.press_release.empty?
     if complete.length == 5
       progress = 100
     elsif complete.length == 3 || complete.length == 4

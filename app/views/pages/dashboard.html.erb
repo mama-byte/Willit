@@ -1,7 +1,6 @@
 <div class="container card-padding max-card-width pt-3" >
 
   <% if user_signed_in? %>
-    <h4> Hi, <%= current_user.nickname %> </h4>
     <h4 class="header2">You are making great Progress!</h4>
       <div class="progress">
         <div class="progress-bar bg-success active" role="progressbar"
@@ -27,7 +26,7 @@
       <%= link_to contacts_path do %>
        <%= image_tag("relations.png") %>
         <div class="card-trip-infos"  style='height: <%= "#{contact_progress}%" %>'>
-          <h2>Relations</h2>
+          <h2>Loved Ones</h2>
         </div>
       <% end%>
     </div>

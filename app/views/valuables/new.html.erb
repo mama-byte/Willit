@@ -1,8 +1,13 @@
-<h1> <%= "Log your #{@category}" %> </h1>
-<div class="container">
-  <div class="row">
-    <div class="col-sm m-3">
-      <%= render "form" %>
-    </div>
+<div class="container1">
+  <div>
+    <%= image_tag('valuables.png',class:'top_image')%>
+  </div>
+  <div class ="purple_box">
+    <h1> <%= "Log your #{@category}" %> </h1>
+      <div class="row">
+        <div class="col-sm m-5">
+          <%= render "form" %>
+        </div>
+      </div>
   </div>
 </div>
