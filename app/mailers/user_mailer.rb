@@ -20,8 +20,15 @@ class UserMailer < ApplicationMailer
 
   def ceremony_email(user)
     @user = user
+    @ceremony = @user.ceremony
     @greeting = "Your Ceremony from Willit"
     mail(to: "dozornik88@gmail.com", subject: 'Welcome to Willit')
   end
 
+  def contact_email(user)
+    @user = user
+    @contacts = @user.contacts
+    @greeting = "Your Ceremony from Willit"
+    mail(to: "dozornik88@gmail.com", subject: 'Welcome to Willit')
+  end
 end

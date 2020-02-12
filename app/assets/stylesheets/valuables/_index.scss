@@ -56,9 +56,10 @@
 .modal-dialog {
    position:fixed;
    top:auto;
-   right:auto;
+   right:70px;
    left:auto;
-   bottom:0;
+   bottom:0px;
+   width:250px;
 }
 
 .animate-bottom {
@@ -76,4 +77,8 @@
     bottom: 0;
     opacity: 1;
   }
+}
+
+.btn {
+  color:none;
 }

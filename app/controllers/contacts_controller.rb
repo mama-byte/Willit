@@ -51,6 +51,13 @@ class ContactsController < ApplicationController
     redirect_to contacts_path
   end
 
+  def send_order_mail
+    @user = current_user
+    authorize @user
+    UserMailer.contact_email(@user).deliver
+    flash[:notice] = "Email has been sent."
+    redirect_to contacts_path(@user)
+  end
 
   def executor_set?
     @contacts = Contact.where(["user_id = ?", current_user.id])
