@@ -52,13 +52,5 @@ joe = Contact.create!(
   user_id: wally.id
   )
 
-watches = Valuable.create!(
-  user_id: wally.id,
-  title:'watch',
-  image_url: 'wallynotwally.com',
-  value:'12',
-  description:"Rolex",
-  item:"watches"
-  )
 
 
