@@ -5,23 +5,23 @@
 
   <div class ="purple_box">
     <div class = "container2">
-
     <%= simple_form_for @ceremony do |f| %>
-      <div class = 'inner_container'>
+    <div class = 'inner_container'>
       <h4>Add Ceremony Details</h4>
-          <p>Select the type of ceremony you desire.</p>
+        <p>Select the type of ceremony you desire.</p>
           <div class = "radio-selector">
-          <% Ceremony.ceremony_types.keys.each do |ceremony_type| %>
-            <%#= f.fields_for :ceremonies do |x| %>
+            <% id_incrementor = 1 %>
+            <% Ceremony.ceremony_types.keys.each do |ceremony_type| %>
             <div class = "radios" >
-              <%= f.radio_button :ceremony_type, ceremony_type, class: "radio", id: "test" %>
-              <%= f.label ceremony_type, class: "radio", for: "test" %>
+              <%= f.radio_button :ceremony_type, ceremony_type, class: "radio", id: "test#{id_incrementor}", name:"ceremony[ceremony_type]" %>
+              <%= f.label ceremony_type, class: "radio", for: "test#{id_incrementor}" %>
+              <% id_incrementor += 1 %>
             </div>
             <% end %>
           </div>
 
           <div>
-            <%= f.input :venue, :label => "Do you have an ideal venue in mind?" %>
+            <%= f.input :venue, :label => "Venue" %>
           </div>
 
 
@@ -29,25 +29,26 @@
 
           <p>Select the type of burial you desire.</p>
           <div class = "radio-selector">
-          <% Ceremony.burial_types.keys.each do |burial_type| %>
-            <%#= f.fields_for :ceremonies do |x| %>
+            <% id_incrementor_two = 10 %>
+            <% Ceremony.burial_types.keys.each do |burial_type| %>
             <div class = "radios" >
-              <%= f.radio_button :burial_type, burial_type, class: "radio", id: "test" %>
-              <%= f.label burial_type, class: "radio", for: "test" %>
+              <%= f.radio_button :burial_type, burial_type, class: "radio", id: "test#{id_incrementor_two}", name:"ceremony[burial_type]" %>
+              <%= f.label burial_type, class: "radio", for: "test#{id_incrementor_two}" %>
+              <% id_incrementor_two += 1 %>
             </div>
             <% end %>
           </div>
           <div>
-            <%= f.input :details, :label => "Any specific requests for your ceremony?" %>
+            <%= f.input :details, :label => "Special Ceremony Requests" %>
           </div>
           <div>
-            <%= f.input :epitaph, placeholder: "Here lies #{current_user.legal_name}. #{current_user.pronouns } was...", :label => "Any last words for your epitaph?"%>
+            <%= f.input :epitaph, placeholder: "Here lies #{current_user.legal_name}. #{current_user.pronouns } was...", :label => "Epitaph. Your Last Words"%>
           </div>
           <div>
-            <%= f.input :funeral_home, :label => "Add the funeral home you want to work with."%>
+            <%= f.input :funeral_home, :label => "Funeral Home"%>
           </div>
           <div>
-            <%= f.input :press_release, :label => "How would you like the news of your passing published or released?"%>
+            <%= f.input :press_release, :label => "Type of Death Announcement"%>
           </div>
           <div>
             <%= f.input :speaker_id, collection: current_user.contacts, value_method: :id, label_method: :full_name, :label => "Choose a speaker from your list of your Relations"%>
@@ -55,14 +56,14 @@
           <div>
             <%= f.input :music_selector_id, collection: current_user.contacts, value_method: :id, label_method: :full_name, :label => "Choose who is in charge of music from your list of your Relations."%>
           </div>
+
             <%= f.submit 'Save' , class: 'orangeButton' %>
       </div>
 
-        <!--   <%= f.button :button do %>
-            <%= image_tag('lock.png', width:60)%>
-          <% end %> -->
+        <!--   <%#= f.button :button do %>
+            <%#= image_tag('lock.png', width:60)%>
+          <%# end %> -->
     <% end %>
      </div>
   </div>
-</div>
 

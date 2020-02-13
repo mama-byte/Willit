@@ -1,24 +1,25 @@
-<h1> Your new valuable,
-    <%= @valuable.title %>
-</h1>
-<h2>Your item type is
-    <%= @valuable.item %>
-</h2>
-<p>
-    <%= @valuable.description%>
-</p>
-<p>Value is,
-    <%= @valuable.value%> euro </p>
-<%= cl_image_tag @valuable.photo, height: 300, width: 400, crop: :fill %>
-<% if policy(@valuable).edit? %>
-<%= link_to "Edit", edit_valuable_path %> <br>
-<% end %>
-<% if policy(@valuable).destroy? %>
-<%= link_to "Delete", valuable_path(@valuable), method: :delete %> <br>
-<% end %>
-<h2> Your other valuables </h2>
-<% @valuables.each do |valuable| %>
-<h2>
-    <%= link_to valuable.title, valuable_path(valuable) %>
-</h2>
-<% end %>
+<div class = "container1">
+  <div>
+    <%= image_tag('valuables.png', class:'top_image')%>
+  </div>
+
+  <div class ="purple_box">
+    <div class = "container2">
+      <div class = "review">
+        <h1> Your <%=@valuable.title%> </h1>
+        <h2><%=@valuable.item%></h2>
+        <p> <%= @valuable.description%> </p>
+        <p>Value: <%= @valuable.value%> euro </p>
+        <%= cl_image_tag @valuable.photo, height: 200, width: 200, crop: :fill %>
+        <div>
+        <% if policy(@valuable).edit? %>
+        <%= link_to image_tag('edit.png', width:25), edit_valuable_path %><br>
+        <% end %>
+        <% if policy(@valuable).destroy? %>
+        <%= link_to image_tag('bin.png', width:25), valuable_path(@valuable), method: :delete %><br>
+        <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

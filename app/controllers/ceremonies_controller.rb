@@ -3,11 +3,16 @@ class CeremoniesController < ApplicationController
 
   def index
     @ceremony = current_user.ceremony
-    @ceremony = policy_scope(Ceremony).first
+    @ceremony = policy_scope(Ceremony).last
   end
 
   def new
-    @ceremony = Ceremony.new
+    @user = current_user
+    if check_record
+      @ceremony = Ceremony.new
+    else
+      flash[:error] = "You've already created a ceremony"
+    end
     authorize @ceremony
   end
 
@@ -16,11 +21,10 @@ class CeremoniesController < ApplicationController
     authorize @ceremony
   end
 
-
-
   def create
     @ceremony = Ceremony.new(ceremony_params)
     @ceremony.user = current_user
+    @user = current_user
     authorize @ceremony
     @progress = helpers.ceremony_progress
     if @ceremony.save
@@ -58,6 +62,10 @@ class CeremoniesController < ApplicationController
 
   private
 
+  def check_record
+    @user.ceremony == nil
+  end
+
   def set_ceremonies
     @ceremony = Ceremony.find(params[:id])
   end
@@ -70,3 +78,4 @@ class CeremoniesController < ApplicationController
     )
   end
 end
+

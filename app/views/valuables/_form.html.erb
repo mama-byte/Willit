@@ -3,9 +3,9 @@
     <div class="col-sm m-5">
      <div class="text_box">
         <%= simple_form_for @valuable  do |f| %>
-            <%= f.input :title, :label => "Item Brand/Name"%>
-            <%= f.input :description, :label => "Item Description" %>
-            <%= f.input :value, :label => "How much is it worth?" %>
+            <%= f.input :title, :label => "Title"%>
+            <%= f.input :description, :label => "Description" %>
+            <%= f.input :value, :label => "Monetary Value" %>
             <%= f.hidden_field :category, value: @category %>
             <%= f.hidden_field :item, value: @item %>
             <%= f.input :photo %>
