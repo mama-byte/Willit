@@ -4,36 +4,38 @@
     <%= image_tag('ceremony.png',class: 'top_image')%>
   </div>
 
-  <% if @ceremony == nil %>
-    <%= link_to 'Add some details', new_ceremony_path, class: 'btn btn-ghost' %>
-  <%else%>
+  <div class ="purple_box">
+    <div class = "container2">
+      <h4>Review Your Ceremony Details</h4>
+      <% if @ceremony == nil %>
+      <div class= "plus">
+      <%= link_to image_tag("plus_white.png", size: 40), new_ceremony_path %>
+      </div>
+      <%else%>
 
-    <div class ="purple_box">
-      <div class = "container2">
-        <h4>Review Your Ceremony Details</h4>
-        <div class = "review">
-          <p>CeremonyType: <%= @ceremony.ceremony_type ? @ceremony.ceremony_type: nil %> </p>
-          <p>Venue: <%= @ceremony.venue ? @ceremony.venue : nil %> </p>
-          <p>BurialType: <%= @ceremony.burial_type ? @ceremony.burial_type : nil %> </p>
-          <p>Details: <%= @ceremony.details ? @ceremony.details: nil %> </p>
-          <p>Epitaph: <%= @ceremony.epitaph ? @ceremony.epitaph: nil  %> </p>
-          <p>FuneralHome: <%= @ceremony.funeral_home ? @ceremony.funeral_home: nil  %> </p>
-          <p>PressRelease: <%= @ceremony.press_release ? @ceremony.press_release: nil  %> </p>
-          <p>Speaker: <%= @ceremony.speaker_id ? @ceremony.speaker.full_name: nil  %> </p>
-          <p>MusicSelector: <%= @ceremony.music_selector_id ? @ceremony.music_selector.full_name: nil  %> </p>
-          <li>
-            <% if policy(@ceremony).edit? %>
-            <%= link_to image_tag('edit.png',width:40), edit_ceremony_path(@ceremony) %>
+      <div class = "review">
+        <p>Ceremony Type: <%= @ceremony.ceremony_type ? @ceremony.ceremony_type: nil %> </p>
+        <p>Venue: <%= @ceremony.venue ? @ceremony.venue : nil %> </p>
+        <p>Burial Type: <%= @ceremony.burial_type ? @ceremony.burial_type: nil %> </p>
+        <p>Details: <%= @ceremony.details ? @ceremony.details: nil %> </p>
+        <p>Epitaph: <%= @ceremony.epitaph ? @ceremony.epitaph: nil  %> </p>
+        <p>Funeral Home: <%= @ceremony.funeral_home ? @ceremony.funeral_home: nil  %> </p>
+        <p>Press Release: <%= @ceremony.press_release ? @ceremony.press_release: nil  %> </p>
+        <p>Speaker: <%= @ceremony.speaker_id ? @ceremony.speaker.full_name: nil  %> </p>
+        <p>Music Selector: <%= @ceremony.music_selector_id ? @ceremony.music_selector.full_name: nil  %> </p>
+        <li>
+          <% if policy(@ceremony).edit? %>
+          <%= link_to image_tag('edit.png',width:40), edit_ceremony_path(@ceremony) %>
+          <% end %>
+          <% if policy(@ceremony).destroy? %>
+          <%= link_to image_tag('bin.png',width:40), ceremony_path(@ceremony),
+          method: :delete, data: {
+            confirm: 'Are you sure?' }%>
             <% end %>
-            <% if policy(@ceremony).destroy? %>
-            <%= link_to image_tag('bin.png',width:40), ceremony_path(@ceremony),
-            method: :delete, data: {
-              confirm: 'Are you sure?' }%>
-              <% end %>
-           </li>
-        </div>
+          </li>
       </div>
     </div>
   </div>
 <% end %>
 <button type="button" class="btn btn-dark"> <%= link_to "Send details to email", :controller => "ceremonies", :action => "send_order_mail", :id => @ceremony.user.id %> </button>
+

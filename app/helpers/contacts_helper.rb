@@ -1,6 +1,7 @@
 module ContactsHelper
 def contact_progress
   contacts = Contact.where(["user_id = ?", current_user.id])
+
   if contacts.count >= 5
     progress = 100
   elsif contacts.count == 4
@@ -17,23 +18,23 @@ def contact_progress
 
 def profile_progress
   complete = []
-  complete << current_user.legal_name if !current_user.legal_name.blank?
-  complete << current_user.nickname if !current_user.nickname.blank?
-  complete << current_user.nationality if !current_user.nationality.blank?
-  complete << current_user.pronouns if !current_user.pronouns.blank?
-    if complete.length == 4
+     complete << current_user.legal_name if !current_user.legal_name.blank?
+     complete << current_user.nickname if !current_user.nickname.blank?
+     complete << current_user.nationality if !current_user.nationality.blank?
+     complete << current_user.pronouns if !current_user.pronouns.blank?
+     if complete.length == 4
       progress = 100
-    elsif complete.length == 3
+     elsif complete.length == 3
       progress = 75
-    elsif complete.length == 2
-      progress = 50
-    elsif complete.length == 1
-      progress = 25
-    else
-      progress = 0
+      elsif complete.length == 2
+        progress = 50
+      elsif complete.length == 1
+        progress = 25
+      else
+        progress = 0
+      end
+      return progress
     end
-    return progress
-  end
 
   def ceremony_progress
     ceremony = current_user.ceremony
@@ -72,7 +73,7 @@ def profile_progress
     else
       progress = 0
     end
-      return progress
+    return progress
   end
 
   def total_progress
