@@ -17,6 +17,14 @@ class ValuablesController < ApplicationController
     authorize @valuable
   end
 
+  def send_order_mail
+    @user = current_user
+    authorize @user
+    UserMailer.valuable_email(@user).deliver
+    flash[:notice] = "Email has been sent."
+    redirect_to valuables_path(@user)
+  end
+
   def new
     @valuable = Valuable.new
     authorize @valuable
@@ -50,6 +58,7 @@ class ValuablesController < ApplicationController
   end
 
   def destroy
+    @valuable = Valuable.find(params[:id])
     authorize @valuable
     @valuable.destroy
     redirect_to valuables_path, notice: 'Valuable was removed'

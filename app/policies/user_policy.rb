@@ -5,6 +5,10 @@ class UserPolicy < ApplicationPolicy
     end
   end
 
+  def send_order_mail?
+    true
+  end
+
   def new?
     create?
   end

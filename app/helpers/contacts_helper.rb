@@ -59,7 +59,6 @@ def profile_progress
     end
     return progress
   end
-
   def valuable_progress
     valuable = Valuable.where(["user_id = ?", current_user.id])
     progress = 0
