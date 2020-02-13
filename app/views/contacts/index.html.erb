@@ -8,28 +8,28 @@
 
         <div class ="progress_notes">
           <h4>Your Loved Ones</h4>
-          <%= render "contacts/executor_set" %>
+          <%#= render "contacts/executor_set" %>
         </div>
 
           <div class = "review">
               <% if @contacts.empty? %>
                 <h4> You currently have no relations added </h4>
-                <%= link_to 'Add a Relation', new_contact_path, class: 'btn btn-ghost' %>
+                <%= link_to 'Add a Loved One', new_contact_path, class: 'btn btn-ghost' %>
               <%else%>
                <% @contacts.each do |contact| %>
                 <li>
                   <% if contact.is_executor %>
-                    <%= image_tag('tick.png', width:25, style: "float:right") %>
+                    <%= image_tag('tick.png', width:25) %>
                   <%end%>
 
                   <%= contact.first_name + " " + contact.last_name %>
 
                   <% if policy(contact).edit? %>
-                    <%= link_to image_tag('edit.png',width:25, style: "float:right"), edit_contact_path(contact) %>
+                    <%= link_to image_tag('edit.png',width:25), edit_contact_path(contact) %>
                   <% end %>
 
                   <% if policy(contact).destroy? %>
-                    <%= link_to image_tag('bin.png',width:25, style: "float:right"), contact_path(contact),
+                    <%= link_to image_tag('bin.png',width:25), contact_path(contact),
                         method: :delete, data: {
                         confirm: 'Are you sure?' }%></li>
                   <%end%>

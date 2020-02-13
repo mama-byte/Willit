@@ -21,7 +21,7 @@
           </div>
 
           <div>
-            <%= f.input :venue, :label => "Do you have an ideal venue in mind?" %>
+            <%= f.input :venue, :label => "Venue" %>
           </div>
 
 
@@ -39,16 +39,16 @@
             <% end %>
           </div>
           <div>
-            <%= f.input :details, :label => "Any specific requests for your ceremony?" %>
+            <%= f.input :details, :label => "Special Ceremony Requests" %>
           </div>
           <div>
-            <%= f.input :epitaph, placeholder: "Here lies #{current_user.legal_name}. #{current_user.pronouns } was...", :label => "Any last words for your epitaph?"%>
+            <%= f.input :epitaph, placeholder: "Here lies #{current_user.legal_name}. #{current_user.pronouns } was...", :label => "Epitaph. Your Last Words"%>
           </div>
           <div>
-            <%= f.input :funeral_home, :label => "Add the funeral home you want to work with."%>
+            <%= f.input :funeral_home, :label => "Funeral Home"%>
           </div>
           <div>
-            <%= f.input :press_release, :label => "How would you like the news of your passing published or released?"%>
+            <%= f.input :press_release, :label => "Type of Death Announcement"%>
           </div>
           <div>
             <%= f.input :speaker_id, collection: current_user.contacts, value_method: :id, label_method: :full_name, :label => "Choose a speaker from your list of your Relations"%>

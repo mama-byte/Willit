@@ -6,7 +6,7 @@ class Valuable < ApplicationRecord
 
   enum item: {
     instruments: 0, books: 1, coins: 2, vinyls: 3, games: 4, miles: 5,
-    computer: 6, phone: 7, camera: 8, television: 9, game_console: 10,
+    computer: 6, phone: 7, camera: 8, television: 9, console: 10,
     stereo: 11, furniture: 12, appliance: 13, artwork: 14, antiques: 15,
     clothing: 16, kitchenwares: 17, rings: 18, bracelets: 19, earrings: 20,
     necklaces: 21, watches: 22, cufflinks: 23, cars: 24, bikes: 25,
