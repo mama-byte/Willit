@@ -36,6 +36,17 @@
   margin-bottom:20px;
 }
 
+.orangeButton {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  width:100%;
+  background:$orange;
+  transition: background 0.3s ease;
+  margin-top:10px;
+  margin-bottom:10px;
+}
+
 .btn-ghost:hover {
   opacity: 1;
 }
@@ -47,6 +58,7 @@
     justify-content: center;
     width: 100%;
     margin: 0 auto;
+    padding-top: 30px;
 
     .check-icon {
         width: 80px;
