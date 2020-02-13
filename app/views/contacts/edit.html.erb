@@ -16,13 +16,11 @@
           <%= f.input :phone_number, :label => "Do they have a Phone Number?"%>
           <%= f.input :is_executor, :label => "Appoint this person as an Executor"%>
       </div>
-          <%= f.button :button do %>
-            <%= image_tag('lock.png', width:30)%>
-          <% end %>
+          <%= f.submit 'Save' , class: 'orangeButton' %>
     <% end %>
   </div>
   </div>
-<div class="button-align">
+<!-- <div class="button-align">
    <%= link_to 'Review your info', ceremonies_path(current_user), class: 'btn btn-ghost' %>
-  </div>
+  </div> -->
 </div>

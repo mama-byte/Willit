@@ -1,23 +1,25 @@
-<div class = "container1">
-  <div>
-    <%= image_tag('personal.png',class:'top_image')%>
-  </div>
-
-  <div class ="purple_box">
-    <div class = "container2">
-      <%= simple_form_for @user, url: profile_update_path, method: :patch do |f| %>
-        <div class = 'inner_container'>
-          <h4>Personal Information</h4>
-              <%= f.input :legal_name , :label => "What is your Legal Name?"%>
-              <%= f.input :pronouns, :label => "What are your Pronouns?" %>
-               <%= f.input :birthdate, :label => "What is your birthdate?" %>
-              <%= f.input :nationality, :label => "What is your Nationality?" %>
-              <%= f.input :nickname, :label => "Do you have a Nickname?"%>
-          </div>
-            <%= f.button :button do %>
-              <%= image_tag('lock.png', width:60, style:"float:right")%>
-            <% end %>
-      <% end %>
+<div class="container1">
+    <div>
+        <%= image_tag('personal.png',class:'top_image')%>
     </div>
-  </div>
+    <div class="purple_box">
+        <div class="container2">
+            <%= simple_form_for @user, url: profile_update_path, method: :patch do |f| %>
+            <div class='inner_container'>
+                <h4>Personal Information</h4>
+                <%= f.input :legal_name , :label => "What is your Legal Name?"%>
+                <%= f.input :pronouns, :label => "What are your Pronouns?" %>
+                <div class= "d-flex flex-column bd-highlight mb-3">
+                <%= f.input :birthdate, start_year: Date.today.year - 110, end_year: Date.today.year,  :label => "What is your birthdate?"%>
+                </div>
+                <%= f.input :nationality, :label => "What is your Nationality?" %>
+                <%= f.input :nickname, :label => "Do you have a Nickname?"%>
+            </div>
+            <%= f.submit 'Save' , class: 'orangeButton' %>
+            <!--  <%= f.button :button do %>
+              <%= image_tag('lock.png', width:60, style:"float:right")%>
+            <% end %> -->
+            <% end %>
+        </div>
+    </div>
 </div>

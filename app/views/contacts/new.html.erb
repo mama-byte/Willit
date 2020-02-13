@@ -16,9 +16,7 @@
           <%= f.input :phone_number, :label => "Do they have a Phone Number?"%>
           <%= f.input :is_executor, :label => "Appoint this person as an Executor"%>
       </div>
-          <%= f.button :button do %>
-            <%= image_tag('lock.png', width:60)%>
-          <% end %>
+         <%= f.submit 'Save' , class: 'orangeButton' %>
     <% end %>
   </div>
   </div>
