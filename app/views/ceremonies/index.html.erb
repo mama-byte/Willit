@@ -36,4 +36,4 @@
     </div>
   </div>
 <% end %>
-<%= link_to "Send details to email", :controller => "ceremonies", :action => "send_order_mail", :id => @ceremony.user.id %>
+<button type="button" class="btn btn-dark"> <%= link_to "Send details to email", :controller => "ceremonies", :action => "send_order_mail", :id => @ceremony.user.id %> </button>

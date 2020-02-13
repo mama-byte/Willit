@@ -1,29 +1,22 @@
-<h1> Your new valuable, <%= @valuable.title %> </h1>
-
-<h2>Your item type is <%=@valuable.item%></h2>
-
+<h2> Your new valuable: <%= @valuable.title %> </h2>
+<p> Your item type is: <%= @valuable.item %> </p>
 <p> <%= @valuable.description%> </p>
 <p>Value is, <%= @valuable.value%> euro </p>
-
-
-<%= cl_image_tag @valuable.photo, height: 300, width: 400, crop: :fill %>
+<%= cl_image_tag @valuable.photo, height: 200, width: 200, crop: :fill %>
  <% if policy(@valuable).edit? %>
- <%= link_to "Edit", edit_valuable_path %> <br>
+ <button type="button" class="btn btn-dark"><%= link_to "Edit", edit_valuable_path %></button>
  <% end %>
  <% if policy(@valuable).destroy? %>
-  <%= link_to "Delete", valuable_path(@valuable), method: :delete %> <br>
+ <button type="button" class="btn btn-dark"> <%= link_to "Delete", valuable_path(@valuable), method: :delete %> </button>
  <% end %>
 
-  <h2> Your other valuables </h2>
+  <h3> Your other valuables </h3>
   <% @valuables.each do |valuable| %>
-  <h2><%= link_to valuable.title, valuable_path(valuable) %></h2>
+<h4><%= link_to valuable.title, valuable_path(valuable) %></h4> <br>
 <% end %>
 
-<p>Assigned user is:
+<h3>Assigned user is:
   <% current_user.contacts.each do |contact| %>
-    <span><%= contact.first_name %>,</span>
-  <% end %>
-euro </p>
-
-  <%= link_to "Send details to email", :controller => "valuables", :action => "send_order_mail", :id => @valuable.user.id %>
-
+    <span><%= contact.first_name %> </span>
+  <% end %> </h3>
+<button type="button" class="btn btn-dark"><%= link_to "Send details to email", :controller => "valuables", :action => "send_order_mail", :id => @valuable.user.id %></button>

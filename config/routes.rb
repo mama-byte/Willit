@@ -17,5 +17,5 @@ Rails.application.routes.draw do
   get :send_profile_mail, to: 'profiles#send_order_mail', as: :send_profile_mail
   get :send_valuable_mail, to: 'valuables#send_order_mail', as: :send_valuable_mail
   get :send_ceremony_mail, to: 'ceremonies#send_order_mail', as: :send_ceremony_mail
-
+  get :send_contacts_mail, to: 'contacts#send_order_mail', as: :send_contacts_mail
 end

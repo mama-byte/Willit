@@ -7,13 +7,14 @@
     <p>
       Here is your information about your Contacts <br>
     </p>
-    <p>First name: <%= @contacts.first_name %> </p>
-    <p>Last name: <%= @contacts.last_name %> </p>
-    <p>Relationship: <%= @contacts.relationship %> </p>
-    <p>Email: <%= @contacts.email %> </p>
+    <% @contacts.each do |contact| %>
+      <p>First name: <%= contact.first_name %> </p>
+      <p>Last name: <%= contact.last_name %> </p>
+      <p>Relationship: <%= contact.relationship %> </p>
+      <p>Email: <%= contact.email %> </p>
+    <% end %>
     <p>Thanks for joining and have a great day!</p>
     <p> your Willit team </p>
     <img src="https://i.ibb.co/0GgyjY7/willit-logo.png" alt="willit-logo" >
   </body>
 </html>
-<html>
