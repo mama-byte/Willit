@@ -125,5 +125,5 @@ input {
 
 /* Make things perty */
 // html {  height: 100%;}
-body { height: 100%; padding-top: 2em; text-align: center;}
+body { height: 100%; text-align: center;}
 input { border: 1px solid #666; background: #333; color: #fff; padding: 0.5em; box-shadow: none; outline: none !important; margin: 1em  auto; text-align: center;}
