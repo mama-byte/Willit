@@ -6,5 +6,6 @@ class PagesController < ApplicationController
 
   def dashboard
    @user = current_user
+   @disable_back = true
   end
 end

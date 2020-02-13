@@ -50,6 +50,8 @@ form {
   color: $dark-purple;
   text-align: left;
   padding-top: 15px;
+  display:flex;
+  justify-content: space-between;
 }
 
 .purple_box{

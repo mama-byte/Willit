@@ -18,12 +18,14 @@
               <%else%>
                <% @contacts.each do |contact| %>
                 <li>
+                  <div>
                   <% if contact.is_executor %>
                     <%= image_tag('tick.png', width:25) %>
                   <%end%>
 
                   <%= contact.first_name + " " + contact.last_name %>
-
+                  </div>
+                  <div>
                   <% if policy(contact).edit? %>
                     <%= link_to image_tag('edit.png',width:25), edit_contact_path(contact) %>
                   <% end %>
@@ -32,6 +34,7 @@
                     <%= link_to image_tag('bin.png',width:25), contact_path(contact),
                         method: :delete, data: {
                         confirm: 'Are you sure?' }%>
+                  </div>
                 </li>
                 <%end%>
                 <% end %>
