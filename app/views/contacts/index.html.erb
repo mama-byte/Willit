@@ -1,6 +1,6 @@
-<div class = "container1">
+<div class="container1">
     <div>
-      <%= image_tag('relations.png',class:'top_image')%>
+        <%= image_tag('relations.png',class:'top_image')%>
     </div>
 
     <div class ="purple_box">
@@ -31,14 +31,15 @@
                   <% if policy(contact).destroy? %>
                     <%= link_to image_tag('bin.png',width:25), contact_path(contact),
                         method: :delete, data: {
-                        confirm: 'Are you sure?' }%></li>
-                  <%end%>
+                        confirm: 'Are you sure?' }%>
+                </li>
+                <%end%>
                 <% end %>
-              <% end %>
-          </div>
-      </div>
-    <div class= "plus">
-      <%= link_to image_tag("plus_white.png", size: 40, style: "float:right"), new_contact_path %>
+                <% end %>
+            </div>
+        </div>
+        <div class="plus">
+            <%= link_to image_tag("plus_white.png", size: 40, style: "float:right"), new_contact_path %>
+        </div>
     </div>
-  </div>
 </div>

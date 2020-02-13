@@ -1,3 +1,7 @@
+.body{
+  padding:0;
+}
+
 .top_image{
   height: 500px;
   width:100%;
@@ -44,6 +48,8 @@ form {
 .review li{
   list-style-type: none;
   color: $dark-purple;
+  text-align: left;
+  padding-top: 15px;
 }
 
 .purple_box{

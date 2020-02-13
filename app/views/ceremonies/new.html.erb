@@ -56,12 +56,14 @@
           <div>
             <%= f.input :music_selector_id, collection: current_user.contacts, value_method: :id, label_method: :full_name, :label => "Choose who is in charge of music from your list of your Relations."%>
           </div>
-        </div>
-        <%= f.button :button do %>
-        <%= image_tag('tick.png', width:60)%>
-        <% end %>
-        <% end %>
+
+            <%= f.submit 'Save' , class: 'orangeButton' %>
       </div>
-    </div>
+
+        <!--   <%#= f.button :button do %>
+            <%#= image_tag('lock.png', width:60)%>
+          <%# end %> -->
+    <% end %>
+     </div>
   </div>
 

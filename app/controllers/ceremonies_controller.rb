@@ -21,6 +21,8 @@ class CeremoniesController < ApplicationController
     authorize @ceremony
   end
 
+
+
   def create
     @ceremony = Ceremony.new(ceremony_params)
     @ceremony.user = current_user
