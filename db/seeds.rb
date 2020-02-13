@@ -52,22 +52,6 @@ joe = Contact.create!(
   user_id: wally.id
   )
 
-ceremony = Ceremony.create!(
-  ceremony_type: 'memorial',
-  burial_type: 'space_burial',
-  user_id: ruthie.id,
-  speaker_id: andrew.id,
-  music_selector_id: lesley.id
-  )
-
-funeral = Ceremony.create!(
-  ceremony_type: 'funeral',
-  burial_type: 'vinyl_press',
-  user_id: wally.id,
-  speaker_id: mike.id,
-  music_selector_id: joe.id
-  )
-
 watches = Valuable.create!(
   user_id: wally.id,
   title:'watch',
