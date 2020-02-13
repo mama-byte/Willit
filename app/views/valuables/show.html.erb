@@ -1,3 +1,4 @@
+
 <h2> Your new valuable: <%= @valuable.title %> </h2>
 <p> Your item type is: <%= @valuable.item %> </p>
 <p> <%= @valuable.description%> </p>
@@ -20,3 +21,4 @@
     <span><%= contact.first_name %> </span>
   <% end %> </h3>
 <button type="button" class="btn btn-dark"><%= link_to "Send details to email", :controller => "valuables", :action => "send_order_mail", :id => @valuable.user.id %></button>
+

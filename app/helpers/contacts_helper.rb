@@ -1,24 +1,26 @@
 module ContactsHelper
 def contact_progress
   contacts = Contact.where(["user_id = ?", current_user.id])
-  progress = 0
-    if contacts.count >= 5
-      progress = 100
-    elsif contacts.count == 4
-      progress = 75
-    elsif contacts.count == 3
-      progress = 50
-    elsif contacts.count == 2
-      progress = 25
-    end
+  if contacts.count >= 5
+    progress = 100
+  elsif contacts.count == 4
+    progress = 75
+  elsif contacts.count == 3
+    progress = 50
+  elsif contacts.count == 2
+    progress = 25
+  else
+    progress = 0
+  end
     return progress
   end
+
 def profile_progress
-     complete = []
-      complete << current_user.legal_name if !current_user.legal_name.nil?
-      complete << current_user.nickname if !current_user.nickname.nil?
-      complete << current_user.nationality if !current_user.nationality.nil?
-      complete << current_user.pronouns if !current_user.pronouns.nil?
+  complete = []
+  complete << current_user.legal_name if !current_user.legal_name.blank?
+  complete << current_user.nickname if !current_user.nickname.blank?
+  complete << current_user.nationality if !current_user.nationality.blank?
+  complete << current_user.pronouns if !current_user.pronouns.blank?
     if complete.length == 4
       progress = 100
     elsif complete.length == 3
@@ -57,8 +59,8 @@ def profile_progress
     return progress
   end
   def valuable_progress
-  valuable = Valuable.where(["user_id = ?", current_user.id])
-  progress = 0
+    valuable = Valuable.where(["user_id = ?", current_user.id])
+    progress = 0
     if valuable.count >= 5
       progress = 100
     elsif valuable.count == 4 || valuable.count == 3
@@ -70,7 +72,7 @@ def profile_progress
     else
       progress = 0
     end
-    return progress
+      return progress
   end
 
   def total_progress

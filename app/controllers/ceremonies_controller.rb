@@ -44,7 +44,7 @@ class CeremoniesController < ApplicationController
 
   def update
     @ceremony = Ceremony.find(params[:id])
-    @progress = helper.ceremony_progress
+    @progress = helpers.ceremony_progress
     if @ceremony.update(ceremony_params)
       authorize @ceremony
       redirect_to ceremonies_path

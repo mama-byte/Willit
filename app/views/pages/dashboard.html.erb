@@ -1,57 +1,77 @@
-<div class="container card-padding max-card-width pt-3" >
-
-  <% if user_signed_in? %>
-    <h4> Hi, <%= current_user.nickname %> </h4>
-    <h4 class="header2">You are making great Progress!</h4>
-      <div class="progress">
-        <div class="progress-bar bg-success active" role="progressbar"
-        aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style='width: <%= "#{ceremony_progress}%" %>'>
-          <%= total_progress %>%
-        </div>
-      </div>
+<div class="container card-padding max-card-width pt-3">
+    <% if user_signed_in? %>
+    <h4 class="header2">You're making Great Overall Progress!</h4>
+    <div id="cont" data-pct=<%=total_progress %> data-percent=
+        <%=total_progress %> >
+        <svg id="svg" width="200" height="200" viewPort="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg">
+            <circle r="90" cx="100" cy="100" fill="transparent" stroke-dasharray="565.48" stroke-dashoffset="0"></circle>
+            <circle id="bar" r="90" cx="100" cy="100" fill="transparent" stroke-dasharray="565.48" stroke-dashoffset="0"></circle>
+        </svg>
+    </div>
     <h4 class="header2">Your proactive Planning Categories</h4>
-  <% else %>
+    <% else %>
     <h4 class="header2">Your proactive Planning Categories</h4>
-  <% end %>
-
-
+    <% end %>
     <div class="card-trip">
-      <%= link_to new_ceremony_path do %>
-        <%= image_tag("ceremony.png") %>
-        <div class="card-trip-infos" style='height: <%= "#{ceremony_progress}%" %>'>
-          <h2>Ceremony</h2>
+        <%= link_to image_tag("ceremony.png"), new_ceremony_path %>
+        <div class="progress">
+            <div class="progress-bar bg-warning" role="progressbar" style='width:  <%= "#{ceremony_progress}%" %>' aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                <%= "#{ceremony_progress}%" %>
+            </div>
         </div>
-      <%end %>
+        <div class="card-trip-infos">
+            <h2>Ceremony</h2>
+        </div>
     </div>
-
     <div class="card-trip">
-      <%= link_to contacts_path do %>
-       <%= image_tag("relations.png") %>
-        <div class="card-trip-infos"  style='height: <%= "#{contact_progress}%" %>'>
-          <h2>Relations</h2>
+        <%= link_to image_tag("relations.png"), contacts_path %>
+        <div class="progress">
+            <div class="progress-bar bg-warning" role="progressbar" style='width:  <%= "#{contact_progress}%" %>' aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                <%= "#{contact_progress}%" %>
+            </div>
         </div>
-      <% end%>
+        <div class="card-trip-infos">
+            <h2>Relations</h2>
+        </div>
     </div>
-
     <div class="card-trip">
-      <%= link_to profile_path do %>
-        <%= image_tag("personal.png") %>
-        <div class="card-trip-infos" style='height: <%= "#{profile_progress}%" %>'>
-          <h2>Yourself</h2>
+        <%= link_to image_tag("personal.png"), profile_path %>
+        <div class="progress">
+            <div class="progress-bar bg-warning" role="progressbar" style='width:  <%= "#{profile_progress}%" %>' aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                <%= "#{profile_progress}%" %>
+            </div>
         </div>
-       <% end%>
+        <div class="card-trip-infos">
+            <h2>Yourself</h2>
+        </div>
     </div>
-
     <div class="card-trip">
-      <%= link_to valuables_path do %>
-        <%= image_tag("valuables.png") %>
-        <div class="card-trip-infos" style='height: <%= "#{valuable_progress}%" %>'>
-          <h2>Valuables</h2>
+        <%= link_to image_tag("valuables.png") , valuables_path %>
+        <div class="progress">
+            <div class="progress-bar bg-warning" role="progressbar" style='width:  <%= "#{valuable_progress}%" %>' aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                <%= "#{valuable_progress}%" %>
+            </div>
         </div>
-      <% end%>
+        <div class="card-trip-infos">
+            <h2>Valuables</h2>
+        </div>
     </div>
-
-  </div>
 </div>
+<!--  <h4 class="header2">Your Progress in each Category</h4>
 
-
+    <h4>Ceremony</h4>
+    <div id="ceremony" data-pctg="<%=ceremony_progress %>" data-percentage="<%=ceremony_progress %>">
+        <svg id="svg1" width="200" height="200" viewPort="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg">
+            <circle r="90" cx="100" cy="100" fill="transparent" stroke-dasharray="565.48" stroke-dashoffset="0"></circle>
+            <circle id="bar1" r="90" cx="100" cy="100" fill="transparent" stroke-dasharray="565.48" stroke-dashoffset="0"></circle>
+        </svg>
+    </div>
+    <h4>Relations</h4>
+    <div id="contact" data-pctge="<%=contact_progress %>" data-percentage="<%=contact_progress %>">
+        <svg id="svg2" width="200" height="200" viewPort="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg">
+            <circle r="90" cx="100" cy="100" fill="transparent" stroke-dasharray="565.48" stroke-dashoffset="0"></circle>
+            <circle id="bar2" r="90" cx="100" cy="100" fill="transparent" stroke-dasharray="565.48" stroke-dashoffset="0"></circle>
+        </svg>
+    </div> -->
+</div>
+</div>
