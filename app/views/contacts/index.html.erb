@@ -1,6 +1,6 @@
 <div class="container1">
     <div>
-        <%= image_tag('relations.png',class:'top_image')%>
+        <%= image_tag('pablo-sign-up.png',class:'top_image')%>
     </div>
 
     <div class ="purple_box">
@@ -45,6 +45,6 @@
             <%= link_to image_tag("plus_white.png", size: 40, style: "float:right"), new_contact_path %>
         </div>
     </div>
+<button type="button" class="btn btn-dark"><%= link_to "Send details to email", :controller => "contacts", :action => "send_order_mail", :id => current_user.id %></button>
 </div>
 
-<%= link_to "Send details to email", :controller => "contacts", :action => "send_order_mail", :id => current_user.id %>

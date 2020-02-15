@@ -12,7 +12,7 @@ class CeremoniesController < ApplicationController
     authorize @ceremony
 
     if ceremony_exists?
-      flash[:notice] = "You've already created a ceremony"
+      flash[:success] = "You've already created a ceremony"
       redirect_to ceremonies_path(@user)
     end
   end

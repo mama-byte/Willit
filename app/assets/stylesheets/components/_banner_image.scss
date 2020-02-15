@@ -3,7 +3,8 @@
 }
 
 .top_image{
-  height: 500px;
+  // adjusted height for new images
+  height: 300px;
   width:100%;
   object-fit:cover;
 }
@@ -18,7 +19,7 @@
 
 .container1{
   display:grid;
-  grid-template-rows: 400px 1fr;
+  grid-template-rows: auto 1fr;
   grid-template-columns: 1fr;
   grid-auto-flow: row;
 }

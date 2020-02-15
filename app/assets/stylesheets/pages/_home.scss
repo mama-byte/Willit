@@ -9,7 +9,7 @@
 
 .card-trip {
   overflow: hidden;
-  background: $light-purple;
+  background: #0e192;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   margin: 40px;
   position: relative;
@@ -38,7 +38,7 @@
   font-size: 16px;
   font-weight: bold;
   margin: 0;
-  color: white;
+  color: rgba(255, 255, 255, 1) !important;
 }
 
 .card-trip p {
@@ -48,7 +48,7 @@
 }
 
 .card-trip a {
-  color:white;
+  color: white;
 }
 
 .card-trip-infos .card-trip-user {

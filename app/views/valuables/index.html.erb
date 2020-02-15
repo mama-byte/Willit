@@ -1,6 +1,6 @@
 <div class = "container1">
   <div>
-    <%= image_tag('valuables.png',class:'top_image')%>
+    <%= image_tag('pablo-camera-access.png', class:'top_image')%>
   </div>
 
   <div class ="purple_box">
@@ -49,7 +49,7 @@
                   <div class="modal-dialog modal-sm">
                    <div class="modal-content animate-bottom">
                        <% @valuables.each do |valuable| %>
-                    <p> <%= link_to valuable.title, valuable_path(valuable) %> </p>
+                    <p> <%= link_to  valuable.title, valuable_path(valuable) %> </p>
                   <% end %>
               </div>
             </div>
