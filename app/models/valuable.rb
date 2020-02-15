@@ -14,8 +14,9 @@ class Valuable < ApplicationRecord
   }
 
   belongs_to :user
+  belongs_to :contact
 
-  has_many :contact_valuables
-  has_many :contacts, through: :contact_valuables
+  # has_many :contact_valuables
+  # has_many :contacts, through: :contact_valuables
   mount_uploader :photo, PhotoUploader
 end
