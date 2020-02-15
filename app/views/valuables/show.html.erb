@@ -1,6 +1,6 @@
 <div class = "container1">
   <div>
-    <%= image_tag('pablo-camera-access.png', class:'top_image')%>
+    <%= image_tag('pablo-camera-2.png', class:'top_image')%>
   </div>
   <div class ="purple_box">
     <div class = "container2">
@@ -16,14 +16,12 @@
          <%= link_to  edit_valuable_path do %>
          <i class="fas fa-pencil-alt"></i>
          <% end %>
-         <br>
          <% end %>
          <% if policy(@valuable).destroy? %>
          <%#= link_to image_tag('bin.png', width:25), valuable_path(@valuable), method: :delete %>
          <%= link_to valuable_path(@valuable), method: :delete do %>
          <i class="fas fa-trash"></i>
          <% end %>
-         <br>
          <% end %>
        </div>
        <% if @valuable.contact %>
@@ -36,11 +34,6 @@
        <% @valuables.each do |valuable| %>
        <h2><%= link_to valuable.title, valuable_path(valuable), class: "custom-link" %></h2> <br>
        <% end %>
-
-       <h3>Assigned user is:
-        <% current_user.contacts.each do |contact| %>
-        <span><%= contact.first_name %> </span>
-        <% end %> </h3>
 
         <button type="button" class="custom-link"><%= link_to "Send details to email", :controller => "valuables", :action => "send_order_mail", :id => @valuable.user.id %></button>
 
