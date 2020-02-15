@@ -6,30 +6,39 @@
     <div class = "container2">
       <div class = "review">
 
-<h2> Your <%= @valuable.title %> </h2>
-<p><%= @valuable.item %> </p>
-<p> <%= @valuable.description%> </p>
-<p>Value is, <%= @valuable.value%> euro </p>
+<h2>Name: <%= @valuable.title %> </h2>
+<%#= @valuable.item %>
+<h2>Description: <%= @valuable.description%> </h2>
+<h2>Value: <%= @valuable.value%> euro </h2>
 <%= cl_image_tag @valuable.photo, height: 200, width: 200, crop: :fill %>
- <div>
+ <div class="bnt">
  <% if policy(@valuable).edit? %>
-<%= link_to image_tag('edit.png', width:25), edit_valuable_path %><br>
+<%= link_to  edit_valuable_path do %>
+<i class="fas fa-pencil-alt"></i>
+<% end %>
+<br>
  <% end %>
  <% if policy(@valuable).destroy? %>
- <%= link_to image_tag('bin.png', width:25), valuable_path(@valuable), method: :delete %><br>
+ <%#= link_to image_tag('bin.png', width:25), valuable_path(@valuable), method: :delete %>
+ <%= link_to valuable_path(@valuable), method: :delete do %>
+  <i class="fas fa-trash"></i>
  <% end %>
+ <br>
+ <% end %>
+</div>
+ <% if @valuable.contact %>
+  <h2>Assigned user is: <%= @valuable.contact.first_name %></h2>
+ <% end %>
+
+<hr>
 
   <h3> Your other valuables </h3>
   <% @valuables.each do |valuable| %>
-<h4><%= link_to valuable.title, valuable_path(valuable) %></h4> <br>
+<h2><%= link_to valuable.title, valuable_path(valuable), class: "custom-link" %></h2> <br>
 <% end %>
 
-<h3>Assigned user is:
-  <% current_user.contacts.each do |contact| %>
-    <span><%= contact.first_name %> </span>
-  <% end %> </h3>
-<button type="button" class="btn btn-dark"><%= link_to "Send details to email", :controller => "valuables", :action => "send_order_mail", :id => @valuable.user.id %></button>
-       
+<button type="button" class="custom-link"><%= link_to "Send details to email", :controller => "valuables", :action => "send_order_mail", :id => @valuable.user.id %></button>
+
   </div>
       </div>
     </div>

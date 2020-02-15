@@ -35,7 +35,8 @@
           </li>
       </div>
     </div>
+    <button type="button" class="custom-link"><%= link_to "Send details to email", :controller => "ceremonies", :action => "send_order_mail", :id => @ceremony.user.id %> </button>
   </div>
 <% end %>
-<button type="button" class="btn btn-dark"> <%= link_to "Send details to email", :controller => "ceremonies", :action => "send_order_mail", :id => @ceremony.user.id %> </button>
+
 
