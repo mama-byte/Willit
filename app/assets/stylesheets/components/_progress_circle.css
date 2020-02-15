@@ -7,7 +7,8 @@
   stroke-width: 1em;
 }
 #svg #bar {
-  stroke: #FF9F1E;
+  /*stroke: #FF9F1E;*/
+  stroke: #1bbc9d;
 }
 
 #cont {
@@ -48,7 +49,8 @@ input {
 //   stroke-width: 1em;
 // }
 // #svg1 #bar1 {
-//   stroke: #FF9F1E;
+/*//   stroke: #FF9F1E;*/
+//   stroke: ##1bbc9d;
 //   stroke-width:1em;
 // }
 // #ceremony {
@@ -89,9 +91,11 @@ input {
 //   stroke-width: 1em;
 // }
 // #svg2 #bar2 {
-//   stroke: #FF9F1E;
+/*//   stroke: #FF9F1E;*/
+//   stroke: #1EDD88;
 //   stroke-width:1em;
 // }
+
 // #contact {
 //   display: block;
 //   height: 200px;

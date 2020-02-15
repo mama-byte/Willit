@@ -49,7 +49,7 @@
 }
 
 .back{
-  background-color: white;
+  // background-color: white;
   margin-left:20px;
   margin-right:20px;
   padding-top:15px;
@@ -71,8 +71,10 @@
   flex-wrap: wrap;
   position: relative;
   display: block;
-  background: rgb(143,153,183);
-  background: radial-gradient(circle, rgba(143,153,183,1) 0%, rgba(3,18,41,1) 100%);
+  // background: rgb(143,153,183);
+  // background: radial-gradient(circle, rgba(143,153,183,1) 0%, rgba(3,18,41,1) 100%);
+    background: rgb(159,191,255);
+  background: radial-gradient(circle, rgba(159,191,255,1) 0%, rgba(3,18,41,1) 100%);
   background-color: #8F99B7;
   color: #FFFFFF;
   line-height: 100px;
