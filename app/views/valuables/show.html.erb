@@ -35,8 +35,9 @@
        <h2><%= link_to valuable.title, valuable_path(valuable), class: "custom-link" %></h2> <br>
        <% end %>
 
-        <button type="button" class="custom-link"><%= link_to "Send details to email", :controller => "valuables", :action => "send_order_mail", :id => @valuable.user.id %></button>
-
+        <%= link_to :controller => "valuables", :action => "send_order_mail", :id => @valuable.user.id do %>
+          <button type="button" class="custom-button btn btn-success">Email Details</button>
+        <% end %>
       </div>
     </div>
   </div>
