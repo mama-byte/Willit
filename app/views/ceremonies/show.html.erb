@@ -18,7 +18,7 @@
         <p>Music Selector: <%= current_user.ceremony.music_selector_id ? current_user.ceremony.music_selector.full_name: nil  %> </p>
         <% if @ceremony == nil %>
         <h4> You currently have no ceremony details added.</h4>
-        <%= link_to 'Add some details', new_ceremony_path, class: 'btn btn-ghost' %>
+        <%= link_to 'Add some details', new_ceremony_path, class: 'greenButton' %>
         <%else%>
         <li>
           <% if policy(@ceremony).edit? %>

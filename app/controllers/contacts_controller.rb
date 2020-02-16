@@ -26,6 +26,11 @@ class ContactsController < ApplicationController
     end
   end
 
+  def show
+    @contact = Contact.find(params[:id])
+    authorize @contact
+  end
+
   def edit
     @contact = Contact.find(params[:id])
     authorize @contact

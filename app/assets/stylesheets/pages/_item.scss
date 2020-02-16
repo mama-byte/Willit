@@ -69,11 +69,10 @@
 .item_link {
   display: flex;
   flex-wrap: wrap;
+  justify: space-around;
   position: relative;
   display: block;
-  // background: rgb(143,153,183);
-  // background: radial-gradient(circle, rgba(143,153,183,1) 0%, rgba(3,18,41,1) 100%);
-    background: rgb(159,191,255);
+  background: rgb(159,191,255);
   background: radial-gradient(circle, rgba(159,191,255,1) 0%, rgba(3,18,41,1) 100%);
   background-color: #8F99B7;
   color: #FFFFFF;
