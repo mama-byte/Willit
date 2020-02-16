@@ -5,9 +5,15 @@
 }
 
 .custom-link {
-text-decoration: none !important;
-color: white;
-background-color: #1bbc9d;
+  text-decoration: none !important;
+  color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  width:100%;
+  background:$green;
+  transition: background 0.3s ease;
+  margin-top:10px;
+  margin-bottom:10px;
 }
 
 i {
