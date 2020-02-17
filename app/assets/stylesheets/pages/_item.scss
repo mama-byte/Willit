@@ -1,5 +1,9 @@
 .purple_box h4{
-  text-align:center;
+  grid-row: 1 / span 1;
+  grid-column: 2/ span 1;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  color: #8F99B7;
 }
 
 .cards-grid-val{
@@ -49,13 +53,16 @@
 }
 
 .back{
-  background-color: white;
   margin-left:20px;
   margin-right:20px;
   padding-top:15px;
   padding-bottom:15px;
-  padding:10px;
   border-radius: 50%;
+  color:white;
+}
+
+.btn {
+    color: white;
 }
 
 .back-item{
