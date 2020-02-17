@@ -18,11 +18,11 @@ gem 'webpacker'
 gem 'cloudinary', '~> 1.9.1'
 gem 'carrierwave', '~> 1.2'
 gem 'pundit'
+gem 'postmark-rails'
 
 
 group :development do
   gem 'web-console', '>= 3.3.0'
-  gem 'postmark-rails'
 end
 
 group :development, :test do

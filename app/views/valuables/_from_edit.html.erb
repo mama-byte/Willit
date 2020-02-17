@@ -10,10 +10,11 @@
             <%= f.input :image_url, :label => "add a photo" %>
             <%= f.hidden_field :category, value: @category %>
             <%= f.hidden_field :item, value: @item %>
-            <%= f.input :user_id, collection: current_user.contacts, value_method: :id, label_method: :full_name, :label => "Choose who will recieve this item"%>
+            <%= f.input :contact, collection: current_user.contacts, value_method: :id, label_method: :full_name, :label => "Choose who will recieve this item"%>
+
             <%= f.input :photo %>
             <%= f.input :photo_cache, as: :hidden %>
-            <%= f.submit 'Save' , class: 'orangeButton' %>
+            <%= f.submit 'Save' , class: 'greenButton' %>
 
         <%end%>
         </div>

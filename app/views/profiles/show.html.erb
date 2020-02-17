@@ -1,6 +1,6 @@
 <div class="container1">
     <div>
-        <%= image_tag('personal.png',class:'top_image')%>
+        <%= image_tag('pablo-2.png',class:'top_image')%>
     </div>
     <div class="purple_box">
         <div class='container2'>
@@ -8,6 +8,9 @@
                 <h4>Yourself</h4>
             </div>
             <div class='review'>
+                <p>Legal Name:
+                    <%= current_user.legal_name ? current_user.legal_name: nil  %>
+                </p>
                 <p>NickName:
                     <%= current_user.nickname ? current_user.nickname: nil %>
                 </p>
@@ -20,16 +23,14 @@
                 <p>Nationality:
                     <%= current_user.nationality ? current_user.nationality: nil %>
                 </p>
-                <p>Legal Name:
-                    <%= current_user.legal_name ? current_user.legal_name: nil  %>
-                </p>
                 <%= link_to image_tag("edit.png", size: 30, style:"float:right"), profile_edit_path %>
             </div>
         </div>
 
    </div>
-  <button type="button" class="btn btn-dark"> <%= link_to "Send details to email", :controller => "profiles", :action => "send_order_mail", :id => @user.id %> </button>
+
 
     </div>
+    <button type="button" class="custom-link"> <%= link_to "Send details to email", :controller => "profiles", :action => "send_order_mail", :id => @user.id %> </button>
   </div>
 </div>

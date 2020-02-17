@@ -1,7 +1,7 @@
 
 <div class = "container1">
   <div>
-    <%= image_tag('ceremony.png',class: 'top_image')%>
+    <%= image_tag('pablo-done-removebg-preview.png',class: 'top_image')%>
   </div>
 
   <div class ="purple_box">
@@ -35,7 +35,8 @@
           </li>
       </div>
     </div>
+    <button type="button" class="custom-link"><%= link_to "Send details to email", :controller => "ceremonies", :action => "send_order_mail", :id => @ceremony.user.id %> </button>
   </div>
 <% end %>
-<button type="button" class="btn btn-dark"> <%= link_to "Send details to email", :controller => "ceremonies", :action => "send_order_mail", :id => @ceremony.user.id %> </button>
+
 

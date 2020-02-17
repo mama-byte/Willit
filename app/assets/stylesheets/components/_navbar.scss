@@ -1,7 +1,8 @@
 
 
 .footer {
-  background: #2E394E;
+  background: #0c1729;
+  // background: #9fbfff;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -9,8 +10,8 @@
   padding: 0px 50px;
   color: rgba(0,0,0,0.3);
   margin-top: 40px;
-  position:sticky;
-  overflow:hidden;
+  position: sticky;
+  overflow: hidden;
 }
 
 .footer-links {

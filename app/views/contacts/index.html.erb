@@ -1,47 +1,40 @@
 <div class="container1">
-    <div>
-        <%= image_tag('relations.png',class:'top_image')%>
-    </div>
+  <div>
+    <%= image_tag('pablo-4.png',class:'top_image')%>
+  </div>
 
-    <div class ="purple_box">
-      <div class = "container2">
+  <div class ="purple_box">
+    <div class = "container2">
 
-        <div class ="progress_notes">
-          <h4>Your Loved Ones</h4>
-          <%#= render "contacts/executor_set" %>
-        </div>
+      <div class ="progress_notes">
+        <h4>Your Loved Ones</h4>
+        <%#= render "contacts/executor_set" %>
+      </div>
 
-          <div class = "review">
-              <% if @contacts.empty? %>
-                <h4> You currently have no relations added </h4>
-                <%= link_to 'Add a Loved One', new_contact_path, class: 'btn btn-ghost' %>
-              <%else%>
-               <% @contacts.each do |contact| %>
-                <li>
-                  <% if contact.is_executor %>
-                    <%= image_tag('tick.png', width:25) %>
-                  <%end%>
+      <div class = "review">
+        <% if @contacts.empty? %>
+        <h4> You currently have no relations added </h4>
+        <%= link_to 'Add a Loved One', new_contact_path, class: 'btn btn-ghost' %>
+        <%else%>
+        <% @contacts.each do |contact| %>
+        <li>
+          <div>
+            <%= contact.first_name + " " + contact.last_name %>
+            <% if contact.is_executor %>
+            <%= image_tag('tick.png', width:25) %>
+            <%end%>
 
-                  <%= contact.first_name + " " + contact.last_name %>
-
-                  <% if policy(contact).edit? %>
-                    <%= link_to image_tag('edit.png',width:25), edit_contact_path(contact) %>
-                  <% end %>
-
-                  <% if policy(contact).destroy? %>
-                    <%= link_to image_tag('bin.png',width:25), contact_path(contact),
-                        method: :delete, data: {
-                        confirm: 'Are you sure?' }%>
-                </li>
-                <%end%>
-                <% end %>
-                <% end %>
-            </div>
-        </div>
+            <%= link_to image_tag('about.png', width:20, style: "float:right"), contact_path(contact) %>
+          </div>
+        </li>
+          <%end%>
+          <% end %>
         <div class="plus">
-            <%= link_to image_tag("plus_white.png", size: 40, style: "float:right"), new_contact_path %>
+          <%= link_to image_tag("plus_white.png", size: 40, style: "float:right"), new_contact_path %>
         </div>
-    </div>
+          <button type="button" class="custom-link"><%= link_to "Email List to Youself", :controller => "contacts", :action => "send_order_mail", :id => current_user.id %></button>
+        </div>
+      </div>
+  </div>
 </div>
 
-<%= link_to "Send details to email", :controller => "contacts", :action => "send_order_mail", :id => current_user.id %>

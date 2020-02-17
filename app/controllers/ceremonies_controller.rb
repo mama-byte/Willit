@@ -8,12 +8,13 @@ class CeremoniesController < ApplicationController
 
   def new
     @user = current_user
-    if check_record
-      @ceremony = Ceremony.new
-    else
-      flash[:error] = "You've already created a ceremony"
-    end
+    @ceremony = Ceremony.new
     authorize @ceremony
+
+    if ceremony_exists?
+      flash[:success] = "You've already created a ceremony"
+      redirect_to ceremonies_path(@user)
+    end
   end
 
   def show
@@ -70,8 +71,8 @@ class CeremoniesController < ApplicationController
 
   private
 
-  def check_record
-    @user.ceremony == nil
+  def ceremony_exists?
+    @user.ceremony.nil? ? false : true
   end
 
   def set_ceremonies
@@ -86,4 +87,3 @@ class CeremoniesController < ApplicationController
     )
   end
 end
-

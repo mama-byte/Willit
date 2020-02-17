@@ -1,31 +1,37 @@
 <% if notice %>
 <div class="alert alert-success alert-dismissible fade show" role="alert">
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-    <%= notice %>
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+  <%= notice %>
 </div>
 <% end %>
 <% if alert %>
 <div class="alert alert-danger alert-dismissible fade show" role="alert">
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-    <%= alert %>
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+  <%= alert %>
 </div>
 <% end %>
 <% if success %>
 <!--  <div class="alert-danger alert-dismissible fade show" role="alert"> -->
-<div class="success-checkmark">
+  <div class="success-checkmark">
     <div class="check-icon">
-        <span class="icon-line line-tip"></span>
-        <span class="icon-line line-long"></span>
-        <div class="icon-circle"></div>
-        <div class="icon-fix"></div>
+      <span class="icon-line line-tip"></span>
+      <span class="icon-line line-long"></span>
+      <div class="icon-circle"></div>
+      <div class="icon-fix"></div>
     </div>
-</div>
-<div class="alert-success" role="alert">
+  </div>
+  <div class="alert-success" role="alert">
     <h4 class="alert-heading">Congrats!</h4>
     <p>
-        <%= success %>
+      <%= success %>
     </p>
-</div>
-<!-- <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button> -->
+  </div>
+  <%# if alert %>
+<!-- <div class="alert alert-danger alert-dismissible fade show" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    <%= alert %>
+  </div> -->
+  <%# end %>
+  <!-- <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button> -->
 </div>
 <% end %>

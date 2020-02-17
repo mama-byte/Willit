@@ -1,0 +1,36 @@
+<div class = "container1">
+  <div>
+    <%= image_tag('pablo-4.png',class:'top_image')%>
+  </div>
+  <div class ="purple_box">
+    <div class = "container2">
+      <h4>Review Loved Ones Details</h4>
+      <div class = "review">
+        <p>First Name: <%= @contact.first_name ? @contact.first_name : nil %>
+        </p>
+        <p>Last Name: <%= @contact.last_name ? @contact.last_name : nil %>
+        </p>
+        <p>Relationship: <%= @contact.relationship ? @contact.relationship : nil %>
+        </p>
+        <p>Email: <%= @contact.email ? @contact.email: nil %>
+        </p>
+        <p>Phone Number: <%= @contact.phone_number ? @contact.phone_number: nil  %>
+        </p>
+        <% if @contact == nil %>
+        <h4> You currently have no details added for this Loved One.</h4>
+        <%= link_to 'Add some details', new_contact_path, class: 'greenButton' %>
+        <%else%>
+        <li>
+          <% if policy(@contact).edit? %>
+          <%= link_to image_tag('edit.png',width:40), edit_contact_path(@contact) %>
+          <% end %>
+          <% if policy(@contact).destroy? %>
+          <%= link_to image_tag('bin.png',width:40), contact_path(@contact),
+          method: :delete, data: {
+            confirm: 'Are you sure?' }%></li>
+            <%end%>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>

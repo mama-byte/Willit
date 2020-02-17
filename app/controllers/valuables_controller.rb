@@ -13,7 +13,7 @@ class ValuablesController < ApplicationController
   end
 
   def show
-    @valuables = Valuable.all
+    @valuables = current_user.valuables
     authorize @valuable
   end
 
@@ -35,6 +35,8 @@ class ValuablesController < ApplicationController
   def create
     @valuable = Valuable.new(valuable_params)
     @valuable.user = current_user
+    contact = Contact.find(params["valuable"]["contact"])
+    @valuable.contact = contact
     authorize @valuable
     if @valuable.save
       redirect_to valuable_path(@valuable), notice: 'Valuable was saved'
@@ -49,6 +51,8 @@ class ValuablesController < ApplicationController
 
   def update
     authorize @valuable
+    contact = Contact.find(params["valuable"]["contact"])
+    @valuable.contact = contact
     if @valuable.update(valuable_params)
       @valuable.save
       redirect_to @valuable, notice: 'Valuable was updated'

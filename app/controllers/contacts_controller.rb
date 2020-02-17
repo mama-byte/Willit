@@ -26,6 +26,11 @@ class ContactsController < ApplicationController
     end
   end
 
+  def show
+    @contact = Contact.find(params[:id])
+    authorize @contact
+  end
+
   def edit
     @contact = Contact.find(params[:id])
     authorize @contact
@@ -63,7 +68,7 @@ class ContactsController < ApplicationController
     @contacts = Contact.where(["user_id = ?", current_user.id])
     @executor = false
     @contacts.each do |contact|
-    !contact.is_executor.nil? ? @executor = true : @executor = false
+    contact.is_executor.present? ? @executor = true : @executor = false
     end
     return @executor
   end

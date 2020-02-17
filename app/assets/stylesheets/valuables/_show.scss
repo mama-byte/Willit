@@ -1,1 +1,28 @@
+.bnt{
+  display: flex;
+  justify-content: center;
+
+}
+
+.custom-link {
+  text-decoration: none !important;
+  color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  width:100%;
+  background:$green;
+  transition: background 0.3s ease;
+  margin-top:10px;
+  margin-bottom:10px;
+}
+
+i {
+  color: white;
+}
+
+h2 {
+
+  font-size: 20px;
+}
+
 

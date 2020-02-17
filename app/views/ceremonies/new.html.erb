@@ -1,6 +1,6 @@
 <div class = "container1">
   <div>
-    <%= image_tag('ceremony.png',class:'top_image')%>
+    <%= image_tag('pablo-done-removebg-preview.png',class:'top_image')%>
   </div>
 
   <div class ="purple_box">
@@ -18,6 +18,11 @@
               <% id_incrementor += 1 %>
             </div>
             <% end %>
+          </div>
+
+          <div>
+            <%#= f.input :details, :label => "Special Ceremony Requests" %>
+            <%= f.input :details, label: "Special Ceremony Requests", as: :text, autofocus: true, :input_html => {:style => 'width: 100%', :rows => 5} %>
           </div>
 
           <div>
@@ -39,10 +44,8 @@
             <% end %>
           </div>
           <div>
-            <%= f.input :details, :label => "Special Ceremony Requests" %>
-          </div>
-          <div>
-            <%= f.input :epitaph, placeholder: "Here lies #{current_user.legal_name}. #{current_user.pronouns } was...", :label => "Epitaph. Your Last Words"%>
+            <%#= f.input :epitaph, placeholder: "Here lies #{current_user.legal_name}. #{current_user.pronouns } was...", :label => "Epitaph. Your Last Words"%>
+            <%= f.input :epitaph, placeholder: "Here lies #{current_user.legal_name}. #{current_user.pronouns } was...", label: "Epitaph. Your Last Words", as: :text, autofocus: true, :input_html => {:style => 'width: 100%', :rows => 5} %>
           </div>
           <div>
             <%= f.input :funeral_home, :label => "Funeral Home"%>
@@ -51,18 +54,14 @@
             <%= f.input :press_release, :label => "Type of Death Announcement"%>
           </div>
           <div>
-            <%= f.input :speaker_id, collection: current_user.contacts, value_method: :id, label_method: :full_name, :label => "Choose a speaker from your list of your Relations"%>
+            <%= f.input :speaker_id, collection: current_user.contacts, value_method: :id, label_method: :full_name, :label => "Who Speaks?"%>
           </div>
           <div>
-            <%= f.input :music_selector_id, collection: current_user.contacts, value_method: :id, label_method: :full_name, :label => "Choose who is in charge of music from your list of your Relations."%>
+            <%= f.input :music_selector_id, collection: current_user.contacts, value_method: :id, label_method: :full_name, :label => "Who is in charge of music?"%>
           </div>
 
-            <%= f.submit 'Save' , class: 'orangeButton' %>
+            <%= f.submit 'Save' , class: 'greenButton' %>
       </div>
-
-        <!--   <%#= f.button :button do %>
-            <%#= image_tag('lock.png', width:60)%>
-          <%# end %> -->
     <% end %>
      </div>
   </div>
