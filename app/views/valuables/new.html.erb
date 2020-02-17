@@ -1,13 +1,13 @@
 <div class="container1">
-  <div>
-    <%= image_tag('pablo-camera-2.png', class:'top_image')%>
-  </div>
-  <div class ="purple_box">
-    <h1> <%= "Add details about your #{@item}" %> </h1>
-      <div class="row">
-        <div class="col-sm m-5">
-          <%= render "form" %>
+    <div>
+        <%= image_tag('pablo-camera-2.png', class:'top_image')%>
+    </div>
+    <div class="purple_box">
+        <div class="container2">
+            <h4>
+                <%= "Add details about your #{@item}" %>
+            </h4>
+            <%= render "form" %>
         </div>
-      </div>
-  </div>
+    </div>
 </div>

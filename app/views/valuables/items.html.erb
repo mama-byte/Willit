@@ -1,157 +1,219 @@
-
-<div class = "container1">
-  <div>
-    <%= image_tag('pablo-camera-2.png',class:'top_image')%>
-  </div>
-
-
-  <div class ="purple_box">
-    <div class = "container2">
-     <!--  <h1>The Category is <%= @category %></h1> -->
-     <div class="cards-grid-val">
-      <div class="<%= 'd-none' unless @category == 'collections' %> no-margin">
-       <!-- <h2> Choose your Collection </h2> -->
-       <div class="card-valuable">
-        <%= image_tag("collection.png", width: 100, class: "home-imgs") %>
-      </div>
-      <div class="card-body">
-        <div class = "item_link">
-          <%= link_to image_tag('guitar.png'), new_valuable_path("collections", "instruments") %><br>
-        </div>
-        <p>Instruments</p>
-        <div class = "item_link">
-          <%= link_to image_tag('book.png'), new_valuable_path("collections", "books") %> <br>
-        </div>
-        <p>Books</p>
-        <div class = "item_link">
-          <%= link_to image_tag('coin.png'), new_valuable_path("collections", "coins") %> <br>
-        </div>
-        <p>Coins</p>
-        <div class = "item_link">
-          <%= link_to image_tag('vinyl.png'), new_valuable_path("collections", "vinyls") %> <br>
-        </div>
-        <p>Vinyl</p>
-        <div class = "item_link">
-          <%= link_to image_tag('boardgame.png'), new_valuable_path("collections", "games") %> <br>
-        </div>
-        <p>Games</p>
-        <div class = "item_link">
-          <%= link_to image_tag('airline.png'), new_valuable_path("collections", "miles") %> <br>
-        </div>
-        <p>Airline Miles</p>
-      </div>
+<div class="container1">
+    <div>
+        <%= image_tag('pablo-camera-2.png',class:'top_image')%>
     </div>
+    <div class="purple_box">
+        <div class="container2">
+            <!--  <h1>The Category is <%= @category %></h1> -->
+            <div class="everything">
+                <div class="<%= 'd-none' unless @category == 'collections' %> val_item_grid">
+                    <div class="item_link">
+                        <%= link_to image_tag('guitar.png'), new_valuable_path("collections", "instruments") %>
+                        <div class="text">
+                            <p>Instruments</p>
+                        </div>
+                    </div>
+                    <div class="item_link">
+                        <%= link_to image_tag('book.png'), new_valuable_path("collections", "books") %>
+                        <div class="text">
+                            <p>Books</p>
+                        </div>
+                    </div>
+                    <div class="item_link">
+                        <%= link_to image_tag('coin.png'), new_valuable_path("collections", "coins") %>
+                        <div class="text">
+                            <p>Coins</p>
+                        </div>
+                    </div>
+                    <div class="item_link">
+                        <%= link_to image_tag('vinyl.png'), new_valuable_path("collections", "vinyls") %>
+                        <div class="text">
+                            <p>Vinyl</p>
+                        </div>
+                    </div>
+                    <div class="item_link">
+                        <%= link_to image_tag('boardgame.png'), new_valuable_path("collections", "games") %>
+                        <div class="text">
+                            <p>Games</p>
+                        </div>
+                    </div>
+                    <div class="item_link">
+                        <%= link_to image_tag('airline.png'), new_valuable_path("collections", "miles") %>
+                        <div class="text">
+                            <p>Airline Miles</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="everything">
+                <div class="<%= 'd-none' unless @category == 'electronics' %> val_item_grid">
+                    <!-- <h2> Choose your Electronics </h2> -->
+                    <div class="item_link">
+                        <%= link_to image_tag('computer.png'), new_valuable_path("electronics", "computer") %>
+                        <div class="text">
+                            <p>Computer</p>
+                        </div>
+                    </div>
+                    <div class="item_link">
+                        <%= link_to image_tag('cellphone.png'), new_valuable_path("electronics", "phone") %>
+                        <div class="text">
+                            <p>Phone</p>
+                        </div>
+                    </div>
+                    <div class="item_link">
+                        <%= link_to image_tag('camera.png'), new_valuable_path("electronics", "camera") %>
+                        <div class="text">
+                            <p>Camera</p>
+                        </div>
+                    </div>
+                    <div class="item_link">
+                        <%= link_to image_tag('vintage.png'), new_valuable_path("electronics", "television") %>
+                        <div class="text">
+                            <p>Television</p>
+                        </div>
+                    </div>
+                    <div class="item_link">
+                        <%= link_to image_tag('videogame.png'), new_valuable_path("electronics", "game_console" ) %>
+                        <div class="text">
+                            <p>Games</p>
+                        </div>
+                    </div>
+                    <div class="item_link">
+                        <%= link_to image_tag('radio.png'), new_valuable_path("electronics", "stereo") %>
+                        <div class="text">
+                            <p>Music</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="everything">
+              <div class="<%= 'd-none' unless @category == 'housewares' %> val_item_grid">
+                <!-- <h2> Choose your Houseware </h2> -->
+                        <div class="item_link">
+                            <%= link_to image_tag('chair.png'), new_valuable_path("housewares", "furniture") %>
+                          <div class="text">
+                            <p>Furniture</p>
+                          </div>
+                        </div>
+                        <div class="item_link">
+                            <%= link_to image_tag('fridge.png'), new_valuable_path("housewares", "appliance")%>
+                          <div class="text">
+                            <p>Appliances</p>
+                          </div>
+                        </div>
+                        <div class="item_link">
+                            <%= link_to image_tag('painting.png'), new_valuable_path("housewares", "artwork") %>
+                          <div class="text">
+                            <p>Artwork</p>
+                          </div>
+                        </div>
+                        <div class="item_link">
+                            <%= link_to image_tag('antique.png'), new_valuable_path("housewares", "antiques") %>
+                          <div class="text">
+                            <p>Antiques</p>
+                          </div>
+                        </div>
+                        <div class="item_link">
+                            <%= link_to image_tag('hanger.png'), new_valuable_path("housewares", "clothing") %>
+                          <div class="text">
+                            <p>Clothing</p>
+                          </div>
+                        </div>
+                        <div class="item_link">
+                            <%= link_to image_tag('kitchen.png'), new_valuable_path("housewares", "kitchenwares") %>
+                            <div class="text">
+                            <p>KitchenWare</p>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+
+            <div class="everything">
+                <div class="<%= 'd-none' unless @category == 'jewelry' %> val_item_grid">
+                <!-- <h2> Choose your Jewelry </h2> -->
+                        <div class="item_link">
+                            <%= link_to image_tag('rings.png'), new_valuable_path("jewelry", "rings") %>
+                          <div class="text">
+                            <p>Rings</p>
+                          </div>
+                        </div>
+                        <div class="item_link">
+                            <%= link_to image_tag('bracelet.png'), new_valuable_path("jewelry", "bracelets") %>
+                            <div class="text">
+                              <p>Bracelets</p>
+                          </div>
+                        </div>
+                        <div class="item_link">
+                            <%= link_to image_tag('earrings.png'), new_valuable_path("jewelry", "earrings") %>
+                            <div class="text">
+                              <p>Earings</p>
+                          </div>
+                        </div>
+                        <div class="item_link">
+                            <%= link_to image_tag('necklace.png'), new_valuable_path("jewelry","necklaces") %>
+                            <div class="text">
+                              <p>Necklaces</p>
+                          </div>
+                        </div>
+                        <div class="item_link">
+                            <%= link_to image_tag('watch.png'), new_valuable_path("jewelry", "watches") %>
+                            <div class="text">
+                              <p>Watches</p>
+                          </div>
+                        </div>
+                        <div class="item_link">
+                            <%= link_to image_tag('cufflinks.png'), new_valuable_path("jewelry", "cufflinks") %>
+                            <div class="text">
+                              <p>Cufflinks</p>
+                          </div>
+                        </div>
+                  </div>
+              </div>
 
 
-    <div class="<%= 'd-none' unless @category == 'electronics' %> no-margin" >
-      <!-- <h2> Choose your Electronics </h2> -->
-      <div class="card-valuable">
-        <%= image_tag("laptop.png", width: 100, class: "home-imgs") %>
-        <div class="card-body">
-          <div class = "item_link">
-            <%= link_to image_tag('computer.png'), new_valuable_path("electronics", "computer") %> <br>
-          </div>
-          <div class = "item_link">
-            <%= link_to image_tag('cellphone.png'), new_valuable_path("electronics", "phone") %> <br>
-          </div>
-          <div class = "item_link">
-            <%= link_to image_tag('camera.png'), new_valuable_path("electronics", "camera") %> <br>
-          </div>
-          <div class = "item_link">
-            <%= link_to image_tag('vintage.png'), new_valuable_path("electronics", "television") %> <br>
-          </div>
-          <div class = "item_link">
-            <%= link_to image_tag('videogame.png'), new_valuable_path("electronics", "game_console" ) %> <br>
-          </div>
-          <div class = "item_link">
-            <%= link_to image_tag('radio.png'), new_valuable_path("electronics", "stereo") %> <br>
-          </div>
+            <div class="everything">
+            <div class="<%= 'd-none' unless @category == 'vehicles' %> val_item_grid">
+                <!-- <h2> Choose your Equipment </h2> -->
+                        <div class="item_link">
+                            <%= link_to image_tag('car.png'), new_valuable_path("vehicles", "cars") %>
+                             <div class="text">
+                              <p>Cars</p>
+                          </div>
+                        </div>
+                        <div class="item_link">
+                            <%= link_to image_tag('bike.png'), new_valuable_path("vehicles", "bikes") %>
+                             <div class="text">
+                              <p>Bikes</p>
+                          </div>
+                        </div>
+                        <div class="item_link">
+                            <%= link_to image_tag('motorbike.png'), new_valuable_path("vehicles", "motorbikes") %>
+                             <div class="text">
+                              <p>Motorbikes</p>
+                          </div>
+                        </div>
+                        <div class="item_link">
+                            <%= link_to image_tag('snowboard.png'), new_valuable_path("vehicles", "snowboards") %>
+                             <div class="text">
+                              <p>Snowboards</p>
+                          </div>
+                        </div>
+                        <div class="item_link">
+                            <%= link_to image_tag('scooter.png'), new_valuable_path("vehicles", "scooters") %>
+                            <div class="text">
+                              <p>Scooters</p>
+                          </div>
+                        </div>
+                        <div class="item_link">
+                            <%= link_to image_tag('boat.png'), new_valuable_path("vehicles", "boats") %>
+                            <div class="text">
+                              <p>Boats</p>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-
-    <div class="<%= 'd-none' unless @category == 'housewares' %> no-margin" >
-      <!-- <h2> Choose your Houseware </h2> -->
-      <div class="card-valuable">
-        <%= image_tag("housewares.png", width: 100, class: "home-imgs" )%>
-        <div class="card-body">
-          <div class = "item_link">
-            <%= link_to image_tag('chair.png'), new_valuable_path("housewares", "furniture") %> <br>
-          </div>
-          <div class = "item_link">
-            <%= link_to image_tag('fridge.png'), new_valuable_path("housewares", "appliance")%> <br>
-          </div>
-          <div class = "item_link">
-            <%= link_to image_tag('painting.png'), new_valuable_path("housewares", "artwork") %> <br>
-          </div>
-          <div class = "item_link">
-            <%= link_to image_tag('antique.png'), new_valuable_path("housewares", "antiques") %> <br>
-          </div>
-          <div class = "item_link">
-            <%= link_to image_tag('hanger.png'), new_valuable_path("housewares", "clothing") %> <br>
-          </div>
-          <div class = "item_link">
-            <%= link_to image_tag('kitchen.png'), new_valuable_path("housewares", "kitchenwares") %> <br>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="<%= 'd-none' unless @category == 'jewelry' %> no-margin" >
-      <!-- <h2> Choose your Jewelry </h2> -->
-      <div class="card-valuable">
-        <%= image_tag("jewelery.png", width: 100, class: "home-imgs" )%>
-        <div class="card-body">
-          <div class = "item_link">
-            <%= link_to image_tag('rings.png'), new_valuable_path("jewelry", "rings") %> <br>
-          </div>
-          <div class = "item_link">
-            <%= link_to image_tag('bracelet.png'), new_valuable_path("jewelry", "bracelets") %> <br>
-          </div>
-          <div class = "item_link">
-            <%= link_to image_tag('earrings.png'), new_valuable_path("jewelry", "earrings") %> <br>
-          </div>
-          <div class = "item_link">
-            <%= link_to image_tag('necklace.png'), new_valuable_path("jewelry","necklaces") %> <br>
-          </div>
-          <div class = "item_link">
-            <%= link_to image_tag('watch.png'), new_valuable_path("jewelry", "watches") %> <br>
-          </div>
-          <div class = "item_link">
-            <%= link_to image_tag('cufflinks.png'), new_valuable_path("jewelry", "cufflinks") %> <br>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="<%= 'd-none' unless @category == 'vehicles' %> no-margin" >
-      <!-- <h2> Choose your Equipment </h2> -->
-      <div class="card-valuable">
-        <%= image_tag("vehicle.png", width: 100, class: "home-imgs")%>
-        <div class="card-body">
-          <div class = "item_link">
-            <%= link_to image_tag('car.png'), new_valuable_path("vehicles", "cars") %> <br>
-          </div>
-          <div class = "item_link">
-            <%= link_to image_tag('bike.png'), new_valuable_path("vehicles", "bikes") %> <br>
-          </div>
-          <div class = "item_link">
-            <%= link_to image_tag('motorbike.png'), new_valuable_path("vehicles", "motorbikes") %> <br>
-          </div>
-          <div class = "item_link">
-            <%= link_to image_tag('snowboard.png'), new_valuable_path("vehicles", "snowboards") %> <br>
-          </div>
-          <div class = "item_link">
-            <%= link_to image_tag('scooter.png'), new_valuable_path("vehicles", "scooters") %> <br>
-          </div>
-          <div class = "item_link">
-            <%= link_to image_tag('boat.png'), new_valuable_path("vehicles", "boats") %> <br>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
 </div>
 </div>
-
-

@@ -1,8 +1,89 @@
-.container{
-  background-color: rgb(1, 14, 34);
-  color: white;
-  height: 900px;
 
+.purple_box h4{
+  grid-row: 1 / span 1;
+  grid-column: 2/ span 1;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  color: #8F99B7;
+}
+
+.cards-grid-val{
+    grid-template-columns: 1fr 1fr;
+    grid-row: 2 / span 1;
+    grid-column: 2/ span 1;
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.card-valuable {
+  grid-column: 2/ span 1;
+  text-align: center;
+  padding: 10px;
+}
+
+.card-valuable1 {
+  grid-column: 3/ span 1;
+  text-align: center;
+  padding: 10px;
+}
+
+.card-valuable > img {
+  object-fit: cover;
+  padding: 20px;
+}
+
+.card-valuable1 > img {
+  object-fit: cover;
+  display:inline-block;
+  padding: 20px;
+}
+
+.card-valuable h2{
+  font-size:16px;
+  display:inline-block
+}
+
+.card-valuable1 h2{
+  font-size:16px;
+}
+
+.container-val{
+  display:grid;
+  grid-template-columns: 40px 1fr 1fr 40px;
+  padding-top: 40px;
+}
+
+.back{
+  margin-left:20px;
+  margin-right:20px;
+  padding-top:15px;
+  padding-bottom:15px;
+  border-radius: 50%;
+  color:white;
+}
+
+.btn {
+    color: white;
+}
+
+.back-item{
+  background-color: white;
+  padding:20px;
+  border-radius: 50%;
+  margin-left:60px;
+  margin-right:60px;
+}
+
+.item_link {
+  background: radial-gradient(circle, rgba(159,191,255,1) 0%, rgba(3,18,41,1) 100%);
+  line-height: 100px;
+  text-align: center;
+  border-radius: 50px;
+  box-shadow: 0 0 15px rgba(0,0,0,1);
+  width: 100px;
+  height: 100px;
+  margin: 10px;
 }
 
 .card {
@@ -13,24 +94,27 @@
   margin-bottom: 10px;
 }
 
-.card-wrapper {
-  display:flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  padding-top: 40px;
+.val_item_grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-top: 40;
+}
+
+.everything{
+  grid-column: 2 /span 1;
 }
 
 
-.card-body{
-  padding: 0px;
-  // background-color: rgb(47,52,74);
-  border-radius: 0 0 20px 20px;
-  padding: 10px 25px;
-  a {
-    color: white;
-    font-size: 20px;
-    font-weight: bold;
-  }
+.item_link{
+  position:relative;
+  margin:25px;
+  display: flex;
+  justify-content: center;
+}
+
+.text{
+  position:absolute;
+  bottom:-87px;
 }
 
 .header2 {
