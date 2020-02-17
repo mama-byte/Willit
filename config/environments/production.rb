@@ -14,18 +14,17 @@ Rails.application.configure do
   config.consider_all_requests_local       = false
   config.action_controller.perform_caching = true
 
+  # TODO: remove this line
+  config.log_level = :debug
+
   # Ensures that a master key has been made available in either ENV["RAILS_MASTER_KEY"]
   # or in config/master.key. This key is used to decrypt credentials (and other encrypted files).
   # config.require_master_key = true
 
+  config.action_mailer.delivery_method     = :postmark
+  config.action_mailer.postmark_settings   = { api_token: ENV["POSTMARK_API_TOKEN"] }
+  config.action_mailer.default_url_options = { host: "willit.herokuapp.com" }
 
-  Rails.application.configure do
-    # ...
-    config.action_mailer.delivery_method     = :postmark
-    config.action_mailer.postmark_settings   = { api_token: ENV['POSTMARK_API_TOKEN'] }
-    config.action_mailer.default_url_options = { host: "willit.herokuapp.com" }
-    # or your custom domain name eg. "www.yourdomain.com"
-  end
   # Disable serving static files from the `/public` folder by default since
   # Apache or NGINX already handles this.
   config.public_file_server.enabled = ENV['RAILS_SERVE_STATIC_FILES'].present?
