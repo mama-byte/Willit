@@ -13,7 +13,7 @@ class ValuablesController < ApplicationController
   end
 
   def show
-    @valuables = Valuable.all
+    @valuables = current_user.valuables
     authorize @valuable
   end
 
