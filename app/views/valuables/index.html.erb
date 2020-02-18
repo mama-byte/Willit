@@ -1,65 +1,58 @@
-<div class = "container1">
-  <div>
-    <%= image_tag('pablo-camera-2.png', class:'top_image')%>
-  </div>
-
-  <div class ="purple_box">
-    <h4>Log Your Valuables</h4>
-<!--     <h5>Choose a Category to start</h5> -->
-    <div class='container-val'>
-
-          <div class="card-valuable">
-            <div class = 'back'>
-              <%= link_to image_tag("collection.png", width: 70), valuable_items_path("collections") %>
-            </div>
-               <h2>Collections</h2>
-          </div>
-
-          <div class="card-valuable1">
-            <div class = 'back'>
-            <%= link_to image_tag("laptop.png", width: 70), valuable_items_path("electronics") %>
-            </div>
-              <h2>Electronics</h2>
-          </div>
-
-          <div class="card-valuable">
-            <div class = 'back'>
-            <%= link_to image_tag("housewares.png", width: 70), valuable_items_path("housewares") %>
-          </div>
-              <h2>Housewares</h2>
-          </div>
-
-          <div class="card-valuable1">
-            <div class = 'back'>
-           <%= link_to image_tag("jewelery.png", width: 70), valuable_items_path("jewelry") %>
-           </div>
-              <h2>Jewelery</h2>
-          </div>
-
-          <div class="card-valuable">
-            <div class = 'back'>
-            <%= link_to image_tag("vehicle.png", width: 70), valuable_items_path("vehicles") %>
-            </div>
-              <h2>Vehicles</h2>
-          </div>
-          <div class="card-valuable1">
-            <div class = 'back'>
-            <%= image_tag "treasurechest.png" %>
-
-              <div  class="btn " data-toggle="modal" data-target=".bd-example-modal-sm">View Saved Valuables</div>
-                <div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
-                  <div class="modal-dialog modal-sm">
-                   <div class="modal-content animate-bottom">
-                       <% @valuables.each do |valuable| %>
-                    <p> <%= link_to valuable.title, valuable_path(valuable) %> </p>
-                  <% end %>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+<div class="container1">
+    <div>
+        <%= image_tag('pablo-camera-2.png', class:'top_image')%>
     </div>
-  </div>
+    <div class="purple_box">
+        <h4>Log Your Valuables</h4>
+        <!--     <h5>Choose a Category to start</h5> -->
+        <div class='container-val'>
+            <div class="card-valuable">
+                <div class='back'>
+                    <%= link_to image_tag("collection.png", width: 70), valuable_items_path("collections") %>
+                </div>
+                <h2>Collections</h2>
+            </div>
+            <div class="card-valuable1">
+                <div class='back'>
+                    <%= link_to image_tag("laptop.png", width: 70), valuable_items_path("electronics") %>
+                </div>
+                <h2>Electronics</h2>
+            </div>
+            <div class="card-valuable">
+                <div class='back'>
+                    <%= link_to image_tag("housewares.png", width: 70), valuable_items_path("housewares") %>
+                </div>
+                <h2>Housewares</h2>
+            </div>
+            <div class="card-valuable1">
+                <div class='back'>
+                    <%= link_to image_tag("jewelery.png", width: 70), valuable_items_path("jewelry") %>
+                </div>
+                <h2>Jewelery</h2>
+            </div>
+            <div class="card-valuable">
+                <div class='back'>
+                    <%= link_to image_tag("vehicle.png", width: 70), valuable_items_path("vehicles") %>
+                </div>
+                <h2>Vehicles</h2>
+            </div>
+            <div class="card-valuable1">
+                <div class='back'>
+                    <div class="btn " data-toggle="modal" data-target=".bd-example-modal-sm">
+                        <%= image_tag("treasurechest.png", width: 70)%>Your Valuables</div>
+                    <div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-sm">
+                            <div class="modal-content animate-bottom">
+                                <% @valuables.each do |valuable| %>
+                                <p>
+                                    <%= link_to valuable.title, valuable_path(valuable) %>
+                                </p>
+                                <% end %>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
-
-

@@ -37,9 +37,11 @@ class ValuablesController < ApplicationController
     @valuable.user = current_user
     contact = Contact.find(params["valuable"]["contact"])
     @valuable.contact = contact
+    @valuable_progress = helpers.valuable_progress
     authorize @valuable
     if @valuable.save
-      redirect_to valuable_path(@valuable), notice: 'Valuable was saved'
+      redirect_to valuable_path(@valuable)
+       flash[:success] = "Your Valuable has been created. You are #{@valuable_progress} % complete"
     else
       render :new
     end
@@ -53,9 +55,11 @@ class ValuablesController < ApplicationController
     authorize @valuable
     contact = Contact.find(params["valuable"]["contact"])
     @valuable.contact = contact
+    @valuable_progress = helpers.valuable_progress
     if @valuable.update(valuable_params)
       @valuable.save
-      redirect_to @valuable, notice: 'Valuable was updated'
+      redirect_to @valuable
+      flash[:success] = "Your Valuable has been updated. You are #{@valuable_progress} % complete"
     else
       render :edit
     end
