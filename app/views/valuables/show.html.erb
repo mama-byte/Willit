@@ -1,44 +1,47 @@
-<div class = "container1">
-  <div>
-    <%= image_tag('pablo-camera-2.png', class:'top_image')%>
-  </div>
-  <div class ="purple_box">
-    <div class = "container2">
-      <div class = "review">
-
-        <h2>Name: <%= @valuable.title %> </h2>
-        <%#= @valuable.item %>
-        <h2>Description: <%= @valuable.description%> </h2>
-        <h2>Value: <%= @valuable.value%> euro </h2>
-        <%= cl_image_tag @valuable.photo, height: 200, width: 200, crop: :fill %>
-        <div class="bnt">
-         <% if policy(@valuable).edit? %>
-         <%= link_to  edit_valuable_path do %>
-         <i class="fas fa-pencil-alt"></i>
-         <% end %>
-         <% end %>
-         <% if policy(@valuable).destroy? %>
-         <%#= link_to image_tag('bin.png', width:25), valuable_path(@valuable), method: :delete %>
-         <%= link_to valuable_path(@valuable), method: :delete do %>
-         <i class="fas fa-trash"></i>
-         <% end %>
-         <% end %>
-       </div>
-       <% if @valuable.contact %>
-       <h2>Assigned user is: <%= @valuable.contact.first_name %></h2>
-       <% end %>
-
-       <hr>
-
-       <h3> Your other valuables </h3>
-       <% @valuables.each do |valuable| %>
-       <h2><%= link_to valuable.title, valuable_path(valuable), class: "custom-link" %></h2> <br>
-       <% end %>
-
-        <button type="button" class="custom-link"><%= link_to "Email Yourself this List", :controller => "valuables", :action => "send_order_mail", :id => @valuable.user.id %></button>
-
-      </div>
+<div class="container1">
+    <div>
+        <%= image_tag('pablo-camera-2.png', class:'top_image')%>
     </div>
-  </div>
+    <div class="purple_box">
+        <div class="container2">
+            <div class="review">
+                <h4>Valuable:</h4>
+                <p>
+                    <%= @valuable.title %>
+                </p>
+                <%#= @valuable.item %>
+                <p>
+                    <%= @valuable.description%>
+                </p>
+                <p>
+                    <%= @valuable.value%> euro</p>
+                <%= cl_image_tag @valuable.photo, height: 200, width: 200, crop: :fill %>
+                <div class="bnt">
+                    <% if policy(@valuable).edit? %>
+                    <%= link_to  edit_valuable_path do %>
+                    <i class="fas fa-pencil-alt"></i>
+                    <% end %>
+                    <% end %>
+                    <% if policy(@valuable).destroy? %>
+                    <%#= link_to image_tag('bin.png', width:25), valuable_path(@valuable), method: :delete %>
+                    <%= link_to valuable_path(@valuable), method: :delete do %>
+                    <i class="fas fa-trash"></i>
+                    <% end %>
+                    <% end %>
+                </div>
+                <% if @valuable.contact %>
+                <p>You have assigned
+                    <%= @valuable.contact.first_name + " " + @valuable.contact.last_name %> to inherit this</p>
+                <% end %>
+                <hr>
+                <h4> Your other valuables </h4>
+                <% @valuables.each do |valuable| %>
+                    <%= link_to valuable.title, valuable_path(valuable)%><br>
+                <% end %>
+                <button type="button" class="custom-link">
+                    <%= link_to "Email Yourself this List", :controller => "valuables", :action => "send_order_mail", :id => @valuable.user.id %></button>
+            </div>
+        </div>
+    </div>
 </div>
 </div>

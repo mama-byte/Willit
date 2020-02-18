@@ -1,7 +1,4 @@
-<div class="container">
-  <div class="row">
-    <div class="col-sm m-5">
-     <div class="text_box">
+
         <%= simple_form_for @valuable  do |f| %>
             <%= f.input :title, :label => "Title"%>
             <%= f.input :description, :label => "Description" %>
@@ -13,7 +10,4 @@
             <%= f.input :photo_cache, as: :hidden %>
             <%= f.submit 'Save' , class: 'greenButton' %>
         <%end%>
-        </div>
-      </div>
-  </div>
-</div>
+
