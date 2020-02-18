@@ -66,6 +66,16 @@
    border-radius: 15px;
 }
 
+.modal-content{
+  background-color: rgb(1, 14, 34);
+  border-color:white;
+ a {
+   color: white;
+   font-size: 15px;
+   font-weight: bold;
+ }
+}
+
 .animate-bottom {
   position: relative;
   animation: animatebottom 0.4s;
@@ -86,3 +96,4 @@
 .btn {
 color:white;
 }
+

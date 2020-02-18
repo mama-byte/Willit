@@ -15,6 +15,7 @@
         <%= image_tag("collection.png", width: 100, class: "home-imgs") %>
       </div>
       <div class="card-body">
+        <div class = "row1">
         <div class = "item_link">
           <%= link_to image_tag('guitar.png'), new_valuable_path("collections", "instruments") %><br>
         </div>
@@ -27,6 +28,8 @@
           <%= link_to image_tag('coin.png'), new_valuable_path("collections", "coins") %> <br>
         </div>
         <p>Coins</p>
+      </div>
+      <div class="row1">
         <div class = "item_link">
           <%= link_to image_tag('vinyl.png'), new_valuable_path("collections", "vinyls") %> <br>
         </div>
@@ -40,6 +43,7 @@
         </div>
         <p>Airline Miles</p>
       </div>
+      </div>
     </div>
 
 
@@ -48,24 +52,34 @@
       <div class="card-valuable">
         <%= image_tag("laptop.png", width: 100, class: "home-imgs") %>
         <div class="card-body">
+          <div class="row1">
           <div class = "item_link">
             <%= link_to image_tag('computer.png'), new_valuable_path("electronics", "computer") %> <br>
           </div>
+          <p>Computer</p>
           <div class = "item_link">
             <%= link_to image_tag('cellphone.png'), new_valuable_path("electronics", "phone") %> <br>
           </div>
+          <p>Phone</p>
           <div class = "item_link">
             <%= link_to image_tag('camera.png'), new_valuable_path("electronics", "camera") %> <br>
           </div>
+          <p>Camera</p>
+        </div>
+        <div class = "row1">
           <div class = "item_link">
             <%= link_to image_tag('vintage.png'), new_valuable_path("electronics", "television") %> <br>
           </div>
+          <p>TV</p>
           <div class = "item_link">
             <%= link_to image_tag('videogame.png'), new_valuable_path("electronics", "game_console" ) %> <br>
           </div>
+          <p>Game Console</p>
           <div class = "item_link">
             <%= link_to image_tag('radio.png'), new_valuable_path("electronics", "stereo") %> <br>
           </div>
+          <p>Stereo</p>
+        </div>
         </div>
       </div>
     </div>
@@ -75,24 +89,34 @@
       <div class="card-valuable">
         <%= image_tag("housewares.png", width: 100, class: "home-imgs" )%>
         <div class="card-body">
+          <div class = "row1">
           <div class = "item_link">
             <%= link_to image_tag('chair.png'), new_valuable_path("housewares", "furniture") %> <br>
           </div>
+          <p>Furniture</p>
           <div class = "item_link">
             <%= link_to image_tag('fridge.png'), new_valuable_path("housewares", "appliance")%> <br>
           </div>
+          <p>Appliance</p>
           <div class = "item_link">
             <%= link_to image_tag('painting.png'), new_valuable_path("housewares", "artwork") %> <br>
           </div>
+          <p>Artwork</p>
+        </div>
+        <div class = "row1">
           <div class = "item_link">
             <%= link_to image_tag('antique.png'), new_valuable_path("housewares", "antiques") %> <br>
           </div>
+          <p>Antiques</p>
           <div class = "item_link">
             <%= link_to image_tag('hanger.png'), new_valuable_path("housewares", "clothing") %> <br>
           </div>
+          <p>Clothing</p>
           <div class = "item_link">
             <%= link_to image_tag('kitchen.png'), new_valuable_path("housewares", "kitchenwares") %> <br>
           </div>
+          <p>Kitchenware</p>
+        </div>
         </div>
       </div>
     </div>
@@ -102,25 +126,35 @@
       <div class="card-valuable">
         <%= image_tag("jewelery.png", width: 100, class: "home-imgs" )%>
         <div class="card-body">
+          <div class = "row1">
           <div class = "item_link">
             <%= link_to image_tag('rings.png'), new_valuable_path("jewelry", "rings") %> <br>
           </div>
+          <p>Rings</p>
           <div class = "item_link">
             <%= link_to image_tag('bracelet.png'), new_valuable_path("jewelry", "bracelets") %> <br>
           </div>
+          <p>Bracelets</p>
           <div class = "item_link">
             <%= link_to image_tag('earrings.png'), new_valuable_path("jewelry", "earrings") %> <br>
           </div>
+          <p>Earrings</p>
+        </div>
+        <div class = "row1">
           <div class = "item_link">
             <%= link_to image_tag('necklace.png'), new_valuable_path("jewelry","necklaces") %> <br>
           </div>
+          <p>Necklaces</p>
           <div class = "item_link">
             <%= link_to image_tag('watch.png'), new_valuable_path("jewelry", "watches") %> <br>
           </div>
+          <p>Watches</p>
           <div class = "item_link">
             <%= link_to image_tag('cufflinks.png'), new_valuable_path("jewelry", "cufflinks") %> <br>
           </div>
+          <p>Cufflinks</p>
         </div>
+      </div>
       </div>
     </div>
 
@@ -129,25 +163,35 @@
       <div class="card-valuable">
         <%= image_tag("vehicle.png", width: 100, class: "home-imgs")%>
         <div class="card-body">
+          <div class = "row1">
           <div class = "item_link">
             <%= link_to image_tag('car.png'), new_valuable_path("vehicles", "cars") %> <br>
           </div>
+          <p>Cars</p>
           <div class = "item_link">
             <%= link_to image_tag('bike.png'), new_valuable_path("vehicles", "bikes") %> <br>
           </div>
+          <p>Bikes</p>
           <div class = "item_link">
             <%= link_to image_tag('motorbike.png'), new_valuable_path("vehicles", "motorbikes") %> <br>
           </div>
+          <p>Motorbikes</p>
+        </div>
+        <div class = "row1">
           <div class = "item_link">
             <%= link_to image_tag('snowboard.png'), new_valuable_path("vehicles", "snowboards") %> <br>
           </div>
+          <p>Snowboards</p>
           <div class = "item_link">
             <%= link_to image_tag('scooter.png'), new_valuable_path("vehicles", "scooters") %> <br>
           </div>
+          <p>Scooters</p>
           <div class = "item_link">
             <%= link_to image_tag('boat.png'), new_valuable_path("vehicles", "boats") %> <br>
           </div>
+          <p>Boats</p>
         </div>
+      </div>
       </div>
     </div>
   </div>

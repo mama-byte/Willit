@@ -31,6 +31,8 @@
 
 
     </div>
-    <button type="button" class="custom-link"> <%= link_to "Send details to email", :controller => "profiles", :action => "send_order_mail", :id => @user.id %> </button>
+    <%= link_to "Send details to email", :controller => "profiles", :action => "send_order_mail", :id => @user.id do %>
+    <button type="button" class="custom-button btn btn-success">Email Details</button>
+        <% end %>
   </div>
 </div>

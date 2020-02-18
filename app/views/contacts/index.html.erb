@@ -32,9 +32,11 @@
         <div class="plus">
           <%= link_to image_tag("plus_white.png", size: 40, style: "float:right"), new_contact_path %>
         </div>
-          <button type="button" class="custom-link"><%= link_to "Email List to Youself", :controller => "contacts", :action => "send_order_mail", :id => current_user.id %></button>
         </div>
       </div>
+         <%= link_to "Email List to Youself", :controller => "contacts", :action => "send_order_mail", :id => current_user.id do %>
+         <button type="button" class="custom-button btn btn-success">Email Details</button>
+        <% end %>
   </div>
 </div>
 
