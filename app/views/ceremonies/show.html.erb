@@ -6,31 +6,30 @@
   <div class ="purple_box">
     <div class = "container2">
       <h4>Review Your Ceremony Details</h4>
-      <div class = "review">
-        <p>Ceremony Type: <%= current_user.ceremony.ceremony_type ? current_user.ceremony.ceremony_type.key : nil %> </p>
-        <p>Venue: <%= current_user.ceremony.venue ? current_user.ceremony.venue : nil %> </p>
-        <p>Burial Type: <%= current_user.ceremony.burial_type ? current_user.ceremony.burial_type.key : nil %> </p>
-        <p>Details: <%= current_user.ceremony.details ? current_user.ceremony.details: nil %> </p>
-        <p>Epitaph: <%= current_user.ceremony.epitaph ? current_user.ceremony.epitaph: nil  %> </p>
-        <p>Funeral Home: <%= current_user.ceremony.funeral_home ? current_user.ceremony.funeral_home: nil  %> </p>
-        <p>Press Release: <%= current_user.ceremony.press_release ? current_user.ceremony.press_release: nil  %> </p>
-        <p>Speaker: <%= current_user.ceremony.speaker_id ? current_user.ceremony.speaker.full_name: nil  %> </p>
-        <p>Music Selector: <%= current_user.ceremony.music_selector_id ? current_user.ceremony.music_selector.full_name: nil  %> </p>
+        <div class = "review">
+          <li> Ceremony Type: <p><%= current_user.ceremony.ceremony_type ? current_user.ceremony.ceremony_type.key : nil %></p></li>
+          <li> Venue: <p><%= current_user.ceremony.venue ? current_user.ceremony.venue : nil %> </p></li>
+          <li> Burial Type:<p><%= current_user.ceremony.burial_type ? current_user.ceremony.burial_type.key : nil %> </p></li>
+          <li> Details: <p><%= current_user.ceremony.details ? current_user.ceremony.details: nil %> </p></li>
+          <li> Epitaph: <p><%= current_user.ceremony.epitaph ? current_user.ceremony.epitaph: nil  %> </p></li>
+          <li> Funeral Home: <p><%= current_user.ceremony.funeral_home ? current_user.ceremony.funeral_home: nil  %> </p></li>
+          <li> Press Release:<p><%= current_user.ceremony.press_release ? current_user.ceremony.press_release: nil  %> </p></li>
+          <li> Speaker: <p><%= current_user.ceremony.speaker_id ? current_user.ceremony.speaker.full_name: nil  %> </p></li>
+          <li> Music Selector: <p><%= current_user.ceremony.music_selector_id ? current_user.ceremony.music_selector.full_name: nil  %> </p></li>
         <% if @ceremony == nil %>
-        <h4> You currently have no ceremony details added.</h4>
-        <%= link_to 'Add some details', new_ceremony_path, class: 'greenButton' %>
-        <%else%>
-        <li>
-          <% if policy(@ceremony).edit? %>
-          <%= link_to image_tag('edit.png',width:40), edit_ceremony_path(@ceremony) %>
-          <% end %>
-          <% if policy(@ceremony).destroy? %>
-          <%= link_to image_tag('bin.png',width:40), ceremony_path(@ceremony),
-          method: :delete, data: {
-            confirm: 'Are you sure?' }%></li>
-            <%end%>
+            <h4> You currently have no ceremony details added.</h4>
+          <%= link_to 'Add some details', new_ceremony_path, class: 'greenButton' %>
+          <%else%>
+            <% if policy(@ceremony).edit? %>
+            <%= link_to image_tag('edit.png',width:40), edit_ceremony_path(@ceremony) %>
             <% end %>
-          </div>
+            <% if policy(@ceremony).destroy? %>
+            <%= link_to image_tag('bin.png',width:40), ceremony_path(@ceremony),
+            method: :delete, data: {
+              confirm: 'Are you sure?' }%>
+              <%end%>
+            <% end %>
         </div>
-      </div>
     </div>
+  </div>
+</div>

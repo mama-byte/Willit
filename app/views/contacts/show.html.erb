@@ -6,16 +6,11 @@
     <div class = "container2">
       <h4>Review Loved Ones Details</h4>
       <div class = "review">
-        <p>First Name: <%= @contact.first_name ? @contact.first_name : nil %>
-        </p>
-        <p>Last Name: <%= @contact.last_name ? @contact.last_name : nil %>
-        </p>
-        <p>Relationship: <%= @contact.relationship ? @contact.relationship : nil %>
-        </p>
-        <p>Email: <%= @contact.email ? @contact.email: nil %>
-        </p>
-        <p>Phone Number: <%= @contact.phone_number ? @contact.phone_number: nil  %>
-        </p>
+        <li>First Name:<p><%= @contact.first_name ? @contact.first_name : nil %></p></li>
+        <li>Last Name:<p><%= @contact.last_name ? @contact.last_name : nil %></p></li>
+        <li>Relationship:<p><%= @contact.relationship ? @contact.relationship : nil %></p></li>
+        <li>Email:<p> <%= @contact.email ? @contact.email: nil %></p></li>
+        <li>Phone Number:<p><%= @contact.phone_number ? @contact.phone_number: nil  %></p></li>
         <% if @contact == nil %>
         <h4> You currently have no details added for this Loved One.</h4>
         <%= link_to 'Add some details', new_contact_path, class: 'greenButton' %>

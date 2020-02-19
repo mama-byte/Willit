@@ -10,34 +10,32 @@ label{
   font-weight:lighter;
 }
 
-.inner_container{
-  padding:20px;
-}
-
-
 .form-control {
-  background-color: #2E394E;
+  background-color: $light-purple;
   box-shadow: -5px 3px 18px -6px rgba(0,0,0,0.75);
   color:white;
+  text-align: left;
 }
+
 
 .form-group{
   padding-bottom: 20px;
+  text-align:left;
 }
 
-.btn-ghost {
-  color: white;
-  padding: 8px 24px;
-  border-radius: 20px;
-  background:#F29406;
-  transition: background 0.3s ease;
-  margin-top:20px;
-  margin-bottom:20px;
-}
+// .btn-ghost {
+//   color: white;
+//   padding: 8px 24px;
+//   border-radius: 20px;
+//   background:#F29406;
+//   transition: background 0.3s ease;
+//   margin-top:20px;
+//   margin-bottom:20px;
+// }
 
-.btn-ghost:hover {
-  opacity: 1;
-}
+// .btn-ghost:hover {
+//   opacity: 1;
+// }
 
 .radio-selector{
   display: flex;
