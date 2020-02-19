@@ -29,17 +29,17 @@
                     <% end %>
                     <% end %>
                 </div>
-                <% if @valuable.contact %>
+<!--                 <%# if @valuable.contact %>
                 <p>You have assigned
-                    <%= @valuable.contact.first_name + " " + @valuable.contact.last_name %> to inherit this</p>
-                <% end %>
+                    <%#= @valuable.contact.first_name + " " + @valuable.contact.last_name %> to inherit this</p>
+                <%# end %>
                 <hr>
                 <h4> Your other valuables </h4>
-                <% @valuables.each do |valuable| %>
-                    <%= link_to valuable.title, valuable_path(valuable)%><br>
-                <% end %>
+                <%# @valuables.each do |valuable| %>
+                    <%#= link_to valuable.title, valuable_path(valuable)%><br>
+                <%# end %>
                 <button type="button" class="custom-link">
-                    <%= link_to "Email Yourself this List", :controller => "valuables", :action => "send_order_mail", :id => @valuable.user.id %></button>
+                    <%#= link_to "Email Yourself this List", :controller => "valuables", :action => "send_order_mail", :id => @valuable.user.id %></button> -->
             </div>
         </div>
     </div>
