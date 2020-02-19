@@ -11,21 +11,11 @@
 
             <div class='review'>
               <div>
-                <p>Legal Name:
-                    <%= current_user.legal_name ? current_user.legal_name: nil  %>
-                </p>
-                <p>NickName:
-                    <%= current_user.nickname ? current_user.nickname: nil %>
-                </p>
-                <p>Pronouns:
-                    <%= current_user.pronouns ? current_user.pronouns : nil %>
-                </p>
-                <p>Birthdate:
-                    <%= current_user.birthdate ? current_user.birthdate.strftime('%-d %B %Y') : nil %>
-                </p>
-                <p>Nationality:
-                    <%= current_user.nationality ? current_user.nationality: nil %>
-                </p>
+                <li>Legal Name:<p><%= current_user.legal_name ? current_user.legal_name: nil  %></p></li>
+                <li>NickName:<p><%= current_user.nickname ? current_user.nickname: nil %></p></li>
+                <li>Pronouns:<p><%= current_user.pronouns ? current_user.pronouns : nil %></p></li>
+                <li>Birthdate:<p><%= current_user.birthdate ? current_user.birthdate.strftime('%-d %B %Y') : nil %></p></li>
+                <li>Nationality:<p><%= current_user.nationality ? current_user.nationality: nil %></p></li>
               </div>
               <div>
                 <%= link_to image_tag("email.png", size: 30, style:"margin-left:141px"), :controller => "profiles", :action => "send_order_mail", :id => @user.id %>

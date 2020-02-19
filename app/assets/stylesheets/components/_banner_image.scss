@@ -6,17 +6,15 @@
   // adjusted height for new images
   height: 350px;
   width:100%;
-  object-fit:cover;
-  margin-top:70px;
+  object-fit:contain;
 }
 
-.container2 h4 {
-  grid-row: 1 / span 1;
-  grid-column: 2/ span 1;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  color: #8F99B7;
-}
+// .container2 h4 {
+//   grid-row: 1 / span 1;
+//   grid-column: 2/ span 1;
+//   padding-bottom: 20px;
+//   color: #8F99B7;
+// }
 
 .container1 {
   display:grid;
@@ -44,19 +42,24 @@ form {
   grid-row: 2 / span 1;
   grid-column: 2/ span 1;
   padding: 20px;
-  background-color: #2E394E;
+  background-color:$light-purple;
 }
 
 .review li{
   list-style-type: none;
-  color: $dark-purple;
   text-align: left;
   padding-top: 15px;
   display:flex;
-  justify-content: space-between;
+  // justify-content: space-between;
 }
 
 .purple_box{
   background: $dark-purple;
-  padding-top: 30px;
+}
+
+.purple_box h4{
+  grid-row: 1 / span 1;
+  grid-column: 2/ span 1;
+  padding-bottom: 20px;
+
 }

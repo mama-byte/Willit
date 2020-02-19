@@ -14,15 +14,15 @@
       <%else%>
 
       <div class = "review">
-        <p>Ceremony Type: <%= @ceremony.ceremony_type ? @ceremony.ceremony_type: nil %> </p>
-        <p>Venue: <%= @ceremony.venue ? @ceremony.venue : nil %> </p>
-        <p>Burial Type: <%= @ceremony.burial_type ? @ceremony.burial_type: nil %> </p>
-        <p>Details: <%= @ceremony.details ? @ceremony.details: nil %> </p>
-        <p>Epitaph: <%= @ceremony.epitaph ? @ceremony.epitaph: nil  %> </p>
-        <p>Funeral Home: <%= @ceremony.funeral_home ? @ceremony.funeral_home: nil  %> </p>
-        <p>Press Release: <%= @ceremony.press_release ? @ceremony.press_release: nil  %> </p>
-        <p>Speaker: <%= @ceremony.speaker_id ? @ceremony.speaker.full_name: nil  %> </p>
-        <p>Music Selector: <%= @ceremony.music_selector_id ? @ceremony.music_selector.full_name: nil  %> </p>
+        <li>Ceremony Type: <p><%= @ceremony.ceremony_type ? @ceremony.ceremony_type: nil %> </p></li>
+        <li>Venue: <p><%= @ceremony.venue ? @ceremony.venue : nil %> </p></li>
+        <li>Burial Type: <p><%= @ceremony.burial_type ? @ceremony.burial_type: nil %> </p></li>
+        <li>Details: <p><%= @ceremony.details ? @ceremony.details: nil %> </p></li>
+        <li>Epitaph: <p><%= @ceremony.epitaph ? @ceremony.epitaph: nil  %> </p></li>
+        <li>Funeral Home: <p><%= @ceremony.funeral_home ? @ceremony.funeral_home: nil  %> </p></li>
+        <li>Press Release: <p><%= @ceremony.press_release ? @ceremony.press_release: nil  %> </p></li>
+        <li>Speaker:<p> <%= @ceremony.speaker_id ? @ceremony.speaker.full_name: nil  %> </p></li>
+        <li>Music Selector:<p> <%= @ceremony.music_selector_id ? @ceremony.music_selector.full_name: nil  %> </p></li>
         <li>
           <% if policy(@ceremony).edit? %>
           <%= link_to image_tag('edit.png',width:40), edit_ceremony_path(@ceremony) %>

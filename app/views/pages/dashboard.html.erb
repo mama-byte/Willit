@@ -1,5 +1,5 @@
-
-    <% if user_signed_in? %>
+<%= link_to image_tag("logout.png", size:25, style:"float:right;position: absolute;top: 25px;z-index: 5;right: 20px;"), destroy_user_session_path, method: :delete, class: "nav-link" %>
+    <% if user_signed_in? && total_progress > 10 %>
     <h4 class="header2">You're making Great Overall Progress!</h4>
     <div id="cont" data-pct=<%=total_progress %> data-percent=
         <%=total_progress %> >
@@ -14,7 +14,8 @@
     <% end %>
     <div class="card-trip">
 
-        <%= link_to image_tag("pablo-face-recognition.png"), profile_path %>
+        <%= link_to profile_path do %>
+        <%= image_tag("pablo-face-recognition.png") %>
         <div class="progress">
             <div class="progress-bar" role="progressbar" style='width:  <%= "#{profile_progress}%" %>' aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
                 <%= "#{profile_progress}%" %>
@@ -24,9 +25,11 @@
             <h2>Yourself</h2>
         </div>
     </div>
+    <% end %>
     <div class="card-trip">
 
-        <%= link_to image_tag("pablo-sign-up.png"), contacts_path %>
+        <%= link_to contacts_path do %>
+        <%= image_tag("pablo-sign-up.png") %>
         <div class="progress">
             <div class="progress-bar" role="progressbar" style='width:  <%= "#{contact_progress}%" %>' aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
                 <%= "#{contact_progress}%" %>
@@ -36,8 +39,10 @@
             <h2>Loved Ones</h2>
         </div>
     </div>
+    <% end %>
     <div class="card-trip">
-        <%= link_to image_tag("pablo-camera-access.png") , valuables_path %>
+        <%= link_to valuables_path do %>
+        <%=  image_tag("pablo-camera-access.png") %>
         <div class="progress">
             <div class="progress-bar" role="progressbar" style='width:  <%= "#{valuable_progress}%" %>' aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
                 <%= "#{valuable_progress}%" %>
@@ -47,8 +52,10 @@
             <h2>Valuables</h2>
         </div>
     </div>
+    <% end %>
     <div class="card-trip">
-        <%= link_to image_tag("pablo-done.png"), new_ceremony_path %>
+        <%= link_to new_ceremony_path do %>
+        <%= image_tag("pablo-done.png") %>
         <div class="progress">
             <div class="progress-bar" role="progressbar" style='width:  <%= "#{ceremony_progress}%" %>' aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
                 <%= "#{ceremony_progress}%" %>
@@ -58,6 +65,7 @@
             <h2>Ceremony</h2>
         </div>
     </div>
+    <% end %>
 </div>
 </div>
 
