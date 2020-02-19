@@ -32,10 +32,10 @@
           method: :delete, data: {
             confirm: 'Are you sure?' }%>
             <% end %>
+            <%= link_to image_tag("email.png", size: 30, style:"margin-left:141px"), :controller => "ceremonies", :action => "send_order_mail", :id => @ceremony.user.id %>
           </li>
       </div>
     </div>
-    <button type="button" class="custom-link"><%= link_to "Send details to email", :controller => "ceremonies", :action => "send_order_mail", :id => @ceremony.user.id %> </button>
   </div>
 <% end %>
 
