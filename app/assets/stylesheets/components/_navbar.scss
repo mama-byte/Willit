@@ -8,12 +8,18 @@
   justify-content: space-between;
   height: 90px;
   padding: 0px 50px;
-  color: rgba(0,0,0,0.3);
   margin-top: 40px;
   position:webkit-sticky;
   position: sticky;
   bottom: 0;
   overflow: hidden;
+  color:white;
+}
+
+.footer h2{
+    font-size: 30px;
+    padding-top: 8px;
+    font:$logo-font !important;
 }
 
 .footer-links {
