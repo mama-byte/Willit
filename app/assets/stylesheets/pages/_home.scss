@@ -5,6 +5,7 @@
   font-weight: lighter;
   font-size: 20px;
   color: white;
+  text-decoration: none;
 }
 
 .card-trip {
@@ -37,16 +38,19 @@
   font-size: 16px;
   font-weight: bold;
   margin: 0;
+  text-decoration: none;
 }
 
 .card-trip p {
   font-size: 12px;
   opacity: .7;
   margin: 0;
+  text-decoration: none;
 }
 
 .card-trip a {
   color: white;
+  text-decoration: none;
 }
 
 .card-trip-infos .card-trip-user {
