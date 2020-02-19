@@ -28,6 +28,7 @@
                     <i class="fas fa-trash"></i>
                     <% end %>
                     <% end %>
+                    <%= link_to image_tag("email.png", size: 30, style:"margin-left:141px"), :controller => "valuables", :action => "send_order_mail", :id => @valuable.user.id  %>
                 </div>
                 <% if @valuable.contact %>
                 <p>You have assigned
@@ -38,8 +39,6 @@
                 <% @valuables.each do |valuable| %>
                     <%= link_to valuable.title, valuable_path(valuable)%><br>
                 <% end %>
-                <button type="button" class="custom-link">
-                    <%= link_to "Email Yourself this List", :controller => "valuables", :action => "send_order_mail", :id => @valuable.user.id %></button>
             </div>
         </div>
     </div>
