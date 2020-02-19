@@ -2,7 +2,7 @@
         <%= simple_form_for @valuable  do |f| %>
             <%= f.input :title, :label => "Title"%>
             <%= f.input :description, :label => "Description" %>
-            <%= f.input :value, :label => "Monetary Value" %>
+            <%= f.input :value, :label => "Value" %>
             <%= f.hidden_field :category, value: @category %>
             <%= f.hidden_field :item, value: @item %>
             <%= f.input :contact, collection: current_user.contacts, value_method: :id, label_method: :full_name, :label => "Choose who will recieve this item"%>

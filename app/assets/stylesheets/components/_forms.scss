@@ -1,5 +1,6 @@
 body{
   color:white;
+  font-size: 1.3rem !important;
 }
 
 select{
@@ -15,6 +16,8 @@ label{
   box-shadow: -5px 3px 18px -6px rgba(0,0,0,0.75);
   color:white;
   text-align: left;
+  line-height: 2 !important;
+  height: calc(3em + 0.75rem + 2px) !important;
 }
 
 
