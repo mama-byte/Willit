@@ -12,8 +12,8 @@
         <li>Email:<p> <%= @contact.email ? @contact.email: nil %></p></li>
         <li>Phone Number:<p><%= @contact.phone_number ? @contact.phone_number: nil  %></p></li>
         <% if @contact == nil %>
-        <h4> You currently have no details added for this Loved One.</h4>
-        <%= link_to 'Add some details', new_contact_path, class: 'greenButton' %>
+        <h4> You have no information added for this Loved One.</h4>
+        <%= link_to 'Add some info', new_contact_path, class: 'greenButton' %>
         <%else%>
         <li>
           <% if policy(@contact).edit? %>
