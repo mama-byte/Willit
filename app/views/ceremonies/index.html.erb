@@ -26,18 +26,19 @@
             <li>Press Release: <p><%= @ceremony.press_release ? @ceremony.press_release: nil  %> </p></li>
             <li>Speaker:<p> <%= @ceremony.speaker_id ? @ceremony.speaker.full_name: nil  %> </p></li>
             <li>Music Selector:<p> <%= @ceremony.music_selector_id ? @ceremony.music_selector.full_name: nil  %> </p></li>
-            <li>
+            <div class="d-flex justify-content-between align-items-center">
               <% if policy(@ceremony).edit? %>
-              <%= link_to image_tag('edit.png',width:40), edit_ceremony_path(@ceremony) %>
+              <%= link_to image_tag('edit.png', width:40), edit_ceremony_path(@ceremony) %>
               <% end %>
               <% if policy(@ceremony).destroy? %>
-              <%= link_to image_tag('bin.png',width:40), ceremony_path(@ceremony),
+              <%= link_to image_tag('bin.png', width:40), ceremony_path(@ceremony),
               method: :delete, data: {
                 confirm: 'Are you sure?' }%>
-                <% end %>
-                <%= link_to image_tag("email.png", width: 40, style:"margin-left:141px"), :controller => "ceremonies", :action => "send_order_mail", :id => @ceremony.user.id %>
-              </li>
+              <% end %>
+              <%= link_to image_tag("email.png", width: 40, class: "ml-1"), :controller => "ceremonies", :action => "send_order_mail", :id => @ceremony.user.id %>
+            </div>
           </div>
+
         <% end %>
       </div>
     </div>
