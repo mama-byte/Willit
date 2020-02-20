@@ -11,24 +11,23 @@
                 <li> Description: <p> <%= @valuable.description%> </p> </li>
                 <li> Value: <p> <%= @valuable.value%> euro</p> </li>
                 <% if @valuable.contact %>
-               <li> Beneficiary: <p> <%= @valuable.contact.first_name + " " + @valuable.contact.last_name %> inherits this</p> </li>
+               <li> Beneficiary: <p> <%= @valuable.contact.first_name + " " + @valuable.contact.last_name %> inherits this</p>
                 <% end %>
                 <div class="imgs">
                 <%= cl_image_tag @valuable.photo, height: 200, width: 200, crop: :fill %>
               </div>
                 <div class="bnt">
                     <% if policy(@valuable).edit? %>
-                    <%= link_to  edit_valuable_path do %>
-                    <i class="fas fa-pencil-alt"></i>
-                    <% end %>
+                    <%= link_to image_tag("edit.png", width:40, style:"float:right"), edit_valuable_path %>
+
+
                     <% end %>
                     <% if policy(@valuable).destroy? %>
                     <%#= link_to image_tag('bin.png', width:25), valuable_path(@valuable), method: :delete %>
-                    <%= link_to valuable_path(@valuable), method: :delete do %>
-                    <i class="fas fa-trash"></i>
+                    <%= link_to image_tag("bin.png", width:40, style:"float:right"), valuable_path(@valuable), method: :delete %>
+
                     <% end %>
-                    <% end %>
-                  <%= link_to image_tag("email.png", size: 25, style:"margin-left:10px"), :controller => "valuables", :action => "send_order_mail", :id => @valuable.user.id  %>
+                  <%= link_to image_tag("email.png", width:40, style:"margin-left:10px"), :controller => "valuables", :action => "send_order_mail", :id => @valuable.user.id  %>
                 </div>
             </div>
         </div>

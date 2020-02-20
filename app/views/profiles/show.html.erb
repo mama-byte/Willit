@@ -18,8 +18,8 @@
                 <li>Nationality:<p><%= current_user.nationality ? current_user.nationality: nil %></p></li>
               </div>
               <div>
-                <%= link_to image_tag("email.png", size: 30, style:"margin-left:141px"), :controller => "profiles", :action => "send_order_mail", :id => @user.id %>
-                <%= link_to image_tag("edit.png", size: 30, style:"float:right"), profile_edit_path %>
+                <%= link_to image_tag("email.png", width: 40, style:"margin-left:141px"), :controller => "profiles", :action => "send_order_mail", :id => @user.id %>
+                <%= link_to image_tag("edit.png", width: 40, style:"float:right"), profile_edit_path %>
               </div>
             </div>
         </div>
