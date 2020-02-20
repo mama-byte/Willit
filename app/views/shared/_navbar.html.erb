@@ -1,7 +1,16 @@
+
 <% if user_signed_in? %>
-    <div class="footer">
+<div class="footer">
             <%= link_to image_tag("home.png", size: 40), dashboard_path %>
             <h2>Willit</h2>
-            <%= link_to image_tag("profile.png", size:40), profile_path %>
-    </div>
-  <% end %>
+            <div class="btn-group dropup">
+                <button type="button" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <img src ="https://res.cloudinary.com/dhkfntyfw/image/upload/v1582192180/profile_gwlgpd.png" height="40" width="40"/>
+                </button>
+                <div class="dropdown-menu">
+                  <%= link_to "view profile", profile_path, class: "dropdown-item" %>
+                  <%= link_to "log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+                </div>
+              </div>
+  </div>
+<% end %>
