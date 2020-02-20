@@ -21,6 +21,10 @@ label{
   width: 100%;
 }
 
+#extra {
+  height: auto !important;
+}
+
 
 .form-group{
   padding-bottom: 20px;
@@ -45,24 +49,23 @@ label{
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
+  padding-bottom: 20px;
 }
 
 .radios .radio {
   position: relative;
   display: block;
-  // background-color: #2E394E;
-  // background: rgb(143,153,183);
-  // background: radial-gradient(circle, rgba(143,153,183,1) 0%, rgba(3,18,41,1) 100%);
-  background: rgb(159,191,255);
-  background: radial-gradient(circle, rgba(159,191,255,1) 0%, rgba(3,18,41,1) 100%);
-  color: #000000;
+  background: #1b2739;
+  /* background: radial-gradient(circle, #9fbfff 0%, #031229 100%); */
+  color: white;
   width: 100px;
   height: 100px;
   line-height: 100px;
   text-align: center;
   margin: 10px;
-  border-radius: 50px;
-  box-shadow: 0 0 15px rgba(0,0,0,2);
+  border-radius: 5px;
+  border: 1px solid rgba(255,255,255,0.5);
+  box-shadow: 0 0 15px black;
 }
 
 .radios input[type=radio] {
@@ -70,12 +73,17 @@ label{
 }
 
 .radios input[type=radio]:checked + .radio {
-  background-color: #2E394E;
+  background-color: $green;
   color: #FFFFFF;
   line-height: 100px;
   text-align: center;
-  border-radius: 48px;
+  border-radius: 5px;
   opacity: 1;
+}
+
+
+.align-left {
+  text-align: left;
 }
 
 // #test {

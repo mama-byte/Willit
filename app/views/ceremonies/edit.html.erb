@@ -7,7 +7,7 @@
     <div class = "container2">
       <h4>Add Ceremony Details</h4>
       <%= simple_form_for @ceremony do |f| %>
-      <div class = 'inner_container'>
+      <div class = 'inner_container align-left'>
         <p>Select a Ceremony Type</p>
           <div class = "radio-selector">
             <% id_incrementor = 1 %>
@@ -21,7 +21,7 @@
           </div>
 
           <div>
-            <%= f.input :details,  :label => "Special Ceremony Requests", as: :text, autofocus: true, :input_html => {:style => 'width: 100%', :rows => 10} %>
+            <%= f.input :details,  :label => "Special Ceremony Requests", as: :text, autofocus: true, :input_html => {:id => "extra", :style => 'width: 100%', :rows => 5 } %>
           </div>
 
           <div>
@@ -45,7 +45,7 @@
 
           <div>
             <%= f.input :epitaph, placeholder: "Here lies #{current_user.legal_name}. #{current_user.pronouns } was...", :label => "Last Words",
-             as: :text, autofocus: true, :input_html => {:style => 'width: 100%', :rows => 5} %>
+             as: :text, autofocus: true, :input_html => {id: "extra", :style => 'width: 100%', :rows => 5} %>
           </div>
           <div>
             <%= f.input :funeral_home, :label => "Funeral Home"%>
