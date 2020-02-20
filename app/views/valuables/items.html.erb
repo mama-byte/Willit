@@ -4,19 +4,19 @@
     </div>
     <div class="purple_box">
         <div class="container2">
-            <!--  <h1>The Category is <%= @category %></h1> -->
             <div class="everything">
+            <h1><%= @category.capitalize %></h1>
                 <div class="<%= 'd-none' unless @category == 'collections' %> val_item_grid">
-                    <div class="item_link">
-                        <%= link_to image_tag('guitar.png'), new_valuable_path("collections", "instruments") %>
-                        <div class="valuable_text">
-                            <p>Instruments</p>
-                        </div>
-                    </div>
                     <div class="item_link">
                         <%= link_to image_tag('book.png'), new_valuable_path("collections", "books") %>
                         <div class="valuable_text">
                             <p>Books</p>
+                        </div>
+                    </div>
+                    <div class="item_link">
+                        <%= link_to image_tag('guitar.png'), new_valuable_path("collections", "instruments") %>
+                        <div class="valuable_text">
+                            <p>Instruments</p>
                         </div>
                     </div>
                     <div class="item_link">
@@ -40,7 +40,7 @@
                     <div class="item_link">
                         <%= link_to image_tag('airline.png'), new_valuable_path("collections", "miles") %>
                         <div class="valuable_text">
-                            <p>Airline Miles</p>
+                            <p>Miles</p>
                         </div>
                     </div>
                 </div>
@@ -81,7 +81,7 @@
                     <div class="item_link">
                         <%= link_to image_tag('radio.png'), new_valuable_path("electronics", "stereo") %>
                         <div class="valuable_text">
-                            <p>Music</p>
+                            <p>Stereo</p>
                         </div>
                     </div>
                 </div>
@@ -145,7 +145,7 @@
                     <div class="item_link">
                         <%= link_to image_tag('earrings.png'), new_valuable_path("jewelry", "earrings") %>
                         <div class="valuable_text">
-                            <p>Earings</p>
+                            <p>Earrings</p>
                         </div>
                     </div>
                     <div class="item_link">

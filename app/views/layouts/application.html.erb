@@ -11,15 +11,19 @@
    <!--  <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script> -->
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable"  content="yes">
+    <link rel="manifest" href="<%= asset_path 'manifest.json' %>">
+    <%= render 'shared/ios_pwa_links' %>
     <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
   </head>
   <body>
     <%= render 'shared/back_button' unless @disable_back %>
     <%= render 'shared/flashes' %>
-    <%= render 'shared/logout' unless @disable_logout %>
     <%= yield %>
     <%= javascript_include_tag 'application' %>
-    <%= render 'shared/navbar' %>
+    <%= render 'shared/navbar' unless @disable_navbar %>
     <%= javascript_pack_tag 'application' %>
     <%= javascript_pack_tag 'dropdown' %>
   </body>

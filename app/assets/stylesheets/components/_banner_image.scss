@@ -4,7 +4,7 @@
 
 .top_image {
   // adjusted height for new images
-  height: 350px;
+  height: 250px;
   width:100%;
   object-fit:contain;
 }
@@ -49,8 +49,9 @@ form {
   list-style-type: none;
   text-align: left;
   padding-top: 15px;
-  display:flex;
-  // justify-content: space-between;
+  // display: flex;
+  justify-content: space-between;
+  // justify-content: space-around;
 }
 
 .purple_box{
