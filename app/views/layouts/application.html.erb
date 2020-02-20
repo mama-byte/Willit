@@ -21,10 +21,9 @@
   <body>
     <%= render 'shared/back_button' unless @disable_back %>
     <%= render 'shared/flashes' %>
-    <%= render 'shared/logout' unless @disable_logout %>
     <%= yield %>
     <%= javascript_include_tag 'application' %>
-    <%= render 'shared/navbar' %>
+    <%= render 'shared/navbar' unless @disable_navbar %>
     <%= javascript_pack_tag 'application' %>
     <%= javascript_pack_tag 'dropdown' %>
   </body>
