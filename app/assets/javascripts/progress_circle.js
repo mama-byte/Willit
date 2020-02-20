@@ -17,16 +17,13 @@ function animateCircle() {
 
     var pct = ((100-val)/100)*c;
 
-    circle.style.strokeDashoffset= pct;
+    circle.style.strokeDashoffset = pct;
 
     mainDiv.getAttribute('data-pct',val);
   }
 }
 
 mainDiv && animateCircle();
-
-
-
 
 
 
