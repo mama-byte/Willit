@@ -6,15 +6,10 @@
         <div class="container2">
             <div class="review">
                 <h4>Valuable:</h4>
-                <p>
-                    <%= @valuable.title %>
-                </p>
+                <p> Valuable name: <%= @valuable.title %> </p>
                 <%#= @valuable.item %>
-                <p>
-                    <%= @valuable.description%>
-                </p>
-                <p>
-                    <%= @valuable.value%> euro</p>
+                <p>Description: <%= @valuable.description%> </p>
+                <p>Value: <%= @valuable.value%> euro</p>
                 <%= cl_image_tag @valuable.photo, height: 200, width: 200, crop: :fill %>
                 <div class="bnt">
                     <% if policy(@valuable).edit? %>
@@ -34,11 +29,26 @@
                 <p>You have assigned
                     <%= @valuable.contact.first_name + " " + @valuable.contact.last_name %> to inherit this</p>
                 <% end %>
-                <hr>
-                <h4> Your other valuables </h4>
-                <% @valuables.each do |valuable| %>
-                    <%= link_to valuable.title, valuable_path(valuable)%><br>
-                <% end %>
+
+
+
+
+                        <div class="btn " data-toggle="modal" data-target=".bd-example-modal-sm">
+                          <h2>Your other valuables: </h2>
+                        </div>
+                        <div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-sm">
+                                <div class="modal-content animate-bottom">
+                                    <% @valuables.each do |valuable| %>
+                                    <p>
+                                        <%= link_to valuable.title, valuable_path(valuable) %>
+                                    </p>
+                                    <% end %>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
             </div>
         </div>
     </div>
