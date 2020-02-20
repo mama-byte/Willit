@@ -7,9 +7,9 @@
     <div class = "container2">
       <h4>Review Your Ceremony Details</h4>
         <div class = "review">
-          <li> Ceremony Type: <p><%= current_user.ceremony.ceremony_type ? current_user.ceremony.ceremony_type.key : nil %></p></li>
+          <li> Ceremony Type: <p><%= current_user.ceremony.ceremony_type ? current_user.ceremony.ceremony_type : "None selected" %></p></li>
           <li> Venue: <p><%= current_user.ceremony.venue ? current_user.ceremony.venue : nil %> </p></li>
-          <li> Burial Type:<p><%= current_user.ceremony.burial_type ? current_user.ceremony.burial_type.key : nil %> </p></li>
+          <li> Burial Type:<p><%= current_user.ceremony.burial_type ? current_user.ceremony.burial_type : "None selected" %> </p></li>
           <li> Details: <p><%= current_user.ceremony.details ? current_user.ceremony.details: nil %> </p></li>
           <li> Epitaph: <p><%= current_user.ceremony.epitaph ? current_user.ceremony.epitaph: nil  %> </p></li>
           <li> Funeral Home: <p><%= current_user.ceremony.funeral_home ? current_user.ceremony.funeral_home: nil  %> </p></li>
