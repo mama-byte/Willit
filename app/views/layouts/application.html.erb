@@ -18,7 +18,7 @@
     <%= render 'shared/flashes' %>
     <%= yield %>
     <%= javascript_include_tag 'application' %>
-    <%= render 'shared/navbar' %>
+    <%= render 'shared/navbar' unless @disable_navbar %>
     <%= javascript_pack_tag 'application' %>
     <%= javascript_pack_tag 'dropdown' %>
   </body>
