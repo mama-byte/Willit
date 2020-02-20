@@ -6,7 +6,7 @@
             <%= f.hidden_field :category, value: @category %>
             <%= f.hidden_field :item, value: @item %>
             <%= f.input :contact, collection: current_user.contacts, value_method: :id, label_method: :full_name, :label => "Who gets it?"%>
-            <%= f.input :photo %>
+            <%= f.input :photo, html: { id: "file" }, type: "file" %>
             <%= f.input :photo_cache, as: :hidden %>
             <%= f.submit 'Save' , class: 'greenButton' %>
         <%end%>

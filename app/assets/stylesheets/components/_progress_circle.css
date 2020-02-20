@@ -40,7 +40,21 @@ input {
   color: #000;
 }
 
+input#valuable_photo {
+  display: inline-block;
+  width: 100%;
+  padding: 60px 0 0 0;
+  height: 50px;
+  overflow: hidden;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  background: url('https://res.cloudinary.com/dhkfntyfw/image/upload/v1582220097/icons8-upload-to-cloud-50_swzbg5.png') center center no-repeat $light-purple;
+  border-radius: 5px;
+  background-size: 60px 60px;
+}
+
 
 /* Make things perty */
 body { height: 100%; text-align: center;}
-input { border: 1px solid #666; background: #1b2739; color: #fff; padding: 0.5em; box-shadow: none; outline: none !important; margin: 1em  auto; text-align: center;}
+.form-control-file { border: 1.3px solid lightgray; border-radius: 5px; background: #1b2739; color: #fff; padding: 0.5em; box-shadow: none; outline: none !important; margin: 1em  auto; text-align: center;}
