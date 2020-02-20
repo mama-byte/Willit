@@ -10,7 +10,9 @@
                 <%#= @valuable.item %>
                 <p>Description: <%= @valuable.description%> </p>
                 <p>Value: <%= @valuable.value%> euro</p>
+                <div class="imgs">
                 <%= cl_image_tag @valuable.photo, height: 200, width: 200, crop: :fill %>
+              </div>
                 <div class="bnt">
                     <% if policy(@valuable).edit? %>
                     <%= link_to  edit_valuable_path do %>
@@ -23,32 +25,12 @@
                     <i class="fas fa-trash"></i>
                     <% end %>
                     <% end %>
-                    <%= link_to image_tag("email.png", size: 30, style:"margin-left:141px"), :controller => "valuables", :action => "send_order_mail", :id => @valuable.user.id  %>
+                  <%= link_to image_tag("email.png", size: 25, style:"margin-left:10px"), :controller => "valuables", :action => "send_order_mail", :id => @valuable.user.id  %>
                 </div>
                 <% if @valuable.contact %>
                 <p>You have assigned
                     <%= @valuable.contact.first_name + " " + @valuable.contact.last_name %> to inherit this</p>
                 <% end %>
-
-
-
-
-                        <div class="btn " data-toggle="modal" data-target=".bd-example-modal-sm">
-                          <h2>Your other valuables: </h2>
-                        </div>
-                        <div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
-                            <div class="modal-dialog modal-sm">
-                                <div class="modal-content animate-bottom">
-                                    <% @valuables.each do |valuable| %>
-                                    <p>
-                                        <%= link_to valuable.title, valuable_path(valuable) %>
-                                    </p>
-                                    <% end %>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
             </div>
         </div>
     </div>

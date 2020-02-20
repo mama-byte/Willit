@@ -28,13 +28,10 @@
         </li>
           <%end%>
           <% end %>
-          <div class="rowws">
         <div class="plus">
           <%= link_to image_tag("plus_white.png", size: 40, style: "float:right"), new_contact_path %>
-         </div>
-         <div class="plus2">
-          <%= link_to image_tag("email.png", size: 30, style:"margin-left:141px"), :controller => "contacts", :action => "send_order_mail", :id => current_user.id %>
-        </div>
+          <%= link_to image_tag("email.png", size: 40, style:"margin-left:141px"), :controller => "contacts", :action => "send_order_mail", :id => current_user.id %>
+
 </div>
         </div>
       </div>

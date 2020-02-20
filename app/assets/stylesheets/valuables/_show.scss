@@ -1,7 +1,11 @@
 .bnt{
   display: flex;
   justify-content: center;
+  margin-left:10px;
+}
 
+.review{
+text-align: left;
 }
 
 .custom-link {
@@ -26,5 +30,11 @@ h2 {
 }
 
 a {
+
   color: white;
+}
+
+
+.imgs{
+  text-align: center;
 }
