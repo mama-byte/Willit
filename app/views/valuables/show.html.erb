@@ -6,16 +6,13 @@
         <div class="container2">
             <div class="review">
                 <h4>Valuable:</h4>
-                <p>
-                    <%= @valuable.title %>
-                </p>
+                <p> Valuable name: <%= @valuable.title %> </p>
                 <%#= @valuable.item %>
-                <p>
-                    <%= @valuable.description%>
-                </p>
-                <p>
-                    <%= @valuable.value%> euro</p>
+                <p>Description: <%= @valuable.description%> </p>
+                <p>Value: <%= @valuable.value%> euro</p>
+                <div class="imgs">
                 <%= cl_image_tag @valuable.photo, height: 200, width: 200, crop: :fill %>
+              </div>
                 <div class="bnt">
                     <% if policy(@valuable).edit? %>
                     <%= link_to  edit_valuable_path do %>
@@ -28,8 +25,12 @@
                     <i class="fas fa-trash"></i>
                     <% end %>
                     <% end %>
-                    <%= link_to image_tag("email.png", size: 30, style:"margin-left:141px"), :controller => "valuables", :action => "send_order_mail", :id => @valuable.user.id  %>
+                  <%= link_to image_tag("email.png", size: 25, style:"margin-left:10px"), :controller => "valuables", :action => "send_order_mail", :id => @valuable.user.id  %>
                 </div>
+                <% if @valuable.contact %>
+                <p>You have assigned
+                    <%= @valuable.contact.first_name + " " + @valuable.contact.last_name %> to inherit this</p>
+                <% end %>
             </div>
         </div>
     </div>

@@ -33,7 +33,7 @@
             method: :delete, data: {
               confirm: 'Are you sure?' }%>
               <% end %>
-              <%= link_to image_tag("email.png", size: 30, style:"margin-left:141px"), :controller => "ceremonies", :action => "send_order_mail", :id => @ceremony.user.id %>
+              <%= link_to image_tag("email.png", size: 40, style:"margin-left:141px"), :controller => "ceremonies", :action => "send_order_mail", :id => @ceremony.user.id %>
             </li>
         </div>
         <% end %>
