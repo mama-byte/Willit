@@ -1,11 +1,11 @@
-<div class = "container1">
+<div class="container1">
   <div>
     <%= image_tag('pablo-4.png',class:'top_image')%>
   </div>
-  <div class ="purple_box">
-    <div class = "container2">
+  <div class="purple_box">
+    <div class="container2">
       <h4>Review Loved Ones Details</h4>
-      <div class = "review">
+      <div class="review">
         <li>First Name:<p><%= @contact.first_name ? @contact.first_name : nil %></p></li>
         <li>Last Name:<p><%= @contact.last_name ? @contact.last_name : nil %></p></li>
         <li>Relationship:<p><%= @contact.relationship ? @contact.relationship : nil %></p></li>
@@ -14,18 +14,18 @@
         <% if @contact == nil %>
         <h4> Add current details to this Loved One.</h4>
         <%= link_to 'Add some info', new_contact_path, class: 'greenButton' %>
-        <%else%>
+        <% else %>
         <li>
-          <% if policy(@contact).edit? %>
+        <% if policy(@contact).edit? %>
           <%= link_to image_tag('edit.png',width:40), edit_contact_path(@contact) %>
-          <% end %>
-          <% if policy(@contact).destroy? %>
+        <% end %>
+        <% if policy(@contact).destroy? %>
           <%= link_to image_tag('bin.png',width:40), contact_path(@contact),
-          method: :delete, data: {
+            method: :delete, data: {
             confirm: 'Are you sure?' }%></li>
-            <%end%>
-            <% end %>
-          </div>
-        </div>
+          <% end %>
+        <% end %>
       </div>
     </div>
+  </div>
+</div>
