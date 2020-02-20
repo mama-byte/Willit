@@ -27,11 +27,9 @@
         </li>
           <%end%>
           <% end %>
-        <div class="plus">
-          <%= link_to image_tag("plus_white.png", size: 40, style: "float:right"), new_contact_path %>
-          <%= link_to image_tag("email.png", size: 40, style:"margin-left:141px"), :controller => "contacts", :action => "send_order_mail", :id => current_user.id %>
-</div>
-
+          <div class="loved_icons">
+          <%= link_to image_tag("plus_white.png", size: 40, style: "float:right"), new_contact_path %> <%= link_to image_tag("email.png", size: 40, style:"margin-left:141px"), :controller => "contacts", :action => "send_order_mail", :id => current_user.id %></p>
+          </div>
         </div>
       </div>
     </div>
