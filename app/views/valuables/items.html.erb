@@ -5,7 +5,7 @@
     <div class="purple_box">
         <div class="container2">
             <div class="everything">
-            <h1><%= @category %></h1>
+            <h1><%= @category.capitalize %></h1>
                 <div class="<%= 'd-none' unless @category == 'collections' %> val_item_grid">
                     <div class="item_link">
                         <%= link_to image_tag('guitar.png'), new_valuable_path("collections", "instruments") %>
