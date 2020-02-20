@@ -13,7 +13,9 @@
             <div class="cards">
                     <%= link_to image_tag("collection.png", width: 70), valuable_items_path("collections") %>
                 <div class="card-product-infos">
+                      <%= link_to valuable_items_path("collections") do %>
                 <h2>Collections</h2>
+                <% end %>
                      </div>
                   </div>
                 </div>
@@ -26,7 +28,9 @@
                              <div class="cards">
                     <%= link_to image_tag("laptop.png", width: 70), valuable_items_path("electronics") %>
                <div class="card-product-infos">
+                <%= link_to valuable_items_path("electronics") do %>
                 <h2>Electronics</h2>
+                <% end %>
                      </div>
                   </div>
                 </div>
@@ -40,7 +44,9 @@
                     <div class="cards">
                     <%= link_to image_tag("housewares.png", width: 70), valuable_items_path("housewares") %>
                <div class="card-product-infos">
+                <%= link_to valuable_items_path("housewares") do %>
                 <h2>Housewares</h2>
+                <% end %>
                      </div>
                   </div>
                 </div>
@@ -54,7 +60,9 @@
                     <div class="cards">
                     <%= link_to image_tag("jewelery.png", width: 70), valuable_items_path("jewelry") %>
                 <div class="card-product-infos">
+                  <%= link_to valuable_items_path("jewelry") do %>
                 <h2>Jewelery</h2>
+                <% end %>
                     </div>
                  </div>
                </div>
@@ -68,7 +76,9 @@
                     <div class="cards">
                     <%= link_to image_tag("vehicle.png", width: 70), valuable_items_path("vehicles") %>
                 <div class="card-product-infos">
+                  <%= link_to valuable_items_path("vehicles") do %>
                 <h2>Vehicles</h2>
+                <% end %>
                      </div>
                   </div>
                 </div>
@@ -84,15 +94,14 @@
                         <%= image_tag("treasurechest.png", width: 70)%>
                       </div>
                     <div class="card-product-infos">
+
                       <h2> Your List </h2>
                     </div>
                     <div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
                         <div class="modal-dialog modal-sm">
                             <div class="modal-content animate-bottom">
                                 <% @valuables.each do |valuable| %>
-                                <p>
-                                    <%= link_to valuable.title, valuable_path(valuable) %>
-                                </p>
+                                <p> <%= link_to valuable.title, valuable_path(valuable) %> </p>
                                 <% end %>
 
               </div>
