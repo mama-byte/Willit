@@ -3,7 +3,6 @@ class PagesController < ApplicationController
 
   def home
     @disable_back = true
-    @disable_logout = true
   end
 
   def dashboard
