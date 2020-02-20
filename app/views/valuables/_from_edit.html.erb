@@ -2,11 +2,11 @@
         <%= simple_form_for @valuable, edit_valuable_path(@valuable), method: :patch  do |f| %>
             <%= f.input :title, :label => "Title"%>
             <%= f.input :description, :label => "Description" %>
-            <%= f.input :value, :label => "Monetary Value" %>
+            <%= f.input :value, :label => "Value" %>
             <%= f.input :image_url, :label => "add a photo" %>
             <%= f.hidden_field :category, value: @category %>
             <%= f.hidden_field :item, value: @item %>
-            <%= f.input :contact, collection: current_user.contacts, value_method: :id, label_method: :full_name, :label => "Choose who will recieve this item"%>
+            <%= f.input :contact, collection: current_user.contacts, value_method: :id, label_method: :full_name, :label => "Who gets it?"%>
 
             <%= f.input :photo %>
             <%= f.input :photo_cache, as: :hidden %>
