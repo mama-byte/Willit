@@ -9,7 +9,6 @@
       <%= simple_form_for @ceremony do |f| %>
       <div class = 'inner_container'>
         <p>Select a Ceremony Type</p>
-        <div class = "radio-selector">
           <div class = "radio-selector">
             <% id_incrementor = 1 %>
             <% Ceremony.ceremony_types.keys.each do |ceremony_type| %>
