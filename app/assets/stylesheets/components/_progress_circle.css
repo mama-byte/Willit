@@ -49,7 +49,7 @@ input#valuable_photo {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  background: url('https://cdn1.iconfinder.com/data/icons/hawcons/32/698394-icon-130-cloud-upload-512.png') center center no-repeat $light-purple;
+  background: url('https://res.cloudinary.com/dhkfntyfw/image/upload/v1582220097/icons8-upload-to-cloud-50_swzbg5.png') center center no-repeat $light-purple;
   border-radius: 5px;
   background-size: 60px 60px;
 }
