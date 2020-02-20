@@ -13,7 +13,7 @@
 
       <div class = "review">
         <% if @contacts.empty? %>
-        <h4> You currently have no relations added </h4>
+        <h4> Add some Loved Ones </h4>
         <%else%>
         <% @contacts.each do |contact| %>
         <li>
@@ -23,21 +23,21 @@
             <%= image_tag('tick.png', width:25) %>
             <%end%>
 
-            <%= link_to image_tag('about.png', width:20, style: "float:right"), contact_path(contact) %>
+            <%= link_to image_tag('view.png', width:20, style: "float:right"), contact_path(contact) %>
           </div>
         </li>
-          <%end%>
-          <% end %>
-          <div class="rowws">
-        <div class="plus">
-          <%= link_to image_tag("plus_white.png", size: 40, style: "float:right"), new_contact_path %>
-         </div>
-         <div class="plus2">
-          <%= link_to image_tag("email.png", size: 30, style:"margin-left:141px"), :controller => "contacts", :action => "send_order_mail", :id => current_user.id %>
-        </div>
-</div>
+        <%end%>
+        <% end %>
+        <div class="rows">
+          <div class="plus">
+            <%= link_to image_tag("plus_white.png", size: 40, style: "float:right"), new_contact_path %>
+          </div>
+          <div class="plus2">
+            <%= link_to image_tag("email.png", size: 30, style:"margin-left:141px"), :controller => "contacts", :action => "send_order_mail", :id => current_user.id %>
+          </div>
         </div>
       </div>
+    </div>
   </div>
 </div>
 

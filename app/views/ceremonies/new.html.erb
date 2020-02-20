@@ -8,7 +8,7 @@
     <%= simple_form_for @ceremony do |f| %>
     <div class = 'inner_container'>
       <h4>Add Ceremony Details</h4>
-        <p>Select the type of ceremony you desire.</p>
+        <p>Set the ceremony type.</p>
           <div class = "radio-selector">
             <% id_incrementor = 1 %>
             <% Ceremony.ceremony_types.keys.each do |ceremony_type| %>
@@ -22,7 +22,7 @@
 
           <div>
             <%#= f.input :details, :label => "Special Ceremony Requests" %>
-            <%= f.input :details, label: "Special Ceremony Requests", as: :text, autofocus: true, :input_html => {:style => 'width: 100%', :rows => 5} %>
+            <%= f.input :details, label: "Ceremony Requests", as: :text, autofocus: true, :input_html => {:style => 'width: 100%', :rows => 5} %>
           </div>
 
           <div>
@@ -32,7 +32,7 @@
 
           <!-- Custom Field For Form With Flex-column -->
 
-          <p>Select the type of burial you desire.</p>
+          <p>Set the burial type.</p>
           <div class = "radio-selector">
             <% id_incrementor_two = 10 %>
             <% Ceremony.burial_types.keys.each do |burial_type| %>
@@ -48,16 +48,16 @@
             <%= f.input :epitaph, placeholder: "Here lies #{current_user.legal_name}. #{current_user.pronouns } was...", label: "Epitaph. Your Last Words", as: :text, autofocus: true, :input_html => {:style => 'width: 100%', :rows => 5} %>
           </div>
           <div>
-            <%= f.input :funeral_home, :label => "Funeral Home"%>
+            <%= f.input :press_release, :label => "Type of Death Announcement"%>
           </div>
           <div>
-            <%= f.input :press_release, :label => "Type of Death Announcement"%>
+            <%= f.input :funeral_home, :label => "Funeral Home"%>
           </div>
           <div>
             <%= f.input :speaker_id, collection: current_user.contacts, value_method: :id, label_method: :full_name, :label => "Who Speaks?"%>
           </div>
           <div>
-            <%= f.input :music_selector_id, collection: current_user.contacts, value_method: :id, label_method: :full_name, :label => "Who is in charge of music?"%>
+            <%= f.input :music_selector_id, collection: current_user.contacts, value_method: :id, label_method: :full_name, :label => "Who selects the music?"%>
           </div>
 
             <%= f.submit 'Save' , class: 'greenButton' %>

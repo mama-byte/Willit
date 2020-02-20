@@ -1,10 +1,11 @@
 // Specific CSS for your home-page
  .header2 {
-  padding: 50px;
+  // padding: 50px;
   padding-bottom:0px;
   font-weight: lighter;
-  font-size: 20px;
+  font-size: 32px;
   color: white;
+  text-decoration: none;
 }
 
 .card-trip {
@@ -28,25 +29,28 @@
 }
 
 .card-trip img {
-  height: 175px;
+  height: 200px;
   width: 100%;
   object-fit: cover;
 }
 
 .card-trip h2 {
-  font-size: 16px;
+  font-size: 24px;
   font-weight: bold;
   margin: 0;
+  text-decoration: none;
 }
 
 .card-trip p {
   font-size: 12px;
   opacity: .7;
   margin: 0;
+  text-decoration: none;
 }
 
 .card-trip a {
   color: white;
+  text-decoration: none;
 }
 
 .card-trip-infos .card-trip-user {

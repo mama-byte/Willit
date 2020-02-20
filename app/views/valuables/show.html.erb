@@ -30,15 +30,6 @@
                     <% end %>
                     <%= link_to image_tag("email.png", size: 30, style:"margin-left:141px"), :controller => "valuables", :action => "send_order_mail", :id => @valuable.user.id  %>
                 </div>
-                <% if @valuable.contact %>
-                <p>You have assigned
-                    <%= @valuable.contact.first_name + " " + @valuable.contact.last_name %> to inherit this</p>
-                <% end %>
-                <hr>
-                <h4> Your other valuables </h4>
-                <% @valuables.each do |valuable| %>
-                    <%= link_to valuable.title, valuable_path(valuable)%><br>
-                <% end %>
             </div>
         </div>
     </div>
