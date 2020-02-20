@@ -93,8 +93,7 @@
                     <div class="btn " data-toggle="modal" data-target=".bd-example-modal-sm">
                         <%= image_tag("treasurechest.png", width: 70)%>
                       </div>
-                    <div class="card-product-infos">
-
+                    <div class="card-product-infos" data-toggle="modal" data-target=".bd-example-modal-sm">
                       <h2> Your List </h2>
                     </div>
                     <div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
@@ -103,7 +102,6 @@
                                 <% @valuables.each do |valuable| %>
                                 <p> <%= link_to valuable.title, valuable_path(valuable) %> </p>
                                 <% end %>
-
               </div>
             </div>
           </div>
