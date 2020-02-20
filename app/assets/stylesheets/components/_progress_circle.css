@@ -40,7 +40,21 @@ input {
   color: #000;
 }
 
+input#valuable_photo {
+  display: inline-block;
+  width: 100%;
+  padding: 60px 0 0 0;
+  height: 50px;
+  overflow: hidden;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  background: url('https://cdn1.iconfinder.com/data/icons/hawcons/32/698394-icon-130-cloud-upload-512.png') center center no-repeat $light-purple;
+  border-radius: 5px;
+  background-size: 60px 60px;
+}
+
 
 /* Make things perty */
 body { height: 100%; text-align: center;}
-input { border: 1px solid #666; background: #1b2739; color: #fff; padding: 0.5em; box-shadow: none; outline: none !important; margin: 1em  auto; text-align: center;}
+.form-control-file { border: 1.3px solid lightgray; border-radius: 5px; background: #1b2739; color: #fff; padding: 0.5em; box-shadow: none; outline: none !important; margin: 1em  auto; text-align: center;}
