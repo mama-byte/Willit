@@ -32,7 +32,7 @@
 
           <!-- Custom Field For Form With Flex-column -->
 
-          <p>Set the burial type.</p>
+          <p>Set the burial type</p>
           <div class = "radio-selector">
             <% id_incrementor_two = 10 %>
             <% Ceremony.burial_types.keys.each do |burial_type| %>
@@ -48,7 +48,7 @@
             <%= f.input :epitaph, placeholder: "Here lies #{current_user.legal_name}. #{current_user.pronouns } was...", label: "Epitaph. Your Last Words", as: :text, autofocus: true, :input_html => {:style => 'width: 100%', :rows => 5} %>
           </div>
           <div>
-            <%= f.input :press_release, :label => "Type of Death Announcement"%>
+            <%= f.input :press_release, :label => "Press Release"%>
           </div>
           <div>
             <%= f.input :funeral_home, :label => "Funeral Home"%>
