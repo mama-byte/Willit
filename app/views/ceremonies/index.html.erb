@@ -17,9 +17,9 @@
 
         <h4>Review Your Ceremony Details</h4>
         <div class = "review">
-            <li>Ceremony Type: <p><%= @ceremony.ceremony_type ? @ceremony.ceremony_type: nil %> </p></li>
+            <li>Ceremony Type: <p><%= @ceremony.ceremony_type ? @ceremony.ceremony_type: "None selected" %> </p></li>
             <li>Venue: <p><%= @ceremony.venue ? @ceremony.venue : nil %> </p></li>
-            <li>Burial Type: <p><%= @ceremony.burial_type ? @ceremony.burial_type: nil %> </p></li>
+            <li>Burial Type: <p><%= @ceremony.burial_type ? @ceremony.burial_type: "None selected" %> </p></li>
             <li>Details: <p><%= @ceremony.details ? @ceremony.details: nil %> </p></li>
             <li>Epitaph: <p><%= @ceremony.epitaph ? @ceremony.epitaph: nil  %> </p></li>
             <li>Funeral Home: <p><%= @ceremony.funeral_home ? @ceremony.funeral_home: nil  %> </p></li>

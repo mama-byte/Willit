@@ -17,7 +17,7 @@
           <li> Speaker: <p><%= current_user.ceremony.speaker_id ? current_user.ceremony.speaker.full_name: nil  %> </p></li>
           <li> Music Selector: <p><%= current_user.ceremony.music_selector_id ? current_user.ceremony.music_selector.full_name: nil  %> </p></li>
         <% if @ceremony == nil %>
-            <h4> You currently have no ceremony details added.</h4>
+            <h4>Add Ceremony Details</h4>
           <%= link_to 'Add some details', new_ceremony_path, class: 'greenButton' %>
           <%else%>
             <% if policy(@ceremony).edit? %>

@@ -6,14 +6,14 @@
         <div class="container2">
             <%= simple_form_for @user, url: profile_update_path, method: :patch do |f| %>
             <div class='inner_container'>
-                <h4>Personal Information</h4>
+                <h4>Yourself</h4>
                 <%= f.input :legal_name , :label => "Legal Name"%>
                 <%= f.input :pronouns, :label => "Pronouns" %>
+                <%= f.input :nickname, :label => "Nickname"%>
                 <div class="d-flex flex-column bd-highlight mb-3">
-                    <%= f.input :birthdate, start_year: Date.today.year - 110, end_year: Date.today.year,  :label => "What is your birthdate?"%>
+                    <%= f.input :birthdate, start_year: Date.today.year - 110, end_year: Date.today.year,  :label => "Birthdate"%>
                 </div>
                 <%= f.input :nationality, :label => "Nationality" %>
-                <%= f.input :nickname, :label => "Nickname"%>
                 <%= f.submit 'Save' , class: 'greenButton' %>
             </div>
             <% end %>
